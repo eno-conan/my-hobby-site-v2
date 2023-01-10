@@ -16,10 +16,17 @@ const TestData: Array<IData> = [
   },
 ];
 
+const hello = { name: 'Hello World' };
+
 export const handlers = [
   rest.get('https://jsonplaceholder.typicode.com/todos', (_, res, ctx) => {
     return res(
       ctx.json(TestData)
+    );
+  }),
+  rest.get('http://localhost:3000/api/hello', (_, res, ctx) => {
+    return res(
+      ctx.json(hello)
     );
   }),
 ];

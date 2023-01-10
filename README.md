@@ -1,5 +1,9 @@
 ## リンク集
 
+### create-next-app
+- [23/01/10：アプリ作成方法](https://mo-gu-mo-gu.com/create-next-app-typescript/)
+
+
 ### StoryBook
 - [23/01/10：インストール、初期設定](https://reffect.co.jp/react/next-js-12-storybook)
 

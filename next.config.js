@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: false,
+  reactStrictMode: false,
+  swcMinify: true,
   env: {
-    // NEXT_PUBLIC_API_MOCKING: "disabled",
     NEXT_PUBLIC_API_MOCKING: "enabled",
   },
 }

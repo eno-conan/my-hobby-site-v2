@@ -1,9 +1,10 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Home: NextPage = (props: any) => {
+  // console.log(props.data);
   return (
     <div className={styles.container}>
       <Head>
@@ -70,3 +71,13 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export const getServerSideProps: GetServerSideProps<any> = async () => {
+  const data = await fetch("/api/hello");
+  const dataJson = await data.json();
+  return {
+    props: {
+      data: dataJson,
+    },
+  };
+};
