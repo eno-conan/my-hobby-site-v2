@@ -5,6 +5,6 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_API_MOCKING: "enabled",
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

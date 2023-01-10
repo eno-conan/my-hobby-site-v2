@@ -1,15 +1,15 @@
-import 'whatwg-fetch'; //テスト環境ではfetchがないため、別ライブラリから用意
+import "whatwg-fetch"; //テスト環境ではfetchがないため、別ライブラリから用意
 
-import { server } from './src/mocks/server';
+import { server } from "./src/mocks/server";
 
 beforeAll(() => {
-    server.listen(); //モックサーバーの起動
+  server.listen(); //モックサーバーの起動
 });
 
 afterEach(() => {
-    server.resetHandlers();
+  server.resetHandlers();
 });
 
 afterAll(() => {
-    server.close(); //モックサーバーの停止
+  server.close(); //モックサーバーの停止
 });

@@ -7,31 +7,28 @@ import { Source } from "../../../types";
 // };
 
 const MswIndex: NextPage = (props: any) => {
-    // const { status, data } = useFetchData();
-    // if (status === 'loading') {
-    //     return <p>Loading...</p>;
-    // }
-    // if (status === 'error') {
-    //     return <p>There was an error fetching the data!</p>;
-    // }
-    return (
-        <>
-            {props.data && props.data.map((d: any, idx: number) => {
-                return (
-                    <div key={idx}>
-                        {idx % 50 == 0 ? (<>{d.title}</>) : (<></>)}
-                    </div>
-                )
-            })}
-        </>
-    );
+  // const { status, data } = useFetchData();
+  // if (status === 'loading') {
+  //     return <p>Loading...</p>;
+  // }
+  // if (status === 'error') {
+  //     return <p>There was an error fetching the data!</p>;
+  // }
+  return (
+    <>
+      {props.data &&
+        props.data.map((d: any, idx: number) => {
+          return <div key={idx}>{idx % 50 == 0 ? <>{d.title}</> : <></>}</div>;
+        })}
+    </>
+  );
 };
 
 interface IResData {
-    id: number;
-    userId: number;
-    title: string;
-    completed: boolean;
+  id: number;
+  userId: number;
+  title: string;
+  completed: boolean;
 }
 
 // function useFetchData() {
@@ -62,13 +59,13 @@ interface IResData {
 // }
 
 export const getServerSideProps: GetServerSideProps<any> = async () => {
-    const data = await fetch("https://jsonplaceholder.typicode.com/todos");
-    const dataJson = await data.json();
-    return {
-        props: {
-            data: dataJson,
-        },
-    };
+  const data = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const dataJson = await data.json();
+  return {
+    props: {
+      data: dataJson,
+    },
+  };
 };
 
 export default MswIndex;

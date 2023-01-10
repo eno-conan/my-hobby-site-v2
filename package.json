@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -31,8 +32,10 @@
     "babel-loader": "^8.3.0",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-storybook": "^0.6.8",
     "msw": "^0.49.2",
+    "prettier": "^2.8.2",
     "typescript": "4.9.4",
     "whatwg-fetch": "^3.6.2"
   },
