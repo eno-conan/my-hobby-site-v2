@@ -1525,6 +1525,14 @@
     "tiny-glob" "^0.2.9"
     "tslib" "^2.4.0"
 
+"@playwright/test@^1.29.2":
+  "integrity" "sha512-+3/GPwOgcoF0xLz/opTnahel1/y42PdcgZ4hs+BZGIUjtmEFSXGg+nFoaH3NSmuc7a6GSFwXDJ5L7VXpqzigNg=="
+  "resolved" "https://registry.npmjs.org/@playwright/test/-/test-1.29.2.tgz"
+  "version" "1.29.2"
+  dependencies:
+    "@types/node" "*"
+    "playwright-core" "1.29.2"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.5.3":
   "integrity" "sha512-j0Ya0hCFZPd4x40qLzbhGsh9TMtdb+CJQiso+WxLOPNasohq9cc5SNUcwsZaRH6++Xh91Xkm/xHCkuIiIu0LUA=="
   "resolved" "https://registry.npmjs.org/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.5.10.tgz"
@@ -8920,6 +8928,11 @@
   "version" "5.0.0"
   dependencies:
     "find-up" "^5.0.0"
+
+"playwright-core@1.29.2":
+  "integrity" "sha512-94QXm4PMgFoHAhlCuoWyaBYKb92yOcGVHdQLoxQ7Wjlc7Flg4aC/jbFW7xMR52OfXMVkWicue4WXE7QEegbIRA=="
+  "resolved" "https://registry.npmjs.org/playwright-core/-/playwright-core-1.29.2.tgz"
+  "version" "1.29.2"
 
 "pnp-webpack-plugin@1.6.4":
   "integrity" "sha512-7Wjy+9E3WwLOEL30D+m8TSTF7qJJUJLONBnwQp0518siuMxUQUbgZwssaFX+QKlZkjHZcw/IpZCt/H0srrntSg=="

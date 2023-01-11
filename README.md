@@ -33,9 +33,14 @@
 ### Vitest
 - [23/01/11：インストール、初期設定](https://zenn.dev/elpnt/scraps/5051d7e06bdd6a)
 
+### playwright
+- [23/01/11：インストール、初期設定](https://playwright.dev/docs/intro)
+- [23/01/11：基本操作関連の実装](https://zenn.dev/optimisuke/articles/f38ea76006d3a6)
+
 ### Cypress
-- [23/01/11：インストール、初期設定](https://zenn.dev/tsucchiiinoko/articles/cbf3189eb62127)
-- 以下エラーの適切な解決方法は？
-   ```
-    Type error: 'commands.ts' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
-  ```
+- playwrightの方が実装しやすいかも
+  - [23/01/11：インストール、初期設定](https://zenn.dev/tsucchiiinoko/articles/cbf3189eb62127)
+  - 以下エラーの適切な解決方法は？
+     ```
+      Type error: 'commands.ts' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
+    ```

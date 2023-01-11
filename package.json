@@ -9,7 +9,8 @@
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "playwright": "playwright test && playwright show-report"
   },
   "dependencies": {
     "axios": "^1.2.2",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@playwright/test": "^1.29.2",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
