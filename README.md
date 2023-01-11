@@ -8,6 +8,7 @@
 
 ### StoryBook
 - [23/01/10：インストール、初期設定](https://reffect.co.jp/react/next-js-12-storybook)
+- [23/01/11：getServerSidePropsとの連携方法](https://egghead.io/lessons/next-js-mock-getserversideprops-and-getstaticprops-request-with-msw-and-storybook-loaders)
 
 ### Msw導入
 - [23/01/10：インストール、初期設定](https://zenn.dev/higuchimakoto/articles/d9865193910046)

@@ -11,7 +11,7 @@ const TestData: Array<IData> = [
   {
     id: 1,
     userId: 1,
-    title: "Something",
+    title: "MSW Mock Data",
     completed: false,
   },
 ];
@@ -22,7 +22,7 @@ export const handlers = [
   rest.get("https://jsonplaceholder.typicode.com/todos", (_, res, ctx) => {
     return res(ctx.json(TestData));
   }),
-  rest.get("http://localhost:3000/api/hello", (_, res, ctx) => {
+  rest.get("/api/hello", (_, res, ctx) => {
     return res(ctx.json(hello));
   }),
 ];
