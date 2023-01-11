@@ -30,6 +30,9 @@
     - `.env.production`
       - NEXT_PUBLIC_API_MOCKING=disabled
 
+### Vitest
+- [23/01/11：インストール、初期設定](https://zenn.dev/elpnt/scraps/5051d7e06bdd6a)
+
 ### Cypress
 - [23/01/11：インストール、初期設定](https://zenn.dev/tsucchiiinoko/articles/cbf3189eb62127)
 

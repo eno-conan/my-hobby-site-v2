@@ -1,3 +1,4 @@
+export { }
 /// <reference types="cypress" />
 
 context("/ - Home", () => {
