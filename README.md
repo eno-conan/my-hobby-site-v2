@@ -35,4 +35,7 @@
 
 ### Cypress
 - [23/01/11：インストール、初期設定](https://zenn.dev/tsucchiiinoko/articles/cbf3189eb62127)
-
+- 以下エラーの適切な解決方法は？
+   ```
+    Type error: 'commands.ts' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
+  ```

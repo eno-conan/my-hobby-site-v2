@@ -9,9 +9,7 @@
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore \"./**/*.{js,jsx,ts,tsx,json,css}\"",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "cypress": "cypress open",
-    "cypress:headless": "cypress run --record --key d1108003-a138-44f6-870e-5e017bca5e45"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "axios": "^1.2.2",
@@ -33,7 +31,6 @@
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
     "babel-loader": "^8.3.0",
-    "cypress": "^12.3.0",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "eslint-config-prettier": "^8.6.0",
