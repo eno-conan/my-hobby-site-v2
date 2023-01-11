@@ -4,6 +4,9 @@
 - [23/01/10：アプリ作成方法](https://mo-gu-mo-gu.com/create-next-app-typescript/)
 - [23/01/11：アプリ作成方法(ESlintの設定も含めて)](https://qiita.com/mu-suke08/items/28fefe92b113c8f1c25d)
 - [23/01/11：ESlintの設定](https://qiita.com/sochan-dev/items/525539b5dc7e4d7f814b)
+- 
+### Eslint
+- [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
 
 ### env variables
 - [23/01/11：envファイルの定義](https://fwywd.com/tech/next-env)
