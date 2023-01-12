@@ -4,9 +4,14 @@
 - [23/01/10：アプリ作成方法](https://mo-gu-mo-gu.com/create-next-app-typescript/)
 - [23/01/11：アプリ作成方法(ESlintの設定も含めて)](https://qiita.com/mu-suke08/items/28fefe92b113c8f1c25d)
 - [23/01/11：ESlintの設定](https://qiita.com/sochan-dev/items/525539b5dc7e4d7f814b)
+  - Vercelにデプロイしたら、以下エラーが発生したので、`react/no-unescaped-entities`を1(warning)に設定
+  ```
+  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+  ```
 - 
 ### Eslint
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
+- [23/01/12：disabling rules](https://nextjs.org/docs/basic-features/eslint#disabling-rules)
 
 ### env variables
 - [23/01/11：envファイルの定義](https://fwywd.com/tech/next-env)
