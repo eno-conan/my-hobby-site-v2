@@ -5,6 +5,7 @@ import React from 'react';
 import styles from "../../styles/pages/sample/radix.module.css";
 import Headline from '../components/Headline';
 import Radix2 from './radix2';
+import Radix3 from './radix3';
 
 const RadixIndex = () => {
     return (
@@ -38,44 +39,50 @@ const RadixIndex = () => {
                 <div className={styles.TopicLabel}>
                     <h4>Dialog</h4>
                 </div>
-                <Dialog.Root>
-                    <Dialog.Trigger asChild>
-                        <button className={`${styles.Button} ${styles.violet}`}>
-                            Edit profile
-                        </button>
-                    </Dialog.Trigger>
-                    <Dialog.Portal>
-                        <Dialog.Overlay className={styles.DialogOverlay} />
-                        <Dialog.Content className={styles.DialogContent}>
-                            <Dialog.Title className={styles.DialogTitle}>Edit profile</Dialog.Title>
-                            <Dialog.Description className={styles.DialogDescription}>
-                                Make changes to your profile here. Click save when you're done.
-                            </Dialog.Description>
-                            <fieldset className={styles.Fieldset}>
-                                <label className={styles.Label} htmlFor="name">
-                                    Name
-                                </label>
-                                <input className={styles.Input} id="name" placeholder='Mike' />
-                            </fieldset>
-                            <fieldset className={styles.Fieldset}>
-                                <label className={styles.Label} htmlFor="username">
-                                    Username
-                                </label>
-                                <input className={styles.Input} id="username" placeholder='@Mike' />
-                            </fieldset>
-                            <div style={{ display: 'flex', marginTop: 25, justifyContent: 'flex-end' }}>
+                <div>
+                    <Dialog.Root>
+                        <Dialog.Trigger asChild>
+                            <button className={`${styles.Button} ${styles.violet}`}>
+                                Edit profile
+                            </button>
+                        </Dialog.Trigger>
+                        <Dialog.Portal>
+                            <Dialog.Overlay className={styles.DialogOverlay} />
+                            <Dialog.Content className={styles.DialogContent}>
+                                <Dialog.Title className={styles.DialogTitle}>Edit profile</Dialog.Title>
+                                <Dialog.Description className={styles.DialogDescription}>
+                                    Make changes to your profile here. Click save when you're done.
+                                </Dialog.Description>
+                                <fieldset className={styles.Fieldset}>
+                                    <label className={styles.Label} htmlFor="name">
+                                        Name
+                                    </label>
+                                    <input className={styles.Input} id="name" placeholder='Mike' />
+                                </fieldset>
+                                <fieldset className={styles.Fieldset}>
+                                    <label className={styles.Label} htmlFor="username">
+                                        Username
+                                    </label>
+                                    <input className={styles.Input} id="username" placeholder='@Mike' />
+                                </fieldset>
+                                <div style={{ display: 'flex', marginTop: 25, justifyContent: 'flex-end' }}>
+                                    <Dialog.Close asChild>
+                                        <button className={`${styles.Button} ${styles.green}`}>Save changes</button>
+                                    </Dialog.Close>
+                                </div>
                                 <Dialog.Close asChild>
-                                    <button className={`${styles.Button} ${styles.green}`}>Save changes</button>
+                                    <button className={styles.IconButton} aria-label="Close">
+                                        <Cross2Icon />
+                                    </button>
                                 </Dialog.Close>
-                            </div>
-                            <Dialog.Close asChild>
-                                <button className={styles.IconButton} aria-label="Close">
-                                    <Cross2Icon />
-                                </button>
-                            </Dialog.Close>
-                        </Dialog.Content>
-                    </Dialog.Portal>
-                </Dialog.Root>
+                            </Dialog.Content>
+                        </Dialog.Portal>
+                    </Dialog.Root>
+                </div>
+                <div className={styles.TopicLabel}>
+                    <h4>Toast</h4>
+                </div>
+                <Radix3 />
             </div>
         </>
     );

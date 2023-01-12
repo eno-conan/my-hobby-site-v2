@@ -8,6 +8,6 @@ export default defineConfig({
         globals: true, // use `describe, it, test` without importing them
         environment: "jsdom",
         setupFiles: "./tests/setup.ts",
-        exclude: ["node_modules", "playwright/*.ts", "playwright_escape/*.ts", "playwright/*.tsx"]
+        exclude: ["node_modules", "playwright/*.ts", "playwright/*.tsx"]
     },
 });
