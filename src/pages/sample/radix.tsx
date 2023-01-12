@@ -4,10 +4,12 @@ import * as Popover from '@radix-ui/react-popover';
 import React from 'react';
 import styles from "../../styles/pages/sample/radix.module.css";
 import Headline from '../components/Headline';
+import Radix2 from './radix2';
 
 const RadixIndex = () => {
     return (
         <>
+            <Radix2 />
             <div className='container mx-auto py-2'>
                 <Headline headline='Radix Sample Page' />
                 <div>
