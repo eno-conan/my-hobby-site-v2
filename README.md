@@ -36,6 +36,16 @@
 ### tailwind css
 - [23/01/12：インストール、初期設定](https://tailwindcss.com/docs/guides/nextjs)
 
+### radix
+- [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)
+- 23/01/12：@import '@radix-ui/colors/violet.css';の実装箇所
+  - `XXX.module.css`に記載すると、以下エラーが表示されてしまう
+  ```
+  Syntax error: Selector ":root" is not pure (pure selectors must contain at least one local class or id)
+  ```
+  - 解決方法
+    - **globals.cssに記述すればいい**
+
 ### playwright
 - [23/01/11：インストール、初期設定](https://playwright.dev/docs/intro)
 - [23/01/11：基本操作関連の実装](https://zenn.dev/optimisuke/articles/f38ea76006d3a6)
