@@ -32,6 +32,9 @@
 
 ### Vitest
 - [23/01/11：インストール、初期設定](https://zenn.dev/elpnt/scraps/5051d7e06bdd6a)
+- 
+### tailwind css
+- [23/01/12：インストール、初期設定](https://tailwindcss.com/docs/guides/nextjs)
 
 ### playwright
 - [23/01/11：インストール、初期設定](https://playwright.dev/docs/intro)

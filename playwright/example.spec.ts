@@ -16,3 +16,19 @@ test('get started link', async ({ page }) => {
   // Expects the URL to contain intro.
   await expect(page).toHaveURL(/.*intro/);
 });
+
+test.describe('chromium only', () => {
+  test.skip(({ browserName }) => browserName === 'chromium', 'except Chromium!');
+
+  test.beforeAll(async () => {
+    // This hook is only run in Chromium.
+  });
+
+  test('test 1', async ({ page }) => {
+    // This test is only run in Chromium.
+  });
+
+  test('test 2', async ({ page }) => {
+    // This test is only run in Chromium.
+  });
+});

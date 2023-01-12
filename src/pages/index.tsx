@@ -33,6 +33,9 @@ const Home: NextPage = () => {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
         </div>
+        <h1 className="text-3xl font-bold underline">
+          Attempt tailwind css
+        </h1>
       </main>
 
       <footer className={styles.footer}>
