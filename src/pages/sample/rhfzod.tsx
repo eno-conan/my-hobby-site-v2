@@ -6,6 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useLocale } from 'src/hooks/useLocale'
 import { ErrorMessage } from '@hookform/error-message';
 import Input from 'src/components/ui/Input'
+import NextLink from 'next/link'
+import styles from "../../styles/pages/sample/rhfzod.module.css";
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -58,9 +60,18 @@ const Rhfzod: NextPage = () => {
                 </div>
                 <ErrorMessage errors={errors} name="email" />
                 <div>
-                    <button type="submit">Submit</button>
+                    <button type="submit" className={`${styles.Button} ${styles.violet}`}>Submit</button>
                 </div>
             </form>
+            <div className={'ml-4 font-bold'}>
+                <h4>{isJapanese ? '国際化対応' : 'i18n'}</h4>
+            </div>
+            <NextLink href={'/sample/rhfzod'} locale={'ja'} passHref>
+                <button className={`${styles.Button} ${styles.violet}`}>ja</button>
+            </NextLink>
+            <NextLink href={'/sample/rhfzod'} locale={'en'} passHref>
+                <button className={`${styles.Button} ${styles.violet}`}>en</button>
+            </NextLink>
         </div>
     )
 }
