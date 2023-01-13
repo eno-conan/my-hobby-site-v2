@@ -1,0 +1,18 @@
+.Input {
+    width: 300px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0 10px;
+    margin: 10px 0px 0px 10px;
+    height: 35px;
+    font-size: 15px;
+    line-height: 1;
+    background-color: var(--blackA3);
+    box-shadow: 0 0 0 1px var(--blackA9);
+  }
+  .Input:focus {
+    box-shadow: 0 0 0 2px black;
+  }
+  
