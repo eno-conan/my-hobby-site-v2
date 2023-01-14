@@ -12,6 +12,7 @@
 ### Eslint
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
 - [23/01/12：disabling rules](https://nextjs.org/docs/basic-features/eslint#disabling-rules)
+- [23/01/12：react/display-name](https://cpoint-lab.co.jp/article/202107/20652/)
 
 ### env variables
 - [23/01/11：envファイルの定義](https://fwywd.com/tech/next-env)
