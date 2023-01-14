@@ -9,9 +9,9 @@ interface Props {
 
 const Input = ({ register, label }: Props) => {
     return (
-        <div>
+        <span>
             <input {...register(label)} className={styles.Input} />
-        </div>
+        </span>
     )
 }
 
