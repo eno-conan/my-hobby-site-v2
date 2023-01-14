@@ -37,6 +37,11 @@
 
 ### React Form Hooks
 - [23/01/13：基本メソッド一覧](https://qiita.com/NozomuTsuruta/items/0140acaee87b7c4ed856)
+- 
+### Zod
+- [23/01/15：公式ドキュメント](https://zod.dev/)
+- [23/01/15：API側のバリデーション（動画）](https://www.youtube.com/watch?v=_K34O0NcKAM)
+- [23/01/15：transformの使用例（プルダウンを用いた場合の値送信）](https://zenn.dev/kaz_z/articles/react-hook-form-select)
 
 ### Vitest
 - [23/01/11：インストール、初期設定](https://zenn.dev/elpnt/scraps/5051d7e06bdd6a)
