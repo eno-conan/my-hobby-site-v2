@@ -6,10 +6,9 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useLocale } from 'src/hooks/useLocale'
 import { ErrorMessage } from '@hookform/error-message';
 import Input from 'src/components/ui/Input'
+import Select from 'src/components/ui/Select'
 import NextLink from 'next/link'
-import * as Select from '@radix-ui/react-select';
 import styles from "../../styles/pages/sample/rhfzod.module.css";
-import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -18,10 +17,11 @@ type Inputs = {
     subject: string;
 };
 
+// 学習単元
 const subjects = [
-    { 'value': 999, name: '学習分野を選択' },
-    { 'value': 1, name: 'React' },
-    { 'value': 2, name: 'AWS' },
+    { value: 999, displayName: '学習分野を選択' },
+    { value: 1, displayName: 'React' },
+    { value: 2, displayName: 'AWS' },
 ]
 
 const EMAIL_FORMAT = new RegExp("^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$");
@@ -40,22 +40,10 @@ const Rhfzod: NextPage = () => {
     })
     const { isJapanese } = useLocale();
 
-    const SelectItem = React.forwardRef(({ children, ...props }: any, forwardedRef) => {
-        return (
-            <Select.Item className={styles.SelectItem} {...props} ref={forwardedRef}>
-                <Select.ItemText>{children}</Select.ItemText>
-                <Select.ItemIndicator className={styles.SelectItemIndicator}>
-                    <CheckIcon />
-                </Select.ItemIndicator>
-            </Select.Item>
-        );
-    });
-
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         alert(`${data.email} ${data.subject}`)
         reset();
     };
-
 
     return (
         <div>
@@ -69,17 +57,7 @@ const Rhfzod: NextPage = () => {
                 </div>
                 <ErrorMessage errors={errors} name="email" />
                 <div className='ml-4'>
-                    <div>
-                        <select className={styles.SelectTrigger} {...register("subject")}>
-                            {subjects.map((subj) => {
-                                return (
-                                    <option className={styles.SelectItem} key={subj.value} value={subj.value}>
-                                        {subj.name}
-                                    </option>
-                                );
-                            })}
-                        </select>
-                    </div>
+                    <Select register={register} label={'subject'} data={subjects} />
                     <ErrorMessage errors={errors} name="subject" />
                     {/* 一応残しておく */}
                     {/* <Select.Root>
