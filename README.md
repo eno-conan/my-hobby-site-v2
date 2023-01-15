@@ -70,6 +70,9 @@
 - [23/01/15：prismaとの連携](https://zenn.dev/kuesato/articles/8da958751b52fb)
 - [23/01/15：prismaと少し実装](https://qiita.com/takux/items/4a3640e67753268652d1)
 
+### prisma
+- [23/01/15：Vercelでデータ投入できるために必要な設定](https://github.com/prisma/prisma/issues/4752)
+
 ### Cypress
 - playwrightの方が実装しやすいかも
   - [23/01/11：インストール、初期設定](https://zenn.dev/tsucchiiinoko/articles/cbf3189eb62127)
