@@ -10,6 +10,8 @@ import styles from "../../styles/pages/sample/rhfzod.module.css";
 import { Cross2Icon, PlusIcon } from '@radix-ui/react-icons'
 import RecordForm from 'src/hooks/recordForm'
 import Label from 'src/components/ui/Label';
+import Meta from '../components/Meta';
+import * as Popover from '@radix-ui/react-popover';
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -22,7 +24,7 @@ type Inputs = {
 // 学習単元
 const subjects = [
     { value: 999, displayName: '学習分野を選択してください' },
-    { value: 0, displayName: '-(分類不可)' },
+    { value: 0, displayName: '- (その他)' },
     { value: 1, displayName: 'React' },
     { value: 2, displayName: 'AWS' },
 ]
@@ -44,10 +46,12 @@ const Rhfzod: NextPage = () => {
 
     return (
         <div className={'container mx-auto px-8'}>
+            <Meta title="記録追加画面" description="レコード追加(更新)を行う画面" />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Label type={'page'} word={'記録追加'} />
                 <Label type={'subHeading'} word={'タイトル名'} />
                 <Input register={register} label={'title'} classSub={'title'} />
+                {/* <textarea name="kansou"></textarea> */}
                 <ErrorMessage errors={errors} name="title" />
 
                 <Label type={'subHeading'} word={'記録の概要'} />
@@ -57,12 +61,24 @@ const Rhfzod: NextPage = () => {
                 <Label type={'subHeading'} word={'学習項目'} />
                 <Select register={register} label={'subject'} data={subjects} />
                 <ErrorMessage errors={errors} name="subject" />
+                <Label type={'subHeading'} word={'参考リンク（任意項目）'} />
+                <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} />
+                <Popover.Root>
+                    <Popover.Trigger className={styles.PopoverTrigger} data-state={'open'}>?</Popover.Trigger>
+                    <Popover.Portal>
+                        <Popover.Content className={styles.PopoverContent} data-side={'right'} >
+                            ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力
+                            {/* <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} /> */}
+                            <Popover.Arrow className={styles.PopoverArrow} />
+                        </Popover.Content>
+                    </Popover.Portal>
+                </Popover.Root>
                 <div>
                     {fields.map((_field: any, index: number) => (
                         <div key={index}>
-                            <Input register={register} label={`references.${index}.referenceTitle`} />
+                            <Input register={register} label={`references.${index}.referenceTitle`} classSub={`referenceTitle`} />
                             <ErrorMessage errors={errors} name={`references.${index}.referenceTitle`} />
-                            <Input register={register} label={`references.${index}.referenceUrl`} />
+                            <Input register={register} label={`references.${index}.referenceUrl`} classSub={`referenceUrl`} />
                             <ErrorMessage errors={errors} name={`references.${index}.referenceUrl`} />
                             <button type={"button"} className={styles.IconButton} onClick={() => remove(index)}><Cross2Icon /></button>
                         </div>
@@ -71,11 +87,11 @@ const Rhfzod: NextPage = () => {
                     <button type={"button"} className={`${styles.IconButton} mt-2`}
                         onClick={() => append({ referenceTitle: '', referenceUrl: '' })}><PlusIcon /></button>
                 </div>
-                <div>
+                <div className={'text-right'}>
                     <button type={"submit"} className={`${styles.Button} ${styles.violet}`}>送信</button>
                 </div>
             </form>
-            <div className={'ml-4 font-bold'}>
+            {/* <div className={'ml-4 font-bold'}>
                 <h4>{isJapanese ? '国際化対応' : 'i18n'}</h4>
             </div>
             <NextLink href={'/sample/rhfzod'} locale={'ja'} passHref>
@@ -83,7 +99,7 @@ const Rhfzod: NextPage = () => {
             </NextLink>
             <NextLink href={'/sample/rhfzod'} locale={'en'} passHref>
                 <button className={`${styles.Button} ${styles.violet}`}>英語</button>
-            </NextLink>
+            </NextLink> */}
         </div>
     )
 

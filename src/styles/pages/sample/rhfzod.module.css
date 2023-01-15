@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   color: var(--violet11);
-  margin-left: 5px;
+  margin: 5px 0px 5px 20px;
 }
 .IconButton:hover {
   background-color: var(--violet4);

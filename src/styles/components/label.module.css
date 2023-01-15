@@ -1,5 +1,5 @@
 .Label{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
   .Label.page{
@@ -8,9 +8,14 @@
       font-size: 48px;
       padding: 4px 4px;
   }
-  
   .Label.subHeading{
       font-size: 24px;
       font-weight: 600;
       padding: 4px 4px;
   }
+  .Label.reference{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 4px 4px;
+    margin-left: 20px;
+}

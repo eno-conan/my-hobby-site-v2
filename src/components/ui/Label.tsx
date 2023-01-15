@@ -10,6 +10,7 @@ interface Props {
 const cx = classnames.bind(styles);
 
 const Label = ({ type, word }: Props) => {
+
     return (
         <div className={cx('Label', type)}>{word}</div>
     )
