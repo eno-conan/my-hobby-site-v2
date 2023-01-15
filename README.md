@@ -66,6 +66,10 @@
 - [23/01/11：インストール、初期設定](https://playwright.dev/docs/intro)
 - [23/01/11：基本操作関連の実装](https://zenn.dev/optimisuke/articles/f38ea76006d3a6)
 
+### supabase
+- [23/01/15：prismaとの連携](https://zenn.dev/kuesato/articles/8da958751b52fb)
+- [23/01/15：prismaと少し実装](https://qiita.com/takux/items/4a3640e67753268652d1)
+
 ### Cypress
 - playwrightの方が実装しやすいかも
   - [23/01/11：インストール、初期設定](https://zenn.dev/tsucchiiinoko/articles/cbf3189eb62127)
