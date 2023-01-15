@@ -8,6 +8,9 @@
   ```
   Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
   ```
+- [23/01/16：Next.jsでのサイト内ページ遷移方法](https://qiita.com/IYA_UFO/items/f13577bad7dd9ef1ae89)
+- [23/01/16：dependenciesとdevDependencies](https://prograshi.com/framework/nodejs/dependencies-and-devdependencies-in-package-json/)
+
 - 
 ### Eslint
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
@@ -77,6 +80,9 @@
 - [23/01/15：Accessibility:Buttons do not have an accessible nameの対処方法](https://t-kuni-tech.com/2020/12/21/lighthouse%E3%81%AE%E3%80%8Cbuttons-do-not-have-an-accessible-name%E3%80%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/)
 - [23/01/15：Accessibility:Form elements do not have associated labelsの対処方法](https://zenn.dev/damono999/articles/f41d51048ef268)
 - [23/01/15：Page is blocked from indexingの対処方法](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/)
+
+# i18n
+- [23/01/16：Internationalized Routing](https://nextjs.org/docs/advanced-features/i18n-routing)
 
 
 ### Cypress
