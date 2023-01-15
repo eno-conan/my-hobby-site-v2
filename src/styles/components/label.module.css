@@ -1,0 +1,16 @@
+.Label{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+  .Label.page{
+      text-align: center;
+      font-weight: 600;
+      font-size: 48px;
+      padding: 4px 4px;
+  }
+  
+  .Label.subHeading{
+      font-size: 24px;
+      font-weight: 600;
+      padding: 4px 4px;
+  }

@@ -9,6 +9,7 @@ import NextLink from 'next/link'
 import styles from "../../styles/pages/sample/rhfzod.module.css";
 import { Cross2Icon, PlusIcon } from '@radix-ui/react-icons'
 import RecordForm from 'src/hooks/recordForm'
+import Label from 'src/components/ui/Label';
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -44,24 +45,16 @@ const Rhfzod: NextPage = () => {
     return (
         <div className={'container mx-auto px-8'}>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div className={styles.PageLabel}>
-                    <div>記録追加</div>
-                </div>
-                <div className={styles.TextLabel}>
-                    <div>タイトル名</div>
-                </div>
+                <Label type={'page'} word={'記録追加'} />
+                <Label type={'subHeading'} word={'タイトル名'} />
                 <Input register={register} label={'title'} classSub={'title'} />
                 <ErrorMessage errors={errors} name="title" />
 
-                <div className={styles.TextLabel}>
-                    <div>記録の概要</div>
-                </div>
+                <Label type={'subHeading'} word={'記録の概要'} />
                 <Input register={register} label={'description'} classSub={'description'} />
                 <ErrorMessage errors={errors} name="description" />
 
-                <div className={styles.TextLabel}>
-                    <div>学習項目</div>
-                </div>
+                <Label type={'subHeading'} word={'学習項目'} />
                 <Select register={register} label={'subject'} data={subjects} />
                 <ErrorMessage errors={errors} name="subject" />
                 <div>
