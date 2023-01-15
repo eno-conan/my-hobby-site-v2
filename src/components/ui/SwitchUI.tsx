@@ -18,7 +18,7 @@ const SwitchUI = ({ label, finishStatus, setFinishStatus }: Props) => {
     return (
         <div>
             <Label type={'finishStatus'} word={label} />
-            <Switch.Root className={styles.SwitchRoot} id="finish-status" onClick={ChangeStatus}>
+            <Switch.Root className={styles.SwitchRoot} aria-label={"button which is switch finish status"} onClick={ChangeStatus}>
                 <Switch.Thumb className={styles.SwitchThumb} />
             </Switch.Root>
         </div>

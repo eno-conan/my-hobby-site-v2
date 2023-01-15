@@ -28,6 +28,7 @@ const subjects = [
     { value: 999, displayName: '学習分野を選択してください' },
     { value: 1, displayName: 'React' },
     { value: 2, displayName: 'AWS' },
+    { value: 3, displayName: 'DB' },
     { value: 0, displayName: '- (その他)' },
 ]
 
@@ -38,6 +39,7 @@ const Rhfzod: NextPage = () => {
     // 参照リンク
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
     const [finishStatus, setFinishStatus] = useState(false);
+    // const [resStatus, setResStatus] = useState('')
 
     const onSubmit: SubmitHandler<Inputs> = async () => {
         // 送信情報の設定
@@ -54,11 +56,17 @@ const Rhfzod: NextPage = () => {
         const headers = {
             'Accept': 'application/json'
         };
-        await fetch(`/api/record`, { method, headers, body })
-        // リンクの入力欄を初期状態に
-        remove()
-        // // テキスト入力を初期化
-        reset();
+        const response = await fetch(`/api/record`, { method, headers, body });
+
+        if (response.ok) {
+            alert('登録完了')
+            // リンクの入力欄を初期状態に
+            remove()
+            // // テキスト入力を初期化
+            reset();
+        } else {
+            alert('何らかのエラーが発生')
+        }
         Router.push({ pathname: `/`, });
         // Router.push({
         //     pathname: `/targetRecordPage/${maxId}`,
@@ -69,6 +77,14 @@ const Rhfzod: NextPage = () => {
         //     }
         // }, `/targetRecordPage/${maxId}`);
     };
+
+    // if (!resStatus) {
+    //     return (
+    //         <>
+    //             Loading...
+    //         </>
+    //     );
+    // }
 
     return (
         <div className={'container mx-auto px-8'}>
