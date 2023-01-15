@@ -24,9 +24,9 @@ type Inputs = {
 // 学習単元
 const subjects = [
     { value: 999, displayName: '学習分野を選択してください' },
-    { value: 0, displayName: '- (その他)' },
     { value: 1, displayName: 'React' },
     { value: 2, displayName: 'AWS' },
+    { value: 0, displayName: '- (その他)' },
 ]
 
 const Rhfzod: NextPage = () => {
@@ -63,16 +63,15 @@ const Rhfzod: NextPage = () => {
                 <ErrorMessage errors={errors} name="subject" />
                 <Label type={'subHeading'} word={'参考リンク（任意項目）'} />
                 <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} />
-                <Popover.Root>
+                {/* <Popover.Root>
                     <Popover.Trigger className={styles.PopoverTrigger} data-state={'open'}>?</Popover.Trigger>
                     <Popover.Portal>
                         <Popover.Content className={styles.PopoverContent} data-side={'right'} >
                             ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力
-                            {/* <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} /> */}
                             <Popover.Arrow className={styles.PopoverArrow} />
                         </Popover.Content>
                     </Popover.Portal>
-                </Popover.Root>
+                </Popover.Root> */}
                 <div>
                     {fields.map((_field: any, index: number) => (
                         <div key={index}>
@@ -100,7 +99,7 @@ const Rhfzod: NextPage = () => {
             <NextLink href={'/sample/rhfzod'} locale={'en'} passHref>
                 <button className={`${styles.Button} ${styles.violet}`}>英語</button>
             </NextLink> */}
-        </div>
+        </div >
     )
 
 }
