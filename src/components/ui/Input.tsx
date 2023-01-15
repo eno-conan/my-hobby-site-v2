@@ -1,3 +1,4 @@
+import classnames from 'classnames/bind'; // <-- notice bind
 import React from 'react'
 import { UseFormRegister } from 'react-hook-form'
 import styles from "../../styles/components/input.module.css";
@@ -5,12 +6,16 @@ import styles from "../../styles/components/input.module.css";
 interface Props {
     register: UseFormRegister<any>;
     label: any;
+    classSub?: string
 }
 
-const Input = ({ register, label }: Props) => {
+const cx = classnames.bind(styles);
+
+const Input = ({ register, label, classSub = '' }: Props) => {
     return (
         <span>
-            <input {...register(label)} className={styles.Input} />
+            {/* 項目によって幅の調整可能 */}
+            <input {...register(label)} className={cx('Input', classSub)} />
         </span>
     )
 }

@@ -1,8 +1,6 @@
 import { NextPage } from 'next'
 import React, { useState } from 'react'
-import { z } from 'zod'
-import { useForm, SubmitHandler, useFieldArray } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { SubmitHandler, useFieldArray } from 'react-hook-form'
 import { useLocale } from 'src/hooks/useLocale'
 import { ErrorMessage } from '@hookform/error-message';
 import Input from 'src/components/ui/Input'
@@ -52,13 +50,13 @@ const Rhfzod: NextPage = () => {
                 <div className={styles.TextLabel}>
                     <div>タイトル名</div>
                 </div>
-                <Input register={register} label={'title'} />
+                <Input register={register} label={'title'} classSub={'title'} />
                 <ErrorMessage errors={errors} name="title" />
 
                 <div className={styles.TextLabel}>
                     <div>記録の概要</div>
                 </div>
-                <Input register={register} label={'description'} />
+                <Input register={register} label={'description'} classSub={'description'} />
                 <ErrorMessage errors={errors} name="description" />
 
                 <div className={styles.TextLabel}>

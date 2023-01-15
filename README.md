@@ -50,6 +50,7 @@
 
 ### tailwind css
 - [23/01/12：インストール、初期設定](https://tailwindcss.com/docs/guides/nextjs)
+- [23/01/12：classnames.bindを使用した動的なクラス名設定](https://gist.github.com/heygrady/316bd69633ce816aee1ca24ab63535db#example-3-with-classnamesbind)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)

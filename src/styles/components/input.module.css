@@ -1,8 +1,5 @@
 .Input {
-  width: 400px;
   display: inline-flex;
-  /* align-items: center;
-  justify-content: center; */
   border-radius: 2px;
   padding: 0 10px;
   margin: 0px 0px 20px 30px;
@@ -15,4 +12,11 @@
   .Input:focus {
     box-shadow: 0 0 0 2px black;
   }
+  .Input.title {
+    width: 400px;
+    }
+
+  .Input.description {
+    width: 600px;
+    }
   
