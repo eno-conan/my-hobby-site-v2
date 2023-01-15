@@ -25,8 +25,8 @@ model Record {
 
 model RecordRef {
   id        Int    @id @default(autoincrement())
-  linkTitle String
-  linkUrl   String
+  referenceTitle String
+  referenceUrl   String
   recordId  Int
 }
 

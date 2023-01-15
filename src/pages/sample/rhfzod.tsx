@@ -32,12 +32,26 @@ const subjects = [
 const Rhfzod: NextPage = () => {
     const { isJapanese } = useLocale();
     // フォーム情報取得
-    const { control, register, handleSubmit, reset, formState: { errors } } = RecordForm();
+    const { control, register, handleSubmit, reset, getValues, formState: { errors } } = RecordForm();
     // 参照リンク
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
-        alert(`${data.description} ${data.subject}`)
+    const onSubmit: SubmitHandler<Inputs> = async () => {
+        // 送信情報の設定
+        const record = {
+            title: getValues().title,
+            description: getValues().description,
+            subject: getValues().subject,
+            detail: '',
+            finished: false,
+            refs: getValues().references
+        };
+        const method = 'POST';
+        const body = JSON.stringify(record);
+        const headers = {
+            'Accept': 'application/json'
+        };
+        await fetch(`/api/record`, { method, headers, body })
         // リンクの入力欄を初期状態に
         remove()
         // テキスト入力を初期化

@@ -15,7 +15,7 @@ export const schema = z.object({
 })
 
 const RecordForm = () => {
-    const { control, register, handleSubmit, reset, formState: { errors } } = useForm<z.infer<typeof schema>>({
+    const { control, register, handleSubmit, reset, getValues, formState: { errors } } = useForm<z.infer<typeof schema>>({
         mode: 'onSubmit',
         resolver: zodResolver(schema),
     })
@@ -24,6 +24,7 @@ const RecordForm = () => {
         register,
         handleSubmit,
         reset,
+        getValues,
         formState: { errors }
     }
 
