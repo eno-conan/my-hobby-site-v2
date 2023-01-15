@@ -1,13 +1,15 @@
 /* select box  */
 .SelectTrigger {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     border-radius: 4px;
-    padding: 10 px;
+    padding: 0 10px;
+    margin: 0px 0px 20px 30px;
     font-size: 13px;
     line-height: 1;
     height: 35px;
+    width: 400px;
     gap: 5px;
     background-color: white;
     color: var(--violet11);

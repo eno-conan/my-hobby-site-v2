@@ -7,12 +7,9 @@ const referenceSchema = z.object({
     referenceUrl: z.string().max(200, '最大入力文字数(200)を超えています'),
 })
 
-const EMAIL_FORMAT = new RegExp("^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$");
-
 export const schema = z.object({
-    name: z.string().min(2, "最低2文字は入力してください"),
-    email: z.string().email("メールアドレスの形式が不正です").max(30, "最大30文字です")
-        .regex(EMAIL_FORMAT, "メールアドレスの形式が不正です"),
+    title: z.string().min(1, "最低1文字は入力してください").max(50, "最大50文字です"),
+    description: z.string().min(1, "最低1文字は入力してください").max(100, "最大100文字です"),
     subject: z.string().max(2, 'いずれかの科目を選択してください'),
     references: z.array(referenceSchema).max(10)
 })

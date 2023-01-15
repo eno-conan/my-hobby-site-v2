@@ -11,7 +11,10 @@ body {
     background-color: beige;
 }
 
-/* button {
-    all: unset;
-} */
+.container{
+    width: 100%;
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+  }
   

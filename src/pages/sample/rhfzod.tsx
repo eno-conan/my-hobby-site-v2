@@ -14,15 +14,15 @@ import RecordForm from 'src/hooks/recordForm'
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
-    name: string;
-    email: string;
+    title: string;
+    description: string;
     subject: string;
     references: Array<any>;
 };
 
 // 学習単元
 const subjects = [
-    { value: 999, displayName: '学習分野を選択' },
+    { value: 999, displayName: '学習分野を選択してください' },
     { value: 0, displayName: '-(分類不可)' },
     { value: 1, displayName: 'React' },
     { value: 2, displayName: 'AWS' },
@@ -30,34 +30,42 @@ const subjects = [
 
 const Rhfzod: NextPage = () => {
     const { isJapanese } = useLocale();
+    // フォーム情報取得
     const { control, register, handleSubmit, reset, formState: { errors } } = RecordForm();
     // 参照リンク
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
-        alert(`${data.email} ${data.subject}`)
+        alert(`${data.description} ${data.subject}`)
         // リンクの入力欄を初期状態に
         remove()
-        // テキスト
+        // テキスト入力を初期化
         reset();
     };
 
     return (
-        <div>
+        <div className={'container mx-auto px-8'}>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <div></div>
-                <div className={'my-2'}>
-                    <Input register={register} label={'name'} />
+                <div className={styles.PageLabel}>
+                    <div>記録追加</div>
                 </div>
-                <ErrorMessage errors={errors} name="name" />
-                <div className={'my-2'}>
-                    <Input register={register} label={'email'} />
+                <div className={styles.TextLabel}>
+                    <div>タイトル名</div>
                 </div>
-                <ErrorMessage errors={errors} name="email" />
-                <div className='ml-4'>
-                    <Select register={register} label={'subject'} data={subjects} />
-                    <ErrorMessage errors={errors} name="subject" />
+                <Input register={register} label={'title'} />
+                <ErrorMessage errors={errors} name="title" />
+
+                <div className={styles.TextLabel}>
+                    <div>記録の概要</div>
                 </div>
+                <Input register={register} label={'description'} />
+                <ErrorMessage errors={errors} name="description" />
+
+                <div className={styles.TextLabel}>
+                    <div>学習項目</div>
+                </div>
+                <Select register={register} label={'subject'} data={subjects} />
+                <ErrorMessage errors={errors} name="subject" />
                 <div>
                     {fields.map((_field: any, index: number) => (
                         <div key={index}>
