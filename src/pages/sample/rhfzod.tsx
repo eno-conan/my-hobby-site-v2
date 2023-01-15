@@ -13,7 +13,7 @@ import Label from 'src/components/ui/Label';
 import Meta from '../components/Meta';
 import * as Popover from '@radix-ui/react-popover';
 import Router from "next/router";
-import SwitchUI from 'src/components/ui/SwitchUi';
+import SwitchUI from 'src/components/ui/SwitchUI';
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
