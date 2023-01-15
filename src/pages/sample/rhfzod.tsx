@@ -39,7 +39,7 @@ const Rhfzod: NextPage = () => {
 
     const onSubmit: SubmitHandler<Inputs> = async () => {
         // 送信情報の設定
-        const record = {
+        const newRecord = {
             title: getValues().title,
             description: getValues().description,
             subject: getValues().subject,
@@ -48,15 +48,15 @@ const Rhfzod: NextPage = () => {
             refs: getValues().references
         };
         const method = 'POST';
-        const body = JSON.stringify(record);
+        const body = JSON.stringify(newRecord);
         const headers = {
             'Accept': 'application/json'
         };
         await fetch(`/api/record`, { method, headers, body })
         // リンクの入力欄を初期状態に
-        // remove()
+        remove()
         // // テキスト入力を初期化
-        // reset();
+        reset();
         Router.push({ pathname: `/`, });
         // Router.push({
         //     pathname: `/targetRecordPage/${maxId}`,
