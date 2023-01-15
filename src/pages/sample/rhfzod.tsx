@@ -13,6 +13,7 @@ import Label from 'src/components/ui/Label';
 import Meta from '../components/Meta';
 import * as Popover from '@radix-ui/react-popover';
 import Router from "next/router";
+import SwitchUI from 'src/components/ui/SwitchUi';
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -36,6 +37,7 @@ const Rhfzod: NextPage = () => {
     const { control, register, handleSubmit, reset, getValues, formState: { errors } } = RecordForm();
     // 参照リンク
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
+    const [finishStatus, setFinishStatus] = useState(false);
 
     const onSubmit: SubmitHandler<Inputs> = async () => {
         // 送信情報の設定
@@ -44,7 +46,7 @@ const Rhfzod: NextPage = () => {
             description: getValues().description,
             subject: getValues().subject,
             detail: '',
-            finished: false,
+            finished: finishStatus,
             refs: getValues().references
         };
         const method = 'POST';
@@ -85,6 +87,8 @@ const Rhfzod: NextPage = () => {
                 <Label type={'subHeading'} word={'学習項目'} />
                 <Select register={register} label={'subject'} data={subjects} />
                 <ErrorMessage errors={errors} name="subject" />
+                <Label type={'subHeading'} word={'完了状態'} />
+                <SwitchUI label={'完了ならチェック'} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
                 <Label type={'subHeading'} word={'参考リンク（任意項目）'} />
                 <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} />
                 {/* <Popover.Root>
@@ -108,7 +112,7 @@ const Rhfzod: NextPage = () => {
                     ))}
                     {/* buttonタグはtype未設定の場合、submitで設定されてしまう */}
                     <button type={"button"} className={`${styles.IconButton} mt-2`}
-                        onClick={() => append({ referenceTitle: '', referenceUrl: '' })}><PlusIcon /></button>
+                        onClick={() => append({ referenceTitle: '', referenceUrl: '' })} aria-label={"add input area about reference"}><PlusIcon /></button>
                 </div>
                 <div className={'text-right'}>
                     <button type={"submit"} className={`${styles.Button} ${styles.violet}`}>送信</button>

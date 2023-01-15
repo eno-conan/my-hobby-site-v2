@@ -63,8 +63,7 @@ export default async function handler(
                 description: jsonBody.description,
                 subject: jsonBody.subject,
                 detail: 'detail',
-                // finished: jsonBody.finished,
-                finished: false,
+                finished: jsonBody.finished,
                 createdAtDate: date
             }
             const record = await prismaRecordCreate(createRecordParams);

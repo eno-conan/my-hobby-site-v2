@@ -15,7 +15,7 @@ const Input = ({ register, label, classSub = '' }: Props) => {
     return (
         <span>
             {/* 項目によって幅の調整可能 */}
-            <input {...register(label)} className={cx('Input', classSub)} />
+            <input {...register(label)} className={cx('Input', classSub)} aria-label={"input type component ui"} />
         </span>
     )
 }
