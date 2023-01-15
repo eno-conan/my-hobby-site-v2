@@ -10,6 +10,7 @@ import Select from 'src/components/ui/Select'
 import NextLink from 'next/link'
 import styles from "../../styles/pages/sample/rhfzod.module.css";
 import { Cross2Icon, PlusIcon } from '@radix-ui/react-icons'
+import RecordForm from 'src/hooks/recordForm'
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -27,27 +28,9 @@ const subjects = [
     { value: 2, displayName: 'AWS' },
 ]
 
-const referenceSchema = z.object({
-    referenceTitle: z.string().max(200, '最大入力文字数(200)を超えています'),
-    referenceUrl: z.string().max(200, '最大入力文字数(200)を超えています'),
-})
-
-const EMAIL_FORMAT = new RegExp("^([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$");
-
-const schema = z.object({
-    name: z.string().min(2, "最低2文字は入力してください"),
-    email: z.string().email("メールアドレスの形式が不正です").max(30, "最大30文字です")
-        .regex(EMAIL_FORMAT, "メールアドレスの形式が不正です"),
-    subject: z.string().max(2, 'いずれかの科目を選択してください'),
-    references: z.array(referenceSchema).max(10)
-})
-
 const Rhfzod: NextPage = () => {
     const { isJapanese } = useLocale();
-    const { control, register, handleSubmit, reset, formState: { errors } } = useForm<z.infer<typeof schema>>({
-        mode: 'onSubmit',
-        resolver: zodResolver(schema),
-    })
+    const { control, register, handleSubmit, reset, formState: { errors } } = RecordForm();
     // 参照リンク
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
 
@@ -62,6 +45,7 @@ const Rhfzod: NextPage = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
+                <div></div>
                 <div className={'my-2'}>
                     <Input register={register} label={'name'} />
                 </div>
