@@ -85,7 +85,6 @@
 - [23/01/15：Accessibility:Buttons do not have an accessible nameの対処方法](https://t-kuni-tech.com/2020/12/21/lighthouse%E3%81%AE%E3%80%8Cbuttons-do-not-have-an-accessible-name%E3%80%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/)
 - [23/01/15：Accessibility:Form elements do not have associated labelsの対処方法](https://zenn.dev/damono999/articles/f41d51048ef268)
 - [23/01/15：Page is blocked from indexingの対処方法](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/)
-- [23/01/15：Define the CSP in an HTTP header](https://developer.chrome.com/docs/lighthouse/best-practices/csp-xss/?utm_source=lighthouse&utm_medium=lr#define-the-csp-in-an-http-header)
 
 # i18n
 - [23/01/16：サンプルコード](https://github.com/hisho/nextjs-with-zod-i18n/tree/main/)
