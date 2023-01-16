@@ -1,0 +1,12 @@
+.ErrorMessage {
+    display: block;
+    padding: 0px 10px;
+    margin: 0px 0px 10px 30px;
+    height: 20px;
+    font-size: 15px;
+    color: crimson;
+    font-weight: 600;
+    line-height: 1;
+    /* background-color: var(--blackA3); */
+    /* box-shadow: 0 0 0 1px var(--blackA9);*/
+    }

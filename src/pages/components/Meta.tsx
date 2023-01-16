@@ -13,6 +13,7 @@ const Meta = ({ title = "Eno Record App", description = "Eno Record App" }) => {
             <meta property="og:image" content={`${process.env.SITE_URL}/ogp_large.png`} />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="robots" content="noindex" />
+            <meta http-equiv="Content-Security-Policy" content="script-src 'none'"></meta>
         </Head>
     )
 }

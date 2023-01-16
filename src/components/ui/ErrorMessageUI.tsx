@@ -1,10 +1,17 @@
+import { ErrorMessage } from '@hookform/error-message'
+import styles from "../../styles/components/errorMessage.module.css";
 import React from 'react'
 
-const ErrorMessageUI = () => {
+interface Props {
+    errors: any;
+    name: any;
+}
+
+const ErrorMessageUI = ({ errors, name }: Props) => {
     return (
-        <div>
-            ErrorMessage
-        </div>
+        <span className={styles.ErrorMessage}>
+            <ErrorMessage errors={errors} name={name} />
+        </span>
     )
 }
 

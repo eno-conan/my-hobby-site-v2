@@ -2,7 +2,6 @@ import { NextPage } from 'next'
 import React, { useState } from 'react'
 import { SubmitHandler, useFieldArray } from 'react-hook-form'
 import { useLocale } from 'src/hooks/useLocale'
-import { ErrorMessage } from '@hookform/error-message';
 import Input from 'src/components/ui/Input'
 import Select from 'src/components/ui/Select'
 import NextLink from 'next/link'
@@ -16,6 +15,9 @@ import Router from "next/router";
 import SwitchUI from 'src/components/ui/SwitchUI';
 import TextArea from 'src/components/ui/TextArea';
 import { SUBJECTS } from '../api/record/consts';
+// import ErrorMessageUI from 'src/components/ui/ErrorMessageUI';
+import dynamic from "next/dynamic";
+const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -78,21 +80,21 @@ const Rhfzod: NextPage = () => {
                 {/* 主要項目 */}
                 <Label type={'subHeading'} word={'タイトル名'} />
                 <Input register={register} label={'title'} classSub={'title'} />
-                <ErrorMessage errors={errors} name="title" />
+                <ErrorMessageUI errors={errors} name={'title'} />
 
                 <Label type={'subHeading'} word={'記録の概要'} />
                 <Input register={register} label={'description'} classSub={'description'} />
-                <ErrorMessage errors={errors} name="description" />
+                <ErrorMessageUI errors={errors} name={'description'} />
 
                 <Label type={'subHeading'} word={'学習項目'} />
                 <Select register={register} label={'subject'} data={SUBJECTS} />
-                <ErrorMessage errors={errors} name="subject" />
+                <ErrorMessageUI errors={errors} name={'subject'} />
                 <Label type={'subHeading'} word={'完了状態'} />
                 <SwitchUI label={'finished'} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
-                <ErrorMessage errors={errors} name="finished" />
+                <ErrorMessageUI errors={errors} name={'finished'} />
                 <Label type={'subHeading'} word={'詳細'} />
                 <TextArea register={register} label={'detail'} />
-                <ErrorMessage errors={errors} name="detail" />
+                <ErrorMessageUI errors={errors} name={'detail'} />
                 {/* 参考リンク */}
                 <Label type={'subHeading'} word={'参考リンク（任意項目）'} />
                 <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} />
@@ -109,10 +111,10 @@ const Rhfzod: NextPage = () => {
                     {fields.map((_field: any, index: number) => (
                         <div key={index}>
                             <Input register={register} label={`references.${index}.referenceTitle`} classSub={`referenceTitle`} />
-                            <ErrorMessage errors={errors} name={`references.${index}.referenceTitle`} />
                             <Input register={register} label={`references.${index}.referenceUrl`} classSub={`referenceUrl`} />
-                            <ErrorMessage errors={errors} name={`references.${index}.referenceUrl`} />
                             <button type={"button"} className={styles.IconButton} onClick={() => remove(index)}><Cross2Icon /></button>
+                            <ErrorMessageUI errors={errors} name={`references.${index}.referenceTitle`} />
+                            <ErrorMessageUI errors={errors} name={`references.${index}.referenceUrl`} />
                         </div>
                     ))}
                     {/* buttonタグはtype未設定の場合、submitで設定されてしまう */}

@@ -11,5 +11,5 @@ export const SUBJECTS: Array<ISubject> = [
     { value: 3, displayName: 'AWS' },
     { value: 4, displayName: 'Azure' },
     { value: 5, displayName: 'DB' },
-    { value: 0, displayName: '- (その他)' },
+    { value: 0, displayName: 'その他' },
 ]

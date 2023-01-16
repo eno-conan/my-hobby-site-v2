@@ -11,17 +11,17 @@
   .Label.subHeading{
       font-size: 24px;
       font-weight: 600;
-      padding: 4px 4px;
+      padding: 8px 4px 4px 4px;
   }
   .Label.reference{
     font-size: 14px;
     font-weight: 600;
     padding: 4px 4px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
   .Label.finishStatus{
     font-size: 14px;
     font-weight: 600;
-    padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 10px;
     margin: 10px 0px 0px 10px;
 }
