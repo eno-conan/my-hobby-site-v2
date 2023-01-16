@@ -14,6 +14,7 @@ import Meta from '../components/Meta';
 import * as Popover from '@radix-ui/react-popover';
 import Router from "next/router";
 import SwitchUI from 'src/components/ui/SwitchUI';
+import TextArea from 'src/components/ui/TextArea';
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -85,7 +86,6 @@ const Rhfzod: NextPage = () => {
                 {/* 主要項目 */}
                 <Label type={'subHeading'} word={'タイトル名'} />
                 <Input register={register} label={'title'} classSub={'title'} />
-                {/* <textarea name="kansou"></textarea> */}
                 <ErrorMessage errors={errors} name="title" />
 
                 <Label type={'subHeading'} word={'記録の概要'} />
@@ -98,7 +98,8 @@ const Rhfzod: NextPage = () => {
                 <Label type={'subHeading'} word={'完了状態'} />
                 <SwitchUI label={'完了ならチェック'} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
                 <Label type={'subHeading'} word={'詳細'} />
-                <Input register={register} label={'detail'} classSub={'description'} />
+                <TextArea register={register} label={'detail'} />
+                <ErrorMessage errors={errors} name="detail" />
                 {/* 参考リンク */}
                 <Label type={'subHeading'} word={'参考リンク（任意項目）'} />
                 <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} />
