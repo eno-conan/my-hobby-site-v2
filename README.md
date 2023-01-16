@@ -14,10 +14,12 @@
 - [23/01/16：Loadingの実装](https://qiita.com/ykkamm/items/4fd4a7bed03e81f07b64)
 
 - 
-### Eslint
+### Eslint,Config
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
 - [23/01/12：disabling rules](https://nextjs.org/docs/basic-features/eslint#disabling-rules)
 - [23/01/12：react/display-name](https://cpoint-lab.co.jp/article/202107/20652/)
+- [23/01/17：skipLibCheckの設定はtrue?false?](https://t-yng.jp/post/skiplibcheck)
+- [23/01/17：VSCode show errors for unresolved types in .d.ts files?](https://stackoverflow.com/questions/70905791/is-there-a-way-to-make-vscode-show-errors-for-unresolved-types-in-d-ts-files)
 
 ### env variables
 - [23/01/11：envファイルの定義](https://fwywd.com/tech/next-env)
