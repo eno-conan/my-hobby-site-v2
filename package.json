@@ -11,8 +11,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "vitest": "vitest run",
-    "jest": "jest -i --passWithNoTests",
-    "playwright": "playwright test && playwright show-report"
+    "playwright": "playwright test && playwright show-report",
+    "jest": "jest -i --passWithNoTests"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -50,6 +50,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.2.5",
     "@types/node": "18.11.18",
     "@types/nprogress": "^0.2.0",
     "@types/react": "18.0.26",

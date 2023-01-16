@@ -4,7 +4,6 @@ import * as Popover from '@radix-ui/react-popover';
 import React from 'react';
 import styles from "../../styles/pages/sample/radix.module.css";
 import Headline from '../../components/Headline';
-import Radix3 from './radix3';
 
 const RadixIndex = () => {
     return (
@@ -77,10 +76,6 @@ const RadixIndex = () => {
                         </Dialog.Portal>
                     </Dialog.Root>
                 </div>
-                <div className={styles.TopicLabel}>
-                    <h4>Toast</h4>
-                </div>
-                <Radix3 />
             </div>
         </>
     );
