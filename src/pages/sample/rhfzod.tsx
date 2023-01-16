@@ -15,6 +15,7 @@ import * as Popover from '@radix-ui/react-popover';
 import Router from "next/router";
 import SwitchUI from 'src/components/ui/SwitchUI';
 import TextArea from 'src/components/ui/TextArea';
+import { SUBJECTS } from '../api/record/consts';
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
 type Inputs = {
@@ -24,19 +25,10 @@ type Inputs = {
     references: Array<any>;
 };
 
-// 学習単元
-const subjects = [
-    { value: 999, displayName: '学習分野を選択してください' },
-    { value: 1, displayName: 'React' },
-    { value: 2, displayName: 'AWS' },
-    { value: 3, displayName: 'DB' },
-    { value: 0, displayName: '- (その他)' },
-]
-
 const Rhfzod: NextPage = () => {
     const { isJapanese } = useLocale();
     // フォーム情報取得
-    const { control, register, handleSubmit, reset, getValues, formState: { errors } } = RecordForm();
+    const { control, register, handleSubmit, getValues, formState: { errors } } = RecordForm();
     // 参照リンク
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
     const [finishStatus, setFinishStatus] = useState(false);
@@ -47,7 +39,7 @@ const Rhfzod: NextPage = () => {
             title: getValues().title,
             description: getValues().description,
             subject: getValues().subject,
-            detail: '',
+            detail: getValues().detail,
             finished: finishStatus,
             refs: getValues().references
         };
@@ -63,7 +55,7 @@ const Rhfzod: NextPage = () => {
             // リンクの入力欄を初期状態に
             remove()
             // // テキスト入力を初期化
-            reset();
+            // reset();
         } else {
             alert('何らかのエラーが発生')
         }
@@ -93,10 +85,11 @@ const Rhfzod: NextPage = () => {
                 <ErrorMessage errors={errors} name="description" />
 
                 <Label type={'subHeading'} word={'学習項目'} />
-                <Select register={register} label={'subject'} data={subjects} />
+                <Select register={register} label={'subject'} data={SUBJECTS} />
                 <ErrorMessage errors={errors} name="subject" />
                 <Label type={'subHeading'} word={'完了状態'} />
-                <SwitchUI label={'完了ならチェック'} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
+                <SwitchUI label={'finished'} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
+                <ErrorMessage errors={errors} name="finished" />
                 <Label type={'subHeading'} word={'詳細'} />
                 <TextArea register={register} label={'detail'} />
                 <ErrorMessage errors={errors} name="detail" />

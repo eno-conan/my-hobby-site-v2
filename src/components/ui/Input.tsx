@@ -1,4 +1,4 @@
-import classnames from 'classnames/bind'; // <-- notice bind
+import classnames from 'classnames/bind';
 import React from 'react'
 import { UseFormRegister } from 'react-hook-form'
 import styles from "../../styles/components/input.module.css";

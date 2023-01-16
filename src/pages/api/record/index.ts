@@ -62,7 +62,7 @@ export default async function handler(
                 title: jsonBody.title,
                 description: jsonBody.description,
                 subject: jsonBody.subject,
-                detail: 'detail',
+                detail: jsonBody.detail,
                 finished: jsonBody.finished,
                 createdAtDate: date
             }

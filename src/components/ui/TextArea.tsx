@@ -9,17 +9,9 @@ interface Props {
 }
 
 const TextArea = ({ register, label, classSub = '' }: Props) => {
-    // このあたりいらないかも。
-    // const [value, setValue] = useState<string>('')
-    // const handleChange = (event: any) => {
-    //     setValue(event.target.value);
-    //     console.log(value)
-    // }
-
     return (
         <div>
-            {/* value={value} onChange={handleChange} */}
-            <textarea {...register(label)} maxLength={500} className={styles.TextArea} />
+            <textarea {...register(label)} maxLength={500} className={styles.TextArea} aria-label={"component ui for input detail content"} />
         </div>
     )
 }
