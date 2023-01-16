@@ -10,6 +10,7 @@
   ```
 - [23/01/16：Next.jsでのサイト内ページ遷移方法](https://qiita.com/IYA_UFO/items/f13577bad7dd9ef1ae89)
 - [23/01/16：dependenciesとdevDependencies](https://prograshi.com/framework/nodejs/dependencies-and-devdependencies-in-package-json/)
+- [23/01/16：Auth.jsのOAuth認証をNext.jsで試す](https://dev.classmethod.jp/articles/auth_js/)
 
 - 
 ### Eslint
@@ -47,6 +48,8 @@
 - [23/01/15：公式ドキュメント](https://zod.dev/)
 - [23/01/15：API側のバリデーション（動画）](https://www.youtube.com/watch?v=_K34O0NcKAM)
 - [23/01/15：transformの使用例（プルダウンを用いた場合の値送信）](https://zenn.dev/kaz_z/articles/react-hook-form-select)
+- [23/01/16：柔軟なバリデーション実装（パスワード・確認用パスワードの実装方法）](https://zenn.dev/nyatinte/articles/ade85843d6d460?s=09)
+- [23/01/16：Zorm - Type safe <form> for React using Zod](https://reactjsexample.com/zorm-type-safe-form-for-react-using-zod/)
 
 ### Vitest
 - [23/01/11：インストール、初期設定](https://zenn.dev/elpnt/scraps/5051d7e06bdd6a)
@@ -54,6 +57,7 @@
 ### tailwind css
 - [23/01/12：インストール、初期設定](https://tailwindcss.com/docs/guides/nextjs)
 - [23/01/12：classnames.bindを使用した動的なクラス名設定](https://gist.github.com/heygrady/316bd69633ce816aee1ca24ab63535db#example-3-with-classnamesbind)
+- [23/01/16：レイアウト調整](https://tech-machi-log.com/tailwindcss-flexbox/)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)
@@ -72,6 +76,7 @@
 ### supabase
 - [23/01/15：prismaとの連携](https://zenn.dev/kuesato/articles/8da958751b52fb)
 - [23/01/15：prismaと少し実装](https://qiita.com/takux/items/4a3640e67753268652d1)
+- [23/01/16：Triggers機能を使用しユーザー情報をデータベースに自動登録](https://dev.classmethod.jp/articles/supabase-triggers/?s=09)
 
 ### prisma
 - [23/01/15：Vercelでデータ投入できるために必要な設定](https://github.com/prisma/prisma/issues/4752)
@@ -82,6 +87,7 @@
 - [23/01/15：Page is blocked from indexingの対処方法](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/)
 
 # i18n
+- [23/01/16：サンプルコード](https://github.com/hisho/nextjs-with-zod-i18n/tree/main/)
 - [23/01/16：Internationalized Routing](https://nextjs.org/docs/advanced-features/i18n-routing)
 
 

@@ -39,7 +39,6 @@ const Rhfzod: NextPage = () => {
     // 参照リンク
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
     const [finishStatus, setFinishStatus] = useState(false);
-    // const [resStatus, setResStatus] = useState('')
 
     const onSubmit: SubmitHandler<Inputs> = async () => {
         // 送信情報の設定
@@ -68,14 +67,6 @@ const Rhfzod: NextPage = () => {
             alert('何らかのエラーが発生')
         }
         Router.push({ pathname: `/`, });
-        // Router.push({
-        //     pathname: `/targetRecordPage/${maxId}`,
-        //     query: {
-        //         id: maxId,
-        //         host: host,
-        //         fromView: 'inputRecord'
-        //     }
-        // }, `/targetRecordPage/${maxId}`);
     };
 
     // if (!resStatus) {
@@ -91,6 +82,7 @@ const Rhfzod: NextPage = () => {
             <Meta title="記録追加画面" description="レコード追加(更新)を行う画面" />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Label type={'page'} word={'記録追加'} />
+                {/* 主要項目 */}
                 <Label type={'subHeading'} word={'タイトル名'} />
                 <Input register={register} label={'title'} classSub={'title'} />
                 {/* <textarea name="kansou"></textarea> */}
@@ -105,6 +97,9 @@ const Rhfzod: NextPage = () => {
                 <ErrorMessage errors={errors} name="subject" />
                 <Label type={'subHeading'} word={'完了状態'} />
                 <SwitchUI label={'完了ならチェック'} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
+                <Label type={'subHeading'} word={'詳細'} />
+                <Input register={register} label={'detail'} classSub={'description'} />
+                {/* 参考リンク */}
                 <Label type={'subHeading'} word={'参考リンク（任意項目）'} />
                 <Label type={'reference'} word={'ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力'} />
                 {/* <Popover.Root>

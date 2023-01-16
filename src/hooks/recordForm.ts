@@ -11,6 +11,7 @@ export const schema = z.object({
     title: z.string().min(1, "最低1文字は入力してください").max(50, "最大50文字です"),
     description: z.string().min(1, "最低1文字は入力してください").max(100, "最大100文字です"),
     subject: z.string().max(2, 'いずれかの科目を選択してください'),
+    detail: z.string().min(1, 'いずれかの科目を選択してください').max(500, "最大500文字です"),
     references: z.array(referenceSchema).max(10)
 })
 
