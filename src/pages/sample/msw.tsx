@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
-import Meta from "../components/Meta";
+import Meta from "src/components/Meta";
 
 const MswIndex: NextPage = (props: any) => {
   return (

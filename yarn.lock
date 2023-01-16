@@ -2078,6 +2078,15 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-slot" "1.0.1"
 
+"@radix-ui/react-progress@^1.0.1":
+  "integrity" "sha512-QbDf9eguM5QtkvGcGHe/nUgloM9yfRGpJTB/Te5cn4WmVHvcbhHyHw39/rbCZxNX4E+GEPp5Vs6+mEoyIotUbg=="
+  "resolved" "https://registry.npmjs.org/@radix-ui/react-progress/-/react-progress-1.0.1.tgz"
+  "version" "1.0.1"
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-context" "1.0.0"
+    "@radix-ui/react-primitive" "1.0.1"
+
 "@radix-ui/react-roving-focus@1.0.1":
   "integrity" "sha512-TB76u5TIxKpqMpUAuYH2VqMhHYKa+4Vs1NHygo/llLvlffN6mLVsFhz0AnSFlSBAvTBYVHYAkHAyEt7x1gPJOA=="
   "resolved" "https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.0.1.tgz"

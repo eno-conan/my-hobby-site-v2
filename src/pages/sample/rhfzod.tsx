@@ -9,7 +9,6 @@ import styles from "../../styles/pages/sample/rhfzod.module.css";
 import { Cross2Icon, PlusIcon } from '@radix-ui/react-icons'
 import RecordForm from 'src/hooks/recordForm'
 import Label from 'src/components/ui/Label';
-import Meta from '../components/Meta';
 import * as Popover from '@radix-ui/react-popover';
 import Router from "next/router";
 import SwitchUI from 'src/components/ui/SwitchUI';
@@ -17,6 +16,7 @@ import TextArea from 'src/components/ui/TextArea';
 import { SUBJECTS } from '../api/record/consts';
 // import ErrorMessageUI from 'src/components/ui/ErrorMessageUI';
 import dynamic from "next/dynamic";
+import Meta from 'src/components/Meta'
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
@@ -36,6 +36,7 @@ const Rhfzod: NextPage = () => {
     const [finishStatus, setFinishStatus] = useState(false);
 
     const onSubmit: SubmitHandler<Inputs> = async () => {
+        Router.push({ pathname: `/sending`, });
         // 送信情報の設定
         const newRecord = {
             title: getValues().title,
@@ -53,15 +54,14 @@ const Rhfzod: NextPage = () => {
         const response = await fetch(`/api/record`, { method, headers, body });
 
         if (response.ok) {
-            alert('登録完了')
             // リンクの入力欄を初期状態に
-            remove()
+            // remove()
             // // テキスト入力を初期化
             // reset();
+            Router.push({ pathname: `/`, });
         } else {
             alert('何らかのエラーが発生')
         }
-        Router.push({ pathname: `/`, });
     };
 
     // if (!resStatus) {

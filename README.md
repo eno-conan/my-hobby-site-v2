@@ -11,6 +11,7 @@
 - [23/01/16：Next.jsでのサイト内ページ遷移方法](https://qiita.com/IYA_UFO/items/f13577bad7dd9ef1ae89)
 - [23/01/16：dependenciesとdevDependencies](https://prograshi.com/framework/nodejs/dependencies-and-devdependencies-in-package-json/)
 - [23/01/16：Auth.jsのOAuth認証をNext.jsで試す](https://dev.classmethod.jp/articles/auth_js/)
+- [23/01/16：Loadingの実装](https://qiita.com/ykkamm/items/4fd4a7bed03e81f07b64)
 
 - 
 ### Eslint
@@ -58,6 +59,7 @@
 - [23/01/12：インストール、初期設定](https://tailwindcss.com/docs/guides/nextjs)
 - [23/01/12：classnames.bindを使用した動的なクラス名設定](https://gist.github.com/heygrady/316bd69633ce816aee1ca24ab63535db#example-3-with-classnamesbind)
 - [23/01/16：レイアウト調整](https://tech-machi-log.com/tailwindcss-flexbox/)
+- [23/01/16：ローディングデザイン](https://zenn.dev/catnose99/articles/19a05103ab9ec7)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)

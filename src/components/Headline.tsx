@@ -1,4 +1,4 @@
-import styles from "../../styles/components/headline.module.css";
+import styles from "../styles/components/headline.module.css";
 
 interface Props {
     headline: string;
