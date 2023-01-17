@@ -1,13 +1,13 @@
 import { rest } from "msw";
 
-interface IData {
+interface IJsonPlaceholderData {
   id: number;
   userId: number;
   title: string;
   completed: boolean;
 }
 
-const TestData: Array<IData> = [
+const JSON_PLACEHOLDER: Array<IJsonPlaceholderData> = [
   {
     id: 1,
     userId: 1,
@@ -20,9 +20,11 @@ const hello = { name: "Hello World" };
 
 export const handlers = [
   rest.get("https://jsonplaceholder.typicode.com/todos", (_, res, ctx) => {
-    return res(ctx.json(TestData));
+    return res(ctx.json(JSON_PLACEHOLDER));
   }),
   rest.get("/api/hello", (_, res, ctx) => {
     return res(ctx.json(hello));
   }),
 ];
+
+

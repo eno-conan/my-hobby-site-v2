@@ -2,7 +2,7 @@ import React from 'react'
 import { useQuery, UseQueryResult } from "@tanstack/react-query"
 import { getRecords } from 'src/hooks/records'
 
-interface IRecord {
+export interface IRecord {
     id: number;
     title: string
     description: string
@@ -17,6 +17,9 @@ const Records = () => {
         {
             queryKey: ["records"],
             queryFn: () => getRecords(),
+            refetchInterval: 300000, // 5m
+            staleTime: Infinity,
+            // cacheTime: 300000, // default:5m
         }
     )
 
@@ -28,7 +31,7 @@ const Records = () => {
     return (
         <>
             {records.data.map((rcd: IRecord) => (
-                <div>
+                <div key={rcd.id}>
                     {rcd.title}
                 </div>
             ))}
