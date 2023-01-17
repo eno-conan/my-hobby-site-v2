@@ -13,7 +13,6 @@
 - [23/01/16：Auth.jsのOAuth認証をNext.jsで試す](https://dev.classmethod.jp/articles/auth_js/)
 - [23/01/16：Loadingの実装](https://qiita.com/ykkamm/items/4fd4a7bed03e81f07b64)
 
-- 
 ### Eslint,Config
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
 - [23/01/12：disabling rules](https://nextjs.org/docs/basic-features/eslint#disabling-rules)
@@ -28,7 +27,7 @@
 - [23/01/10：インストール、初期設定](https://reffect.co.jp/react/next-js-12-storybook)
 - [23/01/11：getServerSidePropsとの連携方法](https://egghead.io/lessons/next-js-mock-getserversideprops-and-getstaticprops-request-with-msw-and-storybook-loaders)
 
-### Msw導入
+### Msw,HTTP
 - [23/01/10：インストール、初期設定](https://zenn.dev/higuchimakoto/articles/d9865193910046)
   - mswインストール
     - `npm install msw --save-dev`
@@ -42,6 +41,8 @@
       - NEXT_PUBLIC_API_MOCKING=enabled
     - `.env.production`
       - NEXT_PUBLIC_API_MOCKING=disabled
+- [23/01/17：axiosによるGET,POST）](https://www.sukerou.com/2019/05/axios.html)
+- [23/01/17：axiosからredaxiosへbundleサイズを抑えられるらしい）](https://www.builder.io/blog/safe-data-fetching?s=09)
 
 ### React Form Hooks
 - [23/01/13：基本メソッド一覧](https://qiita.com/NozomuTsuruta/items/0140acaee87b7c4ed856)
@@ -93,7 +94,6 @@
 # i18n
 - [23/01/16：サンプルコード](https://github.com/hisho/nextjs-with-zod-i18n/tree/main/)
 - [23/01/16：Internationalized Routing](https://nextjs.org/docs/advanced-features/i18n-routing)
-
 
 ### Cypress
 - playwrightの方が実装しやすいかも

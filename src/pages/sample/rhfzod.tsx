@@ -14,9 +14,11 @@ import Router from "next/router";
 import SwitchUI from 'src/components/ui/SwitchUI';
 import TextArea from 'src/components/ui/TextArea';
 import { SUBJECTS } from '../api/record/consts';
-// import ErrorMessageUI from 'src/components/ui/ErrorMessageUI';
 import dynamic from "next/dynamic";
 import Meta from 'src/components/Meta'
+import { useMutation } from '@tanstack/react-query'
+import axios from 'redaxios'
+// 遅延読込
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
 // https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
@@ -46,14 +48,9 @@ const Rhfzod: NextPage = () => {
             finished: finishStatus,
             refs: getValues().references
         };
-        const method = 'POST';
-        const body = JSON.stringify(newRecord);
-        const headers = {
-            'Accept': 'application/json'
-        };
-        const response = await fetch(`/api/record`, { method, headers, body });
+        const res = await axios.post(`/api/record`, newRecord);
 
-        if (response.ok) {
+        if (res.status === 200) {
             // リンクの入力欄を初期状態に
             // remove()
             // // テキスト入力を初期化
@@ -64,13 +61,15 @@ const Rhfzod: NextPage = () => {
         }
     };
 
-    // if (!resStatus) {
-    //     return (
-    //         <>
-    //             Loading...
-    //         </>
-    //     );
-    // }
+    // この処理が呼び出されてない
+    // const { isLoading, mutate } = useMutation(onSubmit, {
+    //     onMutate: () => {
+    //         console.log('onMutate');
+    //     },
+    //     onSuccess: () => {
+    //         Router.push({ pathname: `/`, });
+    //     },
+    // });
 
     return (
         <div className={'container mx-auto px-8'}>

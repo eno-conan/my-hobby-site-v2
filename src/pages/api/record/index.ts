@@ -35,15 +35,13 @@ export default async function handler(
 
         case 'POST':
             if (!body) return res.status(400).end('No body');
-            const jsonBody = JSON.parse(body)
-            // const params = JSON.parse(body) as Omit<Record, 'id'>;
-            //recordテーブルへの登録内容設定 
+            // recordテーブルへの登録内容設定 
             const cnt: number = (await prismaRecordsFindMany()).length + 1;
 
-            // recordRefへの登録
-            if (jsonBody.refs.length > 0) {
+            // // recordRefへの登録
+            if (body.refs.length > 0) {
                 const createRecordRefsParams = { referenceTitle: 'sample', referenceUrl: 'sample', recordId: cnt }
-                const links = jsonBody.refs
+                const links = body.refs
                 // 暫定対応でfor文記載（後々bulkInsertにする:22/12/10）
                 for (let info of links) {
                     createRecordRefsParams.referenceTitle = info.referenceTitle
@@ -52,25 +50,25 @@ export default async function handler(
                 }
             }
 
-            // const dateInfo = getDateInfo(2);
+            // // const dateInfo = getDateInfo(2);
             const currentDate = new Date();
             const year = currentDate.getFullYear().toString();
             const month = (currentDate.getMonth() + 1).toString();
             const day = (currentDate.getDate()).toString();
             const date = year + '/' + month + '/' + day
             const createRecordParams: any = {
-                title: jsonBody.title,
-                description: jsonBody.description,
-                subject: jsonBody.subject,
-                detail: jsonBody.detail,
-                finished: jsonBody.finished,
+                title: body.title,
+                description: body.description,
+                subject: body.subject,
+                detail: body.detail,
+                finished: body.finished,
                 createdAtDate: date
             }
             const record = await prismaRecordCreate(createRecordParams);
 
-            // idを返す
+            // // idを返す
             res.setHeader('id', record.id);
-            res.status(200).json(record.id);
+            res.status(200).json({});
             break;
         default:
             res.setHeader('Allow', ['GET', 'POST']);

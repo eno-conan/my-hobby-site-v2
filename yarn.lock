@@ -1851,13 +1851,6 @@
   "resolved" "https://registry.npmjs.org/@radix-ui/colors/-/colors-0.1.8.tgz"
   "version" "0.1.8"
 
-"@radix-ui/number@1.0.0":
-  "integrity" "sha512-Ofwh/1HX69ZfJRiRBMTy7rgjAzHmwe4kW9C9Y99HTRUcYLUuVT0KESFj15rPjRgKJs20GPq8Bm5aEDJ8DuA3vA=="
-  "resolved" "https://registry.npmjs.org/@radix-ui/number/-/number-1.0.0.tgz"
-  "version" "1.0.0"
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-
 "@radix-ui/primitive@1.0.0":
   "integrity" "sha512-3e7rn8FDMin4CgeL7Z/49smCA3rFYY3Ha2rUQ7HRWFadS5iCRw08ZgVT1LaNTCNqgvrUiyczLflrVrF0SRQtNA=="
   "resolved" "https://registry.npmjs.org/@radix-ui/primitive/-/primitive-1.0.0.tgz"
@@ -2093,33 +2086,6 @@
     "@radix-ui/react-primitive" "1.0.1"
     "@radix-ui/react-use-callback-ref" "1.0.0"
     "@radix-ui/react-use-controllable-state" "1.0.0"
-
-"@radix-ui/react-select@^1.1.2":
-  "integrity" "sha512-pQmfz7T6oR5m27E3NgKOo6DLs5U1qMZaUcfTENXZnNPeyyRN8pEb6Z+xXE6zomP5sg9pgLOtir4R2Q3f2kkF9w=="
-  "resolved" "https://registry.npmjs.org/@radix-ui/react-select/-/react-select-1.1.2.tgz"
-  "version" "1.1.2"
-  dependencies:
-    "@babel/runtime" "^7.13.10"
-    "@radix-ui/number" "1.0.0"
-    "@radix-ui/primitive" "1.0.0"
-    "@radix-ui/react-collection" "1.0.1"
-    "@radix-ui/react-compose-refs" "1.0.0"
-    "@radix-ui/react-context" "1.0.0"
-    "@radix-ui/react-direction" "1.0.0"
-    "@radix-ui/react-dismissable-layer" "1.0.2"
-    "@radix-ui/react-focus-guards" "1.0.0"
-    "@radix-ui/react-focus-scope" "1.0.1"
-    "@radix-ui/react-id" "1.0.0"
-    "@radix-ui/react-portal" "1.0.1"
-    "@radix-ui/react-primitive" "1.0.1"
-    "@radix-ui/react-slot" "1.0.1"
-    "@radix-ui/react-use-callback-ref" "1.0.0"
-    "@radix-ui/react-use-controllable-state" "1.0.0"
-    "@radix-ui/react-use-layout-effect" "1.0.0"
-    "@radix-ui/react-use-previous" "1.0.0"
-    "@radix-ui/react-visually-hidden" "1.0.1"
-    "aria-hidden" "^1.1.1"
-    "react-remove-scroll" "2.5.5"
 
 "@radix-ui/react-slot@1.0.1":
   "integrity" "sha512-avutXAFL1ehGvAXtPquu0YK5oz6ctS474iM3vNGQIkswrVhdrS52e3uoMQBzZhNRAIE0jBnUyXWNmSjGHhCFcw=="
@@ -3205,6 +3171,19 @@
   "version" "0.4.14"
   dependencies:
     "tslib" "^2.4.0"
+
+"@tanstack/query-core@4.22.0":
+  "integrity" "sha512-OeLyBKBQoT265f5G9biReijeP8mBxNFwY7ZUu1dKL+YzqpG5q5z7J/N1eT8aWyKuhyDTiUHuKm5l+oIVzbtrjw=="
+  "resolved" "https://registry.npmjs.org/@tanstack/query-core/-/query-core-4.22.0.tgz"
+  "version" "4.22.0"
+
+"@tanstack/react-query@^4.22.0":
+  "integrity" "sha512-P9o+HjG42uB/xHR6dMsJaPhtZydSe4v0xdG5G/cEj1oHZAXelMlm67/rYJNQGKgBamKElKogj+HYGF+NY2yHYg=="
+  "resolved" "https://registry.npmjs.org/@tanstack/react-query/-/react-query-4.22.0.tgz"
+  "version" "4.22.0"
+  dependencies:
+    "@tanstack/query-core" "4.22.0"
+    "use-sync-external-store" "^1.2.0"
 
 "@testing-library/dom@^8.3.0", "@testing-library/dom@^8.5.0", "@testing-library/dom@>=7.21.4":
   "integrity" "sha512-P6iIPyYQ+qH8CvGauAqanhVnjrnRe0IZFSYCeGkSRW9q3u8bdVn2NPI+lasFyVsEQn1J/IFmp5Aax41+dAP9wg=="
@@ -11568,6 +11547,11 @@
   dependencies:
     "picomatch" "^2.2.1"
 
+"redaxios@^0.5.1":
+  "integrity" "sha512-FSD2AmfdbkYwl7KDExYQlVvIrFz6Yd83pGfaGjBzM9F6rpq8g652Q4Yq5QD4c+nf4g2AgeElv1y+8ajUPiOYMg=="
+  "resolved" "https://registry.npmjs.org/redaxios/-/redaxios-0.5.1.tgz"
+  "version" "0.5.1"
+
 "redent@^1.0.0":
   "integrity" "sha512-qtW5hKzGQZqKoh6JNSD+4lfitfPKGz42e6QwiRmPM5mmKtR0N41AbJRYu0xJi7nhOJ4WDgRkKvAk6tw4WIwR4g=="
   "resolved" "https://registry.npmjs.org/redent/-/redent-1.0.0.tgz"
@@ -13427,6 +13411,11 @@
   dependencies:
     "detect-node-es" "^1.1.0"
     "tslib" "^2.0.0"
+
+"use-sync-external-store@^1.2.0":
+  "integrity" "sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA=="
+  "resolved" "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz"
+  "version" "1.2.0"
 
 "use@^3.1.0":
   "integrity" "sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ=="
