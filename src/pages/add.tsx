@@ -1,11 +1,11 @@
 import { NextPage } from 'next'
 import React, { useState } from 'react'
+import styles from "../styles/pages/add.module.css";
 import { SubmitHandler, useFieldArray } from 'react-hook-form'
 import { useLocale } from 'src/hooks/useLocale'
 import Input from 'src/components/ui/Input'
 import Select from 'src/components/ui/Select'
 import NextLink from 'next/link'
-import styles from "../../styles/pages/sample/rhfzod.module.css";
 import { Cross2Icon, PlusIcon } from '@radix-ui/react-icons'
 import RecordForm from 'src/hooks/recordForm'
 import Label from 'src/components/ui/Label';
@@ -13,13 +13,11 @@ import * as Popover from '@radix-ui/react-popover';
 import Router from "next/router";
 import SwitchUI from 'src/components/ui/SwitchUI';
 import TextArea from 'src/components/ui/TextArea';
-import { SUBJECTS } from '../api/record/consts';
+import { SUBJECTS } from './api/record/consts';
 import dynamic from "next/dynamic";
 import Meta from 'src/components/Meta'
 import { useMutation } from '@tanstack/react-query'
-import axios from 'redaxios'
 import wretch from 'wretch'
-
 // 遅延読込
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
@@ -39,8 +37,15 @@ const Rhfzod: NextPage = () => {
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
     const [finishStatus, setFinishStatus] = useState(false);
 
+    function sleep(ms: number) {
+        return new Promise(
+            resolve => setTimeout(resolve, ms)
+        );
+    }
+
     const onSubmit: SubmitHandler<Inputs> = async () => {
         Router.push({ pathname: `/sending`, });
+        await sleep(500);
         // 送信情報の設定
         const newRecord = {
             title: getValues().title,
@@ -50,26 +55,18 @@ const Rhfzod: NextPage = () => {
             finished: finishStatus,
             refs: getValues().references
         };
-        // const res = await axios.post(`/api/record`, newRecord);
         await wretch(`/api/record`).post(newRecord).res(response => {
             if (response.ok) {
+                // リンクの入力欄を初期状態に
+                // remove()
+                // // テキスト入力を初期化
+                // reset();
                 Router.push({ pathname: `/`, });
             } else {
                 alert('何らかのエラーが発生')
             }
         })
-
-        // if (res) {
-        // リンクの入力欄を初期状態に
-        // remove()
-        // // テキスト入力を初期化
-        // reset();
-        // Router.push({ pathname: `/`, });
-        // } else {
-        // alert('何らかのエラーが発生')
-        // }
     };
-
     // この処理が呼び出されてない
     // const { isLoading, mutate } = useMutation(onSubmit, {
     //     onMutate: () => {

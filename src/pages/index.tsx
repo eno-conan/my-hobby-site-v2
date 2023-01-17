@@ -24,9 +24,10 @@ const Home: NextPage = () => {
         </p>
 
         <p className={styles.description}>
+          <Link href="/add">[Add Record]</Link>
+          <Link href="/records">[Check Records]</Link>
           <Link href="/sample/msw">[Mock Service Worker]</Link>
           <Link href="/sample/radix">[Radix]</Link>
-          <Link href="/sample/rhfzod">[rhf and zod]</Link>
         </p>
 
         <div className={styles.grid}>

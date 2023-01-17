@@ -12,6 +12,7 @@
 - [23/01/16：dependenciesとdevDependencies](https://prograshi.com/framework/nodejs/dependencies-and-devdependencies-in-package-json/)
 - [23/01/16：Auth.jsのOAuth認証をNext.jsで試す](https://dev.classmethod.jp/articles/auth_js/)
 - [23/01/16：Loadingの実装](https://qiita.com/ykkamm/items/4fd4a7bed03e81f07b64)
+- [23/01/17：Sleep機能実装方法](https://lost-in-code.com/ja/tutorials/js/sleep/)
 
 ### Eslint,Config
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
@@ -43,6 +44,7 @@
       - NEXT_PUBLIC_API_MOCKING=disabled
 - [23/01/17：axiosによるGET,POST）](https://www.sukerou.com/2019/05/axios.html)
 - [23/01/17：axiosからredaxiosへbundleサイズを抑えられるらしい）](https://www.builder.io/blog/safe-data-fetching?s=09)
+- [23/01/17：wretchのgithub](https://github.com/elbywan/wretch)
 
 ### React Form Hooks
 - [23/01/13：基本メソッド一覧](https://qiita.com/NozomuTsuruta/items/0140acaee87b7c4ed856)
@@ -63,6 +65,7 @@
 - [23/01/12：classnames.bindを使用した動的なクラス名設定](https://gist.github.com/heygrady/316bd69633ce816aee1ca24ab63535db#example-3-with-classnamesbind)
 - [23/01/16：レイアウト調整](https://tech-machi-log.com/tailwindcss-flexbox/)
 - [23/01/16：ローディングデザイン](https://zenn.dev/catnose99/articles/19a05103ab9ec7)
+- [23/01/16：モダンなCSSの書き方](https://zenn.dev/taku_matsunaga/articles/c85a44757b46c9)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)
@@ -82,6 +85,7 @@
 - [23/01/15：prismaとの連携](https://zenn.dev/kuesato/articles/8da958751b52fb)
 - [23/01/15：prismaと少し実装](https://qiita.com/takux/items/4a3640e67753268652d1)
 - [23/01/16：Triggers機能を使用しユーザー情報をデータベースに自動登録](https://dev.classmethod.jp/articles/supabase-triggers/?s=09)
+- [23/01/17：ConnectorError: prepared statement \"s0\" already exists when connecting to pgbouncer with sslへの対処](https://github.com/prisma/prisma/issues/4752)
 
 ### prisma
 - [23/01/15：Vercelでデータ投入できるために必要な設定](https://github.com/prisma/prisma/issues/4752)
