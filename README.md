@@ -28,7 +28,7 @@
 - [23/01/10：インストール、初期設定](https://reffect.co.jp/react/next-js-12-storybook)
 - [23/01/11：getServerSidePropsとの連携方法](https://egghead.io/lessons/next-js-mock-getserversideprops-and-getstaticprops-request-with-msw-and-storybook-loaders)
 
-### Msw,HTTP
+### MSW,HTTP
 - [23/01/10：インストール、初期設定](https://zenn.dev/higuchimakoto/articles/d9865193910046)
   - mswインストール
     - `npm install msw --save-dev`
@@ -48,8 +48,13 @@
 
 ### React Form Hooks
 - [23/01/13：基本メソッド一覧](https://qiita.com/NozomuTsuruta/items/0140acaee87b7c4ed856)
-- [23/01/13：Zodと組み合わせる](https://qiita.com/anneau/items/19607ddeccdf3a7941e4)
-- 
+- [23/01/13：ハンズオン記事1](https://zenn.dev/t_keshi/articles/react-query-prescription)
+- [23/01/13：ハンズオン記事1](https://zenn.dev/t_keshi/articles/react-query-prescription)
+
+### tanStackQuery
+- [23/01/17：公式](https://tanstack.com/query/latest)
+- [23/01/17：最適化](https://tech.techtouch.jp/entry/react-query-optimization)
+
 ### Zod
 - [23/01/15：公式ドキュメント](https://zod.dev/)
 - [23/01/15：API側のバリデーション（動画）](https://www.youtube.com/watch?v=_K34O0NcKAM)
