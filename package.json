@@ -36,6 +36,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.42.0",
     "redaxios": "^0.5.1",
+    "wretch": "^2.3.2",
     "zod": "^3.20.2"
   },
   "devDependencies": {

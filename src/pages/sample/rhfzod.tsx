@@ -18,6 +18,8 @@ import dynamic from "next/dynamic";
 import Meta from 'src/components/Meta'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'redaxios'
+import wretch from 'wretch'
+
 // 遅延読込
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
@@ -48,17 +50,24 @@ const Rhfzod: NextPage = () => {
             finished: finishStatus,
             refs: getValues().references
         };
-        const res = await axios.post(`/api/record`, newRecord);
+        // const res = await axios.post(`/api/record`, newRecord);
+        await wretch(`/api/record`).post(newRecord).res(response => {
+            if (response.ok) {
+                Router.push({ pathname: `/`, });
+            } else {
+                alert('何らかのエラーが発生')
+            }
+        })
 
-        if (res.status === 200) {
-            // リンクの入力欄を初期状態に
-            // remove()
-            // // テキスト入力を初期化
-            // reset();
-            Router.push({ pathname: `/`, });
-        } else {
-            alert('何らかのエラーが発生')
-        }
+        // if (res) {
+        // リンクの入力欄を初期状態に
+        // remove()
+        // // テキスト入力を初期化
+        // reset();
+        // Router.push({ pathname: `/`, });
+        // } else {
+        // alert('何らかのエラーが発生')
+        // }
     };
 
     // この処理が呼び出されてない
