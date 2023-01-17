@@ -2,9 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import MainLayout from "src/components/layout";
 import styles from "../styles/Home.module.css";
+import { NextPageWithLayout } from "./page";
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -41,25 +43,20 @@ const Home: NextPage = () => {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
         </div>
-        <h1 className="text-3xl font-bold underline">
-          Attempt tailwind css
-        </h1>
+        {/* <div className={'ml-4 font-bold'}>
+                <h4>{isJapanese ? '国際化対応' : 'i18n'}</h4>
+            </div>
+            <NextLink href={'/sample/rhfzod'} locale={'ja'} passHref>
+                <button className={`${styles.Button} ${styles.violet}`}>日本語</button>
+            </NextLink>
+            <NextLink href={'/sample/rhfzod'} locale={'en'} passHref>
+                <button className={`${styles.Button} ${styles.violet}`}>英語</button>
+            </NextLink> */}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
 };
 
 export default Home;
+
+Home.getLayout = (page) => <MainLayout>{page}</MainLayout>;

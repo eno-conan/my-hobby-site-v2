@@ -69,6 +69,7 @@
 ### React Form Hooks
 - [23/01/13：基本メソッド一覧](https://qiita.com/NozomuTsuruta/items/0140acaee87b7c4ed856)
 - [23/01/13：ハンズオン記事1](https://zenn.dev/t_keshi/articles/react-query-prescription)
+- [23/01/18：REACT-YMD-DATE-SELECT(一覧画面で日付の検索情報で使えるかも)](https://whitphx.github.io/react-ymd-date-select/)
 
 ### React Query
 - [23/01/17：最適化1](https://tech.techtouch.jp/entry/react-query-optimization)
@@ -94,12 +95,13 @@
 ### Vitest
 - [23/01/11：インストール、初期設定](https://zenn.dev/elpnt/scraps/5051d7e06bdd6a)
 
-### tailwind css
+### Layout,tailwind css
 - [23/01/12：インストール、初期設定](https://tailwindcss.com/docs/guides/nextjs)
 - [23/01/12：classnames.bindを使用した動的なクラス名設定](https://gist.github.com/heygrady/316bd69633ce816aee1ca24ab63535db#example-3-with-classnamesbind)
 - [23/01/16：レイアウト調整](https://tech-machi-log.com/tailwindcss-flexbox/)
 - [23/01/16：ローディングデザイン](https://zenn.dev/catnose99/articles/19a05103ab9ec7)
 - [23/01/16：モダンなCSSの書き方](https://zenn.dev/taku_matsunaga/articles/c85a44757b46c9)
+- [23/01/16：Header,Footer,layoutの実装方法](https://reactjsexample.com/a-starter-template-designed-to-get-up-and-running-with-a-next-js-powered-blog/)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)

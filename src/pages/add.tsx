@@ -1,11 +1,9 @@
-import { NextPage } from 'next'
 import React, { useState } from 'react'
 import styles from "../styles/pages/add.module.css";
 import { SubmitHandler, useFieldArray } from 'react-hook-form'
 import { useLocale } from 'src/hooks/useLocale'
 import Input from 'src/components/ui/Input'
 import Select from 'src/components/ui/Select'
-import NextLink from 'next/link'
 import { Cross2Icon, PlusIcon } from '@radix-ui/react-icons'
 import RecordForm from 'src/hooks/recordForm'
 import Label from 'src/components/ui/Label';
@@ -18,6 +16,8 @@ import dynamic from "next/dynamic";
 import Meta from 'src/components/Meta'
 import { useMutation } from '@tanstack/react-query'
 import wretch from 'wretch'
+import { NextPageWithLayout } from './page';
+import MainLayout from 'src/components/layout';
 // 遅延読込
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
@@ -29,7 +29,7 @@ type Inputs = {
     references: Array<any>;
 };
 
-const Rhfzod: NextPage = () => {
+const Add: NextPageWithLayout = () => {
     const { isJapanese } = useLocale();
     // フォーム情報取得
     const { control, register, handleSubmit, getValues, formState: { errors } } = RecordForm();
@@ -130,18 +130,11 @@ const Rhfzod: NextPage = () => {
                     <button type={"submit"} className={`${styles.Button} ${styles.violet}`}>送信</button>
                 </div>
             </form>
-            {/* <div className={'ml-4 font-bold'}>
-                <h4>{isJapanese ? '国際化対応' : 'i18n'}</h4>
-            </div>
-            <NextLink href={'/sample/rhfzod'} locale={'ja'} passHref>
-                <button className={`${styles.Button} ${styles.violet}`}>日本語</button>
-            </NextLink>
-            <NextLink href={'/sample/rhfzod'} locale={'en'} passHref>
-                <button className={`${styles.Button} ${styles.violet}`}>英語</button>
-            </NextLink> */}
         </div >
     )
 
 }
 
-export default Rhfzod
+export default Add
+
+Add.getLayout = (page) => <MainLayout>{page}</MainLayout>;

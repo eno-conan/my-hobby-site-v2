@@ -5,20 +5,31 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
+import { NextPageWithLayout } from "./page";
+import { ThemeProvider } from "next-themes";
+
+// MSWの起動設定
 if (process.env.NEXT_PUBLIC_API_MOCKING == "enabled") {
   require("../mocks");
 }
 
-// tanStack Queryのための定義
+interface AppPropsWithLayout extends AppProps {
+  Component: NextPageWithLayout;
+}
+
+// tanStack Query定義
 const queryClient = new QueryClient()
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout || ((page) => page);
   // 画面のローディング機能
   useTransition();
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    <ThemeProvider enableSystem={true} attribute="class">
+      <QueryClientProvider client={queryClient}>
+        {getLayout(<Component {...pageProps} />)}
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

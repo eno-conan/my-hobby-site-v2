@@ -2,6 +2,8 @@ import React from 'react'
 import { useQuery, UseQueryResult } from "@tanstack/react-query"
 import { getRecords } from 'src/hooks/records'
 import Meta from 'src/components/Meta';
+import { NextPageWithLayout } from './page';
+import MainLayout from 'src/components/layout';
 
 export interface IRecord {
     id: number;
@@ -12,7 +14,7 @@ export interface IRecord {
     updatedAt: string
 }
 
-const Records = () => {
+const Records: NextPageWithLayout = () => {
     // データ一覧を取得
     const records: UseQueryResult<IRecord[], Error> = useQuery(
         {
@@ -44,3 +46,5 @@ const Records = () => {
 }
 
 export default Records
+
+Records.getLayout = (page) => <MainLayout>{page}</MainLayout>;
