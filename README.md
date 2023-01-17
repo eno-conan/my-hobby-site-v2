@@ -1,5 +1,25 @@
-## リンク集
+## 基本方針
+- テスト環境やパフォーマンス、設計を重視して作業を進める
+- playwright
+  - e2eテスト
+- msw
+  - ローカル環境でのMockデータ
+- storybook
+  - getServersidePropsでのデータ取得が残課題
+- vitest
+  - 設定、動作確認完了
+- planetScale → supabase
+  - データ追加・取得完了
+- MaterialUI → radix(tailwindCssも併せて)
+  - 適宜実装中
+- Zod
+  - v1と同様に使用して進めている
+- lightHouse
+  - パフォーマンスを適宜確認しながら、動作確認
+- Nextのv13、Reactのv18
+  - これで進められている
 
+## リンク集
 ### create-next-app
 - [23/01/10：アプリ作成方法](https://mo-gu-mo-gu.com/create-next-app-typescript/)
 - [23/01/11：アプリ作成方法(ESlintの設定も含めて)](https://qiita.com/mu-suke08/items/28fefe92b113c8f1c25d)
@@ -53,7 +73,6 @@
 ### React Query
 - [23/01/17：最適化1](https://tech.techtouch.jp/entry/react-query-optimization)
 
-
 ### tanStackQuery
 - [23/01/17：公式](https://tanstack.com/query/latest)
 - [23/01/17：パフォーマンスについて](https://tech.techtouch.jp/entry/react-query-performance-issue)
@@ -63,6 +82,7 @@
 - [23/01/17：cacheTimeとstaleTime(初級)](https://www.azukipan.com/posts/react-react-query-staletime-cachetime/)
 - [23/01/17：cacheTimeとstaleTime](https://zenn.dev/helloiamktn/articles/166f15d1b5fa4b)
 - [23/01/17：Caching Examples(公式)](https://tanstack.com/query/v4/docs/react/guides/caching?from=reactQueryV3&original=https%3A%2F%2Freact-query-v3.tanstack.com%2Fguides%2Fcaching)
+- [23/01/17：テーブル実装](https://dev.classmethod.jp/articles/react-table/)
 
 ### Zod
 - [23/01/15：公式ドキュメント](https://zod.dev/)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery, UseQueryResult } from "@tanstack/react-query"
 import { getRecords } from 'src/hooks/records'
+import Meta from 'src/components/Meta';
 
 export interface IRecord {
     id: number;
@@ -30,11 +31,14 @@ const Records = () => {
 
     return (
         <>
-            {records.data.map((rcd: IRecord) => (
-                <div key={rcd.id}>
-                    {rcd.title}
-                </div>
-            ))}
+            <div className={'container mx-auto px-8'}>
+                <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
+                {records.data.map((rcd: IRecord) => (
+                    <div key={rcd.id}>
+                        {rcd.title}
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
