@@ -13,10 +13,12 @@ const cx = classnames.bind(styles);
 
 const Input = ({ register, label, classSub = '' }: Props) => {
     return (
-        <span>
+        <div>
             {/* 項目によって幅の調整可能 */}
-            <input {...register(label)} className={cx('Input', classSub)} aria-label={"input type component ui"} />
-        </span>
+            <span className="w-full">
+                <input {...register(label)} className={`${cx('Input', classSub)} flex flex-nowrap`} aria-label={"input type component ui"} />
+            </span>
+        </div>
     )
 }
 

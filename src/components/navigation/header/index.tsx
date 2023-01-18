@@ -11,7 +11,7 @@ const menuItems = [
 const Header = () => {
   return (
     <section className="bg-indigo-300 border-b-2 border-slate-500 dark:border-slate-600">
-      <div className="container mx-auto flex flex-wrap items-center justify-between p-4">
+      <div className="container mx-auto flex flex-wrap items-center justify-between p-2">
         <div className={styles.Label}>
           My Record App
         </div>

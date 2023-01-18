@@ -9,7 +9,7 @@ interface Props {
 
 const ErrorMessageUI = ({ errors, name }: Props) => {
     return (
-        <span className={styles.ErrorMessage}>
+        <span className={`${styles.ErrorMessage} flex flex-nowrap`}>
             <ErrorMessage errors={errors} name={name} />
         </span>
     )

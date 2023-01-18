@@ -11,11 +11,11 @@ interface Props {
 const Select = ({ register, label, data }: Props) => {
     return (
         <>
-            <div>
+            <div className='w-full'>
                 <select className={styles.SelectTrigger} {...register(label)}>
                     {data.map((subj: any) => {
                         return (
-                            <option className={styles.SelectItem} key={subj.value} value={subj.value}>
+                            <option className={`${styles.SelectItem} flex flex-nowrap`} key={subj.value} value={subj.value}>
                                 {subj.displayName}
                             </option>
                         );

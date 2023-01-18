@@ -1,9 +1,9 @@
 .TextArea {
-    width: 600px;
-    display: inline-flex;
+    width: 90%;
+    display: flex;
     border-radius: 2px;
     padding: 5px 10px;
-    margin: 0px 0px 10px 30px;
+    margin: 10px 10px 10px 30px;
     height: 200px;
     font-size: 16px;
     font-weight: 600;

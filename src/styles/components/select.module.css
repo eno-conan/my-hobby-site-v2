@@ -1,8 +1,7 @@
 /* select box  */
 .SelectTrigger {
+    width: 80%;
     display: inline-flex;
-    /* align-items: center;
-    justify-content: center; */
     border-radius: 4px;
     padding: 0 10px;
     margin: 0px 0px 10px 30px;
@@ -10,7 +9,6 @@
     font-weight: 500;
     line-height: 1;
     height: 40px;
-    width: 400px;
     gap: 5px;
     background-color: white;
     color: var(--violet11);

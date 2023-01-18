@@ -6,6 +6,14 @@ import MainLayout from "src/components/layout";
 import styles from "../styles/Home.module.css";
 import { NextPageWithLayout } from "./page";
 
+
+const SECTIONS = [
+  { title: 'Add Record', link: '/add' },
+  { title: 'Check Records', link: '/records' },
+  { title: 'Mock Service Worker', link: '/sample/msw' },
+  { title: 'Radix', link: '/sample/radix' },
+]
+
 const Home: NextPageWithLayout = () => {
   return (
     <div className={styles.container}>
@@ -17,27 +25,26 @@ const Home: NextPageWithLayout = () => {
 
       <div className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to Record App!
         </h1>
 
-        <p className={styles.description}>
-          <Link href="/add">[Add Record]</Link>
-          <Link href="/records">[Check Records]</Link>
-          <Link href="/sample/msw">[Mock Service Worker]</Link>
-          <Link href="/sample/radix">[Radix]</Link>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+        <div className="grid grid-cols-12 gap-4">
+          {SECTIONS?.map((meta) => (
+            <div
+              key={meta.title}
+              className="col-span-12 md:col-span-6 p-2 flex flex-col"
+            >
+              <div className="flex flex-col space-y-2 p-4">
+                <Link href={`${meta.link}`}>
+                  <span className="headingxs cursor-pointer hover:underline text-2xl">
+                    {meta.title}
+                  </span>
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
+
         {/* <div className={'ml-4 font-bold'}>
                 <h4>{isJapanese ? '国際化対応' : 'i18n'}</h4>
             </div>

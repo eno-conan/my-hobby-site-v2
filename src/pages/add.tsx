@@ -78,7 +78,7 @@ const Add: NextPageWithLayout = () => {
     // });
 
     return (
-        <div className={'container mx-auto px-8'}>
+        <div className="container mx-auto flex flex-wrap items-center justify-between p-4">
             <Meta title="記録追加画面" description="レコード追加(更新)を行う画面" />
             <form onSubmit={handleSubmit(onSubmit)}>
                 <Label type={'page'} word={'記録追加'} />
@@ -86,11 +86,9 @@ const Add: NextPageWithLayout = () => {
                 <Label type={'subHeading'} word={'タイトル名'} />
                 <Input register={register} label={'title'} classSub={'title'} />
                 <ErrorMessageUI errors={errors} name={'title'} />
-
                 <Label type={'subHeading'} word={'記録の概要'} />
                 <Input register={register} label={'description'} classSub={'description'} />
                 <ErrorMessageUI errors={errors} name={'description'} />
-
                 <Label type={'subHeading'} word={'学習項目'} />
                 <Select register={register} label={'subject'} data={SUBJECTS} />
                 <ErrorMessageUI errors={errors} name={'subject'} />
@@ -127,7 +125,7 @@ const Add: NextPageWithLayout = () => {
                         onClick={() => append({ referenceTitle: '', referenceUrl: '' })} aria-label={"add input area about reference"}><PlusIcon /></button>
                 </div>
                 <div className={'text-right'}>
-                    <button type={"submit"} className={`${styles.Button} ${styles.violet}`}>送信</button>
+                    <button type={"submit"} className={`${styles.Button} ${styles.violet} flex flex-nowrap`}>送信</button>
                 </div>
             </form>
         </div >

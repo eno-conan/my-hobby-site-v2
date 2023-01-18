@@ -12,7 +12,9 @@ const cx = classnames.bind(styles);
 const Label = ({ type, word }: Props) => {
 
     return (
-        <div className={cx('Label', type)}>{word}</div>
+        <div className="flex flex-nowrap">
+            <div className={cx('Label', type)}>{word}</div>
+        </div>
     )
 }
 
