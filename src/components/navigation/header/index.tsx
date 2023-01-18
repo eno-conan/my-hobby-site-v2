@@ -1,22 +1,20 @@
 // import Logo from '@/components/brand/logo';
-// import GitHubMark from '@/components/ui/github-mark';
-// import ThemeToggle from '@/components/ui/theme-toggle';
 import Link from 'next/link';
-import ThemeToggle from 'src/components/ui/theme-toggle';
+import GitHubMark from 'src/components/ui/github-mark';
+import styles from "../../../styles/navigation/header.module.css";
 
 const menuItems = [
   { label: 'Home', link: '/' },
   { label: 'Components', link: '/' },
-  { label: 'Showcase', link: '/' },
-  { label: 'Next.js', link: '/' },
 ];
 
 const Header = () => {
   return (
-    <section className="brand-white border-b-2 border-slate-200 dark:border-slate-600">
+    <section className="bg-indigo-300 border-b-2 border-slate-500 dark:border-slate-600">
       <div className="container mx-auto flex flex-wrap items-center justify-between p-4">
-        ABC
-
+        <div className={styles.Label}>
+          My Record App
+        </div>
         {/* menu */}
         <div className="flex items-center space-x-4">
           <div className="hidden lg:flex items-center border-r-2">
@@ -30,10 +28,8 @@ const Header = () => {
               </div>
             ))}
           </div>
-
           <div className="flex items-center space-x-2">
-            DEF
-            <ThemeToggle />
+            <GitHubMark />
           </div>
         </div>
       </div>

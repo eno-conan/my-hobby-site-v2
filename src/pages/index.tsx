@@ -15,15 +15,10 @@ const Home: NextPageWithLayout = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
 
         <p className={styles.description}>
           <Link href="/add">[Add Record]</Link>
@@ -52,7 +47,7 @@ const Home: NextPageWithLayout = () => {
             <NextLink href={'/sample/rhfzod'} locale={'en'} passHref>
                 <button className={`${styles.Button} ${styles.violet}`}>英語</button>
             </NextLink> */}
-      </main>
+      </div>
     </div>
   );
 };

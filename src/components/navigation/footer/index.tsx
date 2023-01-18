@@ -2,11 +2,8 @@
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-200 dark:bg-slate-800 py-4">
+    <footer className="bg-slate-200 dark:bg-slate-800 py-6">
       <div className="container mx-auto min-h-[15vh] md:min-h-fit flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-2">
-        ABC
-        <div>Copyright &copy; {new Date().getFullYear()}</div>
-
         <div className="social">
           <a
             href="https://github.com/eric-ricky/nextjs-mdx-blog-starter"
@@ -18,6 +15,7 @@ const Footer = () => {
             Get it on GitHub
           </a>
         </div>
+        <div>Copyright &copy; {new Date().getFullYear()}</div>
       </div>
     </footer>
   );
