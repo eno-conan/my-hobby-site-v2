@@ -102,6 +102,8 @@
 - [23/01/16：ローディングデザイン](https://zenn.dev/catnose99/articles/19a05103ab9ec7)
 - [23/01/16：モダンなCSSの書き方](https://zenn.dev/taku_matsunaga/articles/c85a44757b46c9)
 - [23/01/16：Header,Footer,layoutの実装方法](https://reactjsexample.com/a-starter-template-designed-to-get-up-and-running-with-a-next-js-powered-blog/)
+- [23/01/18：flexの実装](https://runebook.dev/ja/docs/tailwindcss/flex-wrap)
+- [23/01/18：幅の設定方法](https://runebook.dev/ja/docs/tailwindcss/width)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)
