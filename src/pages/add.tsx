@@ -113,9 +113,12 @@ const Add: NextPageWithLayout = () => {
                 <div>
                     {fields.map((_field: any, index: number) => (
                         <div key={index}>
+                            <div className='flex'>
+                                <Label type={'referenceIndex'} word={`${index + 1}個目`} />
+                                <button type={"button"} className={`${styles.IconButton}`} onClick={() => remove(index)}><Cross2Icon /></button>
+                            </div>
                             <Input register={register} label={`references.${index}.referenceTitle`} classSub={`referenceTitle`} />
                             <Input register={register} label={`references.${index}.referenceUrl`} classSub={`referenceUrl`} />
-                            <button type={"button"} className={styles.IconButton} onClick={() => remove(index)}><Cross2Icon /></button>
                             <ErrorMessageUI errors={errors} name={`references.${index}.referenceTitle`} />
                             <ErrorMessageUI errors={errors} name={`references.${index}.referenceUrl`} />
                         </div>

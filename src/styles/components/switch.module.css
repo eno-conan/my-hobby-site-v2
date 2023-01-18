@@ -7,7 +7,7 @@
     box-shadow: 0 2px 10px var(--blackA7);
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     margin-left: 20px;
   }
   .SwitchRoot:focus {

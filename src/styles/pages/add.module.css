@@ -32,10 +32,10 @@
   align-items: center;
   justify-content: center;
   color: var(--violet11);
-  margin: 5px 0px 5px 20px;
+  margin: 3px 0px 5px 10px;
 }
 .IconButton:hover {
-  background-color: var(--violet4);
+  background-color: var(--violet4); 
 }
 .IconButton:focus {
   box-shadow: 0 0 0 2px var(--violet7);

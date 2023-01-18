@@ -3,8 +3,8 @@
   border-radius: 2px;
   padding: 0 10px;
   margin: 10px 10px 10px 20px;
-  height: 30px;
-  font-size: 15px;
+  height: 40px;
+  font-size: 16px;
   line-height: 1;
   background-color: var(--blackA3);
   box-shadow: 0 0 0 1px var(--blackA9);
@@ -19,9 +19,9 @@
     width: 95%;
   }
   .Input.referenceTitle {
-    width: 250px;
+    width: 50%;
   }
   .Input.referenceUrl {
-    width: 500px;
+    width: 80%;
   }
   
