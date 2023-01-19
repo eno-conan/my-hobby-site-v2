@@ -9,5 +9,7 @@ module.exports = {
       center: true,
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
