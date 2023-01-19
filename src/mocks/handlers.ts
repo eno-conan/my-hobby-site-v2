@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-interface IJsonPlaceholderData {
+export interface IJsonPlaceholderData {
   id: number;
   userId: number;
   title: string;
