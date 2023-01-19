@@ -4,9 +4,9 @@ import { getRecords } from 'src/hooks/records'
 import Meta from 'src/components/Meta';
 import { NextPageWithLayout } from './page';
 import MainLayout from 'src/components/layout';
-import styles from "../styles/pages/records.module.css";
+// import styles from "../styles/pages/records.module.css";
 
-export interface IRecord {
+interface IDisplayRecord {
     id: number;
     title: string
     description: string
@@ -17,7 +17,7 @@ export interface IRecord {
 
 const Records: NextPageWithLayout = () => {
     // データ一覧を取得
-    const records: UseQueryResult<IRecord[], Error> = useQuery(
+    const records: UseQueryResult<IDisplayRecord[], Error> = useQuery(
         {
             queryKey: ["records"],
             queryFn: () => getRecords(),
@@ -36,7 +36,7 @@ const Records: NextPageWithLayout = () => {
         <>
             <div className={'container mx-auto px-8'}>
                 <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
-                {records.data.map((rcd: IRecord) => (
+                {records.data.map((rcd: IDisplayRecord) => (
                     <div key={rcd.id}>
                         {rcd.title}
                     </div>
