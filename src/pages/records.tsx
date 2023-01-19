@@ -4,6 +4,7 @@ import { getRecords } from 'src/hooks/records'
 import Meta from 'src/components/Meta';
 import { NextPageWithLayout } from './page';
 import MainLayout from 'src/components/layout';
+import styles from "../styles/pages/records.module.css";
 
 export interface IRecord {
     id: number;

@@ -104,6 +104,7 @@
 - [23/01/16：Header,Footer,layoutの実装方法](https://reactjsexample.com/a-starter-template-designed-to-get-up-and-running-with-a-next-js-powered-blog/)
 - [23/01/18：flexの実装](https://runebook.dev/ja/docs/tailwindcss/flex-wrap)
 - [23/01/18：幅の設定方法](https://runebook.dev/ja/docs/tailwindcss/width)
+- [23/01/19：flex-grow、flex-shrink、flex-basis](https://miyattiblog.com/explanation-of-flex-property/)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)

@@ -1,0 +1,33 @@
+.flexContainer {
+    display: flex;
+    background-color: blueviolet;
+}
+
+.flex1 {
+    background-color: skyblue;
+    margin: 10px;
+    padding: 50px 0;
+}
+
+.grow1 {
+    flex-grow: 1;
+}
+
+.grow2 {
+    flex-grow: 3;
+}
+  
+.flex2 {
+    background-color: skyblue;
+    margin: 10px;
+    padding: 50px 0;
+    width: 400px;
+}
+
+.shrink1 {
+    flex-shrink: 1;
+}
+
+.shrink2 {
+    flex-shrink: 1;
+}
