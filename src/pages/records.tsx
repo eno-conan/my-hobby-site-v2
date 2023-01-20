@@ -49,9 +49,6 @@ const Records: NextPageWithLayout = () => {
                         <Table.HeadCell>
                             完了状態
                         </Table.HeadCell>
-                        <Table.HeadCell>
-                            詳細
-                        </Table.HeadCell>
                     </Table.Head>
                     <Table.Body className="divide-y">
                         {records.data.map((rcd: IDisplayRecord) => (
@@ -67,9 +64,6 @@ const Records: NextPageWithLayout = () => {
                                 </Table.Cell>
                                 <Table.Cell>
                                     未完了
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {rcd.detail}
                                 </Table.Cell>
                             </Table.Row>
                         ))}

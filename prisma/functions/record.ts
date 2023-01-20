@@ -13,7 +13,7 @@ export const prismaRecordsFindMany = async (): Promise<any[]> => {
             updatedAt: true
         },
         orderBy: { updatedAt: Prisma.SortOrder.desc },
-        take: 10,
+        take: 15,//件数制限
     }
     );
     return records;
