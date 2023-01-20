@@ -13,10 +13,11 @@ const SECTIONS = [
   { title: 'Mock Service Worker', link: '/sample/msw' },
   { title: 'Radix', link: '/sample/radix' },
   { title: 'LearnMemo', link: '/sample/learnMemo' },
-  { title: 'LearnMemo(bad)', link: '/sample/learnMemo2' },
+  { title: 'LearnMemo pattern2', link: '/sample/learnMemo2' },
 ]
 
 const Home: NextPageWithLayout = () => {
+  // const { isJapanese } = useLocale();
   return (
     <div className={styles.container}>
       <Head>

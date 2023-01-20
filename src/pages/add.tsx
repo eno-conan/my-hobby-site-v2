@@ -30,7 +30,6 @@ type Inputs = {
 };
 
 const Add: NextPageWithLayout = () => {
-    const { isJapanese } = useLocale();
     // フォーム情報取得
     const { control, register, handleSubmit, getValues, formState: { errors } } = RecordForm();
     // 参照リンク
@@ -57,10 +56,6 @@ const Add: NextPageWithLayout = () => {
         };
         await wretch(`/api/record`).post(newRecord).res(response => {
             if (response.ok) {
-                // リンクの入力欄を初期状態に
-                // remove()
-                // // テキスト入力を初期化
-                // reset();
                 Router.push({ pathname: `/`, });
             } else {
                 alert('何らかのエラーが発生')

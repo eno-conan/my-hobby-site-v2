@@ -139,6 +139,12 @@
 - [23/01/15：Accessibility:Form elements do not have associated labelsの対処方法](https://zenn.dev/damono999/articles/f41d51048ef268)
 - [23/01/15：Page is blocked from indexingの対処方法](https://developer.chrome.com/docs/lighthouse/seo/is-crawlable/)
 - [23/01/19：再レンダリングを防ぐ実装](https://zenn.dev/azukiazusa/articles/react-rerender-patterns)
+  - リフトダウンパターン
+  - リフトアップパターン
+  - memoパターン
+- [23/01/20：memoをコンポーネントに付与して再レンダリングを防ぐ方法](https://zenn.dev/azukiazusa/articles/react-rerender-patterns)
+- [23/01/20：memo化の使いどころ](https://cam-inc.co.jp/p/techblog/530551646413914939)
+  - なんでもかんでもmemo化せず、設計再検討の上で使用
 
 # i18n
 - [23/01/16：サンプルコード](https://github.com/hisho/nextjs-with-zod-i18n/tree/main/)

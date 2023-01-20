@@ -1,32 +1,31 @@
-import React, { useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 
-const LearnMemo = () => {
-    const [countNormal, setCountNormal] = useState(0);
-    const [countHeavy, setCountHeavy] = useState(0);
-
-    const heavyFunction = (count: number) => {
-        let i = 0;
-        while (i < 10000000) i++;
-        return count;
-    };
-
+function SuperSlowComponent() {
+    const now = performance.now();
+    while (performance.now() - now < 200) { }
     return (
         <>
-            <div className='container pl-8'>
-                <div className="app-counter">
-                    <div>Normal: {countNormal}</div>
-                    <div>Heavy: {heavyFunction(countHeavy)}</div>
-                </div>
-                <div className="app-button">
-                    <div>
-                        <button onClick={() => setCountNormal(countNormal + 1)}>Normal+</button>
-                    </div>
-                    <div>
-                        <button onClick={() => setCountHeavy(countHeavy + 1)}>Heavy+</button>
-                    </div>
-                </div>
-            </div>
+            <div>Super slow component</div>
         </>
+    );
+}
+
+const MemoSupserSlowComponent = memo(SuperSlowComponent);
+
+const LearnMemo = () => {
+    const [name, setName] = useState("");
+
+    return (
+        <div className="app">
+            <label htmlFor="name">Name</label>
+            <input
+                id="name"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+            />
+            <MemoSupserSlowComponent />
+        </div>
     );
 }
 
