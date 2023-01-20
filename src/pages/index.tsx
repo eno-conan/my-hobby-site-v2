@@ -28,7 +28,7 @@ const Home: NextPageWithLayout = () => {
 
       <div className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Record App!
+          Welcome!
         </h1>
 
         <div className="grid grid-cols-12 gap-4">
