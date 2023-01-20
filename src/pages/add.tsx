@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from "../styles/pages/add.module.css";
 import { SubmitHandler, useFieldArray } from 'react-hook-form'
-import { useLocale } from 'src/hooks/useLocale'
 import Input from 'src/components/ui/Input'
 import Select from 'src/components/ui/Select'
 import { Cross2Icon, PlusIcon } from '@radix-ui/react-icons'
@@ -13,21 +12,34 @@ import SwitchUI from 'src/components/ui/SwitchUI';
 import TextArea from 'src/components/ui/TextArea';
 import { SUBJECTS } from './api/record/consts';
 import Meta from 'src/components/Meta'
-import { useMutation } from '@tanstack/react-query'
 import wretch from 'wretch'
 import { NextPageWithLayout } from './page';
 import MainLayout from 'src/components/layout';
 import dynamic from "next/dynamic";
+import { IFieldCheckInputs, IRecord } from 'types/record';
 // 遅延読込
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
-// https://qiita.com/NozomuTsuruta/items/60d15d97eeef71993f06
-type Inputs = {
-    title: string;
-    description: string;
-    subject: string;
-    references: Array<any>;
-};
+// 一定時間処理停止
+function sleep(ms: number) {
+    return new Promise(
+        resolve => setTimeout(resolve, ms)
+    );
+}
+
+// レコード情報送信
+async function sendRecord(newRecord: any) {
+    Router.push({ pathname: `/sending`, });
+    await sleep(500);
+    // 送信情報の設定
+    await wretch(`/api/record`).post(newRecord).res(response => {
+        if (response.ok) {
+            Router.push({ pathname: `/`, });
+        } else {
+            alert('何らかのエラーが発生');
+        }
+    })
+}
 
 const Add: NextPageWithLayout = () => {
     // フォーム情報取得
@@ -36,43 +48,19 @@ const Add: NextPageWithLayout = () => {
     const { fields, append, remove } = useFieldArray({ control, name: 'references' });
     const [finishStatus, setFinishStatus] = useState(false);
 
-    function sleep(ms: number) {
-        return new Promise(
-            resolve => setTimeout(resolve, ms)
-        );
-    }
-
-    const onSubmit: SubmitHandler<Inputs> = async () => {
-        Router.push({ pathname: `/sending`, });
-        await sleep(500);
-        // 送信情報の設定
-        const newRecord = {
+    const onSubmit: SubmitHandler<IFieldCheckInputs> = () => {
+        // 送信情報設定
+        const newRecord: IRecord = {
             title: getValues().title,
             description: getValues().description,
             subject: getValues().subject,
             detail: getValues().detail,
             finished: finishStatus,
-            refs: getValues().references
+            references: getValues().references
         };
-        await wretch(`/api/record`).post(newRecord).res(response => {
-            if (response.ok) {
-                Router.push({ pathname: `/`, });
-            } else {
-                alert('何らかのエラーが発生')
-            }
-        })
+        // 送信
+        sendRecord(newRecord);
     };
-
-    // Tanstackの実装
-    // この処理が呼び出されてない
-    // const { isLoading, mutate } = useMutation(onSubmit, {
-    //     onMutate: () => {
-    //         console.log('onMutate');
-    //     },
-    //     onSuccess: () => {
-    //         Router.push({ pathname: `/`, });
-    //     },
-    // });
 
     return (
         <div className="container mx-auto flex flex-wrap items-center justify-between p-4">

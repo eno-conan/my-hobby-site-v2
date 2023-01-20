@@ -4,16 +4,8 @@ import { getRecords } from 'src/hooks/records'
 import Meta from 'src/components/Meta';
 import { NextPageWithLayout } from './page';
 import MainLayout from 'src/components/layout';
+import { IDisplayRecord } from 'types/record';
 // import styles from "../styles/pages/records.module.css";
-
-interface IDisplayRecord {
-    id: number;
-    title: string
-    description: string
-    detail: string
-    finished: boolean
-    updatedAt: string
-}
 
 const Records: NextPageWithLayout = () => {
     // データ一覧を取得

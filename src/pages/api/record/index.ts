@@ -26,9 +26,9 @@ export default async function handler(
             const cnt: number = (await prismaRecordsFindMany()).length + 1;
 
             // // recordRefへの登録
-            if (body.refs.length > 0) {
+            if (body.references.length > 0) {
                 const createRecordRefsParams = { referenceTitle: 'sample', referenceUrl: 'sample', recordId: cnt }
-                const links = body.refs
+                const links = body.references
                 // 暫定対応でfor文記載（後々bulkInsertにする:22/12/10）
                 for (let info of links) {
                     createRecordRefsParams.referenceTitle = info.referenceTitle
