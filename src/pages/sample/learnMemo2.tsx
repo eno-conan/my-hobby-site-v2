@@ -12,7 +12,6 @@ function Form({ left, right }: any) {
     const [name, setName] = useState("");
 
     const checkValue = () => {
-        console.log(name)
         setName('')
     }
     return (

@@ -12,7 +12,8 @@ export const prismaRecordsFindMany = async (): Promise<any[]> => {
             createdAt: false,
             updatedAt: true
         },
-        orderBy: { updatedAt: Prisma.SortOrder.desc }
+        orderBy: { updatedAt: Prisma.SortOrder.desc },
+        take: 10,
     }
     );
     return records;

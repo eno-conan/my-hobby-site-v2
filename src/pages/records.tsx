@@ -35,6 +35,7 @@ const Records: NextPageWithLayout = () => {
         <>
             <div className={'container mx-auto px-4'}>
                 <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
+                {/* 各チェックボックスのstate管理については慎重に実装 */}
                 <Table hoverable={true} className={'my-4'}>
                     <Table.Head>
                         <Table.HeadCell className="!p-4">
