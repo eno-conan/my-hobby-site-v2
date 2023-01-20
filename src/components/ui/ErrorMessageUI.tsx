@@ -1,6 +1,6 @@
 import { ErrorMessage } from '@hookform/error-message'
 import styles from "../../styles/components/errorMessage.module.css";
-import React from 'react'
+import React, { memo } from 'react'
 
 interface Props {
     errors: any;
@@ -15,4 +15,4 @@ const ErrorMessageUI = ({ errors, name }: Props) => {
     )
 }
 
-export default ErrorMessageUI
+export default ErrorMessageUI;

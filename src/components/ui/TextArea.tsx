@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 import styles from "../../styles/components/textArea.module.css";
 
@@ -16,4 +16,4 @@ const TextArea = ({ register, label, classSub = '' }: Props) => {
     )
 }
 
-export default TextArea
+export default memo(TextArea);

@@ -12,6 +12,8 @@ const SECTIONS = [
   { title: 'Check Records', link: '/records' },
   { title: 'Mock Service Worker', link: '/sample/msw' },
   { title: 'Radix', link: '/sample/radix' },
+  { title: 'LearnMemo', link: '/sample/learnMemo' },
+  { title: 'LearnMemo(bad)', link: '/sample/learnMemo2' },
 ]
 
 const Home: NextPageWithLayout = () => {

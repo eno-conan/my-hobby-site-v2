@@ -1,5 +1,5 @@
 import classnames from 'classnames/bind';
-import React from 'react'
+import React, { memo } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 import styles from "../../styles/components/input.module.css";
 
@@ -22,4 +22,4 @@ const Input = ({ register, label, classSub = '' }: Props) => {
     )
 }
 
-export default Input
+export default memo(Input);

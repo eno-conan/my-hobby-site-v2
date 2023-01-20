@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import classnames from 'classnames/bind';
 import styles from "../../styles/components/label.module.css";
 
@@ -18,4 +18,4 @@ const Label = ({ type, word }: Props) => {
     )
 }
 
-export default Label
+export default memo(Label);

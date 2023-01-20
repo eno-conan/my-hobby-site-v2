@@ -12,12 +12,12 @@ import Router from "next/router";
 import SwitchUI from 'src/components/ui/SwitchUI';
 import TextArea from 'src/components/ui/TextArea';
 import { SUBJECTS } from './api/record/consts';
-import dynamic from "next/dynamic";
 import Meta from 'src/components/Meta'
 import { useMutation } from '@tanstack/react-query'
 import wretch from 'wretch'
 import { NextPageWithLayout } from './page';
 import MainLayout from 'src/components/layout';
+import dynamic from "next/dynamic";
 // 遅延読込
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 

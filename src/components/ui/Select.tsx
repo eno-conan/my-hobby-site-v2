@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { UseFormRegister } from 'react-hook-form'
 import styles from "../../styles/components/select.module.css";
 
@@ -26,4 +26,4 @@ const Select = ({ register, label, data }: Props) => {
     )
 }
 
-export default Select
+export default memo(Select);
