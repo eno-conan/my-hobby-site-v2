@@ -18,9 +18,14 @@ export const prismaRecordsFindMany = async (page: number): Promise<any[]> => {
     }
     );
     // レコード件数
-    const recordsCount = await prisma.record.count();
-    // return records;
+    const recordsCount = await prismaRecordsCount();
     return [records, recordsCount];
+};
+
+// レコード件数取得
+export const prismaRecordsCount = async (): Promise<number> => {
+    const recordsCount = await prisma.record.count();
+    return recordsCount;
 };
 
 // ある記事に関する情報を取得する

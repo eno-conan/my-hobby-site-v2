@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { prismaRecordCreate, prismaRecordFindOneByTitle, prismaRecordsFindMany } from '../../../../prisma/functions/record';
+import { prismaRecordCreate, prismaRecordFindOneByTitle, prismaRecordsCount, prismaRecordsFindMany } from '../../../../prisma/functions/record';
 import { prismaRecordRefsCreate } from '../../../../prisma/functions/recordRef';
 // import { formatToTimeZone } from 'date-fns-timezone';
 
@@ -23,7 +23,7 @@ export default async function handler(
         case 'POST':
             if (!body) return res.status(400).end('No body');
             // recordテーブルへの登録内容設定 
-            const cnt: number = (await prismaRecordsFindMany()).length + 1;
+            const cnt: number = (await prismaRecordsCount()) + 1;
 
             // // recordRefへの登録
             if (body.references.length > 0) {
