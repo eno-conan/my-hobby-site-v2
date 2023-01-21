@@ -11,16 +11,16 @@ import { useState } from "react";
 // テーブルのヘッダー情報
 function TableHeader() {
     return (
-        <Table.Head>
-            <Table.HeadCell className="!p-4">
-            </Table.HeadCell>
+        <Table.Head className="">
+            {/* <Table.HeadCell className="!p-4 flex flex-wrap">
+            </Table.HeadCell> */}
             <Table.HeadCell className="pr-16">
                 タイトル
-            </Table.HeadCell>
-            <Table.HeadCell className="pr-16">
+            </Table.HeadCell >
+            <Table.HeadCell className="pr-16" >
                 概要
             </Table.HeadCell>
-            <Table.HeadCell className="pr-8">
+            <Table.HeadCell className="pr-8 hidden lg:block">
                 完了状態
             </Table.HeadCell>
         </Table.Head>
@@ -61,17 +61,17 @@ const Records: NextPageWithLayout = () => {
                     {TableHeader()}
                     <Table.Body className="divide-y">
                         {res.data.records.map((rcd: IDisplayRecord) => (
-                            <Table.Row className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800" key={rcd.id}>
-                                <Table.Cell className="!p-4">
+                            <Table.Row className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800" key={rcd.id} onClick={() => console.log(rcd)}>
+                                {/* <Table.Cell className="!p-4">
                                     <Checkbox value={'1'} onChange={setValue} checked={checkState == '1'} />
-                                </Table.Cell>
+                                </Table.Cell> */}
                                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                     {rcd.title}
                                 </Table.Cell>
                                 <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white">
                                     {rcd.description}
                                 </Table.Cell>
-                                <Table.Cell>
+                                <Table.Cell className="hidden lg:block">
                                     未完了
                                 </Table.Cell>
                             </Table.Row>
