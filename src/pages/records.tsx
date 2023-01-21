@@ -12,16 +12,14 @@ import { useState } from "react";
 function TableHeader() {
     return (
         <Table.Head className="">
-            {/* <Table.HeadCell className="!p-4 flex flex-wrap">
-            </Table.HeadCell> */}
-            <Table.HeadCell className="pr-16">
+            <Table.HeadCell className="text-center">
                 タイトル
             </Table.HeadCell >
-            <Table.HeadCell className="pr-16" >
+            <Table.HeadCell className="pr-16 hidden lg:block" >
                 概要
             </Table.HeadCell>
-            <Table.HeadCell className="pr-8 hidden lg:block">
-                完了状態
+            <Table.HeadCell className="text-center">
+                完了
             </Table.HeadCell>
         </Table.Head>
     )
@@ -62,17 +60,14 @@ const Records: NextPageWithLayout = () => {
                     <Table.Body className="divide-y">
                         {res.data.records.map((rcd: IDisplayRecord) => (
                             <Table.Row className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800" key={rcd.id} onClick={() => console.log(rcd)}>
-                                {/* <Table.Cell className="!p-4">
-                                    <Checkbox value={'1'} onChange={setValue} checked={checkState == '1'} />
-                                </Table.Cell> */}
                                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                     {rcd.title}
                                 </Table.Cell>
-                                <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white">
+                                <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white hidden lg:block">
                                     {rcd.description}
                                 </Table.Cell>
-                                <Table.Cell className="hidden lg:block">
-                                    未完了
+                                <Table.Cell className="text-center">
+                                    未
                                 </Table.Cell>
                             </Table.Row>
                         ))}
