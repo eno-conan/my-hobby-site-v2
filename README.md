@@ -84,6 +84,7 @@
 - [23/01/17：cacheTimeとstaleTime](https://zenn.dev/helloiamktn/articles/166f15d1b5fa4b)
 - [23/01/17：Caching Examples(公式)](https://tanstack.com/query/v4/docs/react/guides/caching?from=reactQueryV3&original=https%3A%2F%2Freact-query-v3.tanstack.com%2Fguides%2Fcaching)
 - [23/01/17：テーブル実装](https://dev.classmethod.jp/articles/react-table/)
+- [23/01/17：ページネーション](https://tanstack.com/query/v4/docs/react/guides/paginated-queries)
 
 ### Zod
 - [23/01/15：公式ドキュメント](https://zod.dev/)
@@ -133,6 +134,7 @@
 
 ### prisma
 - [23/01/15：Vercelでデータ投入できるために必要な設定](https://github.com/prisma/prisma/issues/4752)
+- [23/01/15：ページングの実装（skipとtakeを併用）](https://www.prisma.io/docs/concepts/components/prisma-client/pagination)
 
 ### Performance,Lighthouse
 - [23/01/15：Accessibility:Buttons do not have an accessible nameの対処方法](https://t-kuni-tech.com/2020/12/21/lighthouse%E3%81%AE%E3%80%8Cbuttons-do-not-have-an-accessible-name%E3%80%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/)
