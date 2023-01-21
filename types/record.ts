@@ -7,7 +7,7 @@ export interface IFieldCheckInputs {
 };
 
 // データ追加用
-export interface IRecord {
+export interface IRecordForAdd {
     title: string;
     description: string;
     subject: string;
@@ -19,6 +19,11 @@ export interface IRecord {
 interface IRecordRef {
     referenceTitle: string;
     referenceUrl: string;
+}
+
+export interface IRecordsAndCount {
+    records: IDisplayRecord[]
+    count: number
 }
 
 // 一覧画面用

@@ -16,7 +16,7 @@ import wretch from 'wretch'
 import { NextPageWithLayout } from './page';
 import MainLayout from 'src/components/layout';
 import dynamic from "next/dynamic";
-import { IFieldCheckInputs, IRecord } from 'types/record';
+import { IFieldCheckInputs, IRecordForAdd, } from 'types/record';
 // 遅延読込
 const ErrorMessageUI = dynamic(() => import('src/components/ui/ErrorMessageUI'));
 
@@ -50,7 +50,7 @@ const Add: NextPageWithLayout = () => {
 
     const onSubmit: SubmitHandler<IFieldCheckInputs> = () => {
         // 送信情報設定
-        const newRecord: IRecord = {
+        const newRecord: IRecordForAdd = {
             title: getValues().title,
             description: getValues().description,
             subject: getValues().subject,

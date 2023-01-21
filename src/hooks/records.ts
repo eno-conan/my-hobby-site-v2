@@ -1,4 +1,4 @@
 import wretch from 'wretch'
-export function getRecords() {
-    return wretch(`/api/records`).get().json()
+export function getRecords(page: number) {
+    return wretch(`/api/records?page=${page}`).get().json()
 }

@@ -1,7 +1,7 @@
 import { Prisma, Record } from '@prisma/client';
 import prisma from './client';
 
-export const prismaRecordsFindMany = async (): Promise<any[]> => {
+export const prismaRecordsFindMany = async (page: number): Promise<any[]> => {
     const records = await prisma.record.findMany({
         select: {
             id: true,
@@ -13,10 +13,14 @@ export const prismaRecordsFindMany = async (): Promise<any[]> => {
             updatedAt: true
         },
         orderBy: { updatedAt: Prisma.SortOrder.desc },
-        take: 15,//件数制限
+        skip: 10 * page,//件数制限
+        take: 10,//件数制限
     }
     );
-    return records;
+    // レコード件数
+    const recordsCount = await prisma.record.count();
+    // return records;
+    return [records, recordsCount];
 };
 
 // ある記事に関する情報を取得する

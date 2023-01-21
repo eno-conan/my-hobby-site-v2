@@ -16,17 +16,21 @@ export default async function handler(
     switch (method) {
         case 'GET':
             let records;
+            let info = { 'records': [], 'count': 0 }
             // 条件が入力されている場合は、絞って取得
             if (query.condition) {
                 records = await prismaRecordFindOneByTitle(query.condition.toString());
             } else {
-                records = await prismaRecordsFindMany();
+                // records = await prismaRecordsFindMany(Number(query.page));
+                const [records, recordsCount] = await prismaRecordsFindMany(Number(query.page));
+                info['records'] = records as any
+                info['count'] = recordsCount as number
             }
             // 2022-12-11T03:32:18.117Z から2022/12/19に形式変更して返す
             // records.map((rcd) => {
             //     rcd.updatedAt = formatToTimeZone(rcd.updatedAt, FORMAT, { timeZone: TIME_ZONE_TOKYO }).split(' ')[0];
             // })
-            res.status(200).json(records);
+            res.status(200).json(info);
             break;
 
         case 'POST':
