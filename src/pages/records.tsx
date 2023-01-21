@@ -6,6 +6,7 @@ import MainLayout from 'src/components/layout';
 import { IDisplayRecord, IRecordsAndCount } from 'types/record';
 import { Checkbox, Table } from 'flowbite-react';
 import { useState } from "react";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 
 // テーブルのヘッダー情報
@@ -48,6 +49,10 @@ const Records: NextPageWithLayout = () => {
     if (res.status === "loading") return <h1>Loading...</h1>
     if (res.status === "error") {
         return <h1>{JSON.stringify(res.error)}</h1>
+    }
+    // データが0件の場合
+    if (res.data.records.length == 0) {
+        return <h1>No Data</h1>
     }
 
     return (
@@ -100,6 +105,9 @@ const Records: NextPageWithLayout = () => {
                     </div>
                 </div>
             </div>
+            {/* 取得データの確認用(開発環境のみ表示) */}
+            {process.env.NEXT_PUBLIC_API_MOCKING == "enabled" ?
+                (<ReactQueryDevtools />) : (<></>)}
         </>
     )
 }
