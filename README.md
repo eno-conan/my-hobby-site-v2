@@ -40,6 +40,8 @@
 - [23/01/12：react/display-name](https://cpoint-lab.co.jp/article/202107/20652/)
 - [23/01/17：skipLibCheckの設定はtrue?false?](https://t-yng.jp/post/skiplibcheck)
 - [23/01/17：VSCode show errors for unresolved types in .d.ts files?](https://stackoverflow.com/questions/70905791/is-there-a-way-to-make-vscode-show-errors-for-unresolved-types-in-d-ts-files)
+- [23/01/22：Rome formatter linter(公式)](https://rome.tools/)
+- [23/01/22：Rome formatter linterとは](https://qiita.com/rana_kualu/items/47341ce38b3df6a75559)
 
 ### env variables
 - [23/01/11：envファイルの定義](https://fwywd.com/tech/next-env)

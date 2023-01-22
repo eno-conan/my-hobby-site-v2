@@ -3,14 +3,14 @@
   "formatter": {
     "indentStyle": "tab",
     "lineWidth": 120,
-    "ignore": ["scripts/*.js"]
+    "ignore": ["node_modules/*"]
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true,
       "suspicious": {
-        "noExplicitAny": "warn",
+        "noExplicitAny": "off",
         "noArrayIndexKey":"warn"
       }
     }
