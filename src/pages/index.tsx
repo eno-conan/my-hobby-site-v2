@@ -13,7 +13,7 @@ const SECTIONS = [
   { title: 'Mock Service Worker', link: '/sample/msw' },
   { title: 'Radix', link: '/sample/radix' },
   { title: 'LearnMemo', link: '/sample/learnMemo' },
-  { title: 'LearnMemo pattern2', link: '/sample/learnMemo2' },
+  { title: 'tanStackInfinite', link: '/sample/tanStackInfinite' },
 ]
 
 const Home: NextPageWithLayout = () => {
