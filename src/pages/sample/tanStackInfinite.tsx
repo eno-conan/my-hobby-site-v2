@@ -10,6 +10,7 @@ const getRecords2 = ({ pageParam = 1 }) => {
     return wretch(`/api/records?page=${pageParam}`).get().json()
 }
 
+// unknown回避のために型設定予定
 // interface Props {
 //     isLoading: boolean
 //     isFetching: boolean

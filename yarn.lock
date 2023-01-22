@@ -2300,6 +2300,11 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@rometools/cli-win32-x64@11.0.0":
+  "integrity" "sha512-bmBai8WHxYjsGk1+je7ZTfCUCWq30WJI3pQM8pzTA674lfGTZ9ymJoZwTaIMSO4rL5V9mlO6uLunsBKso9VqOg=="
+  "resolved" "https://registry.npmjs.org/@rometools/cli-win32-x64/-/cli-win32-x64-11.0.0.tgz"
+  "version" "11.0.0"
+
 "@rushstack/eslint-patch@^1.1.3":
   "integrity" "sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg=="
   "resolved" "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
@@ -12333,6 +12338,18 @@
   "version" "3.10.0"
   optionalDependencies:
     "fsevents" "~2.3.2"
+
+"rome@^11.0.0":
+  "integrity" "sha512-rRo6JOwpMLc3OkeTDRXkrmrDqnxDvZ75GS4f0jLDBNmRgDXWbu0F8eVnJoRn+VbK2AE7vWvhVOMBjnWowcopkQ=="
+  "resolved" "https://registry.npmjs.org/rome/-/rome-11.0.0.tgz"
+  "version" "11.0.0"
+  optionalDependencies:
+    "@rometools/cli-darwin-arm64" "11.0.0"
+    "@rometools/cli-darwin-x64" "11.0.0"
+    "@rometools/cli-linux-arm64" "11.0.0"
+    "@rometools/cli-linux-x64" "11.0.0"
+    "@rometools/cli-win32-arm64" "11.0.0"
+    "@rometools/cli-win32-x64" "11.0.0"
 
 "rsvp@^4.8.4":
   "integrity" "sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA=="

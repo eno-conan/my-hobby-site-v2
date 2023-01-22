@@ -30,7 +30,7 @@ export const zodCustomErrorMap =
           }
         case z.ZodIssueCode.invalid_union:
           return {
-            message: `Invalid input`,
+            message: "Invalid input",
           }
         case z.ZodIssueCode.invalid_union_discriminator:
           return {
@@ -46,15 +46,15 @@ export const zodCustomErrorMap =
           }
         case z.ZodIssueCode.invalid_arguments:
           return {
-            message: `Invalid function arguments`,
+            message: "Invalid function arguments",
           }
         case z.ZodIssueCode.invalid_return_type:
           return {
-            message: `Invalid function return type`,
+            message: "Invalid function return type",
           }
         case z.ZodIssueCode.invalid_date:
           return {
-            message: `Invalid date`,
+            message: "Invalid date",
           }
         case z.ZodIssueCode.invalid_string:
           if (issue.validation !== 'regex') {
@@ -71,7 +71,7 @@ export const zodCustomErrorMap =
         case z.ZodIssueCode.too_small:
           if (issue.type === 'array') {
             return {
-              message: `Array must contain ${issue.inclusive ? `at least` : `more than`
+              message: `Array must contain ${issue.inclusive ? "at least" : "more than"
                 } ${issue.minimum} element(s)`,
             }
           } else if (issue.type === 'string') {
@@ -84,7 +84,7 @@ export const zodCustomErrorMap =
             }
           } else if (issue.type === 'number') {
             return {
-              message: `Number must be greater than ${issue.inclusive ? `or equal to ` : ``
+              message: `Number must be greater than ${issue.inclusive ? "or equal to " : ""
                 }${issue.minimum}`,
             }
           } else {
@@ -93,17 +93,17 @@ export const zodCustomErrorMap =
         case z.ZodIssueCode.too_big:
           if (issue.type === 'array') {
             return {
-              message: `Array must contain ${issue.inclusive ? `at most` : `less than`
+              message: `Array must contain ${issue.inclusive ? "at most" : "less than"
                 } ${issue.maximum} element(s)`,
             }
           } else if (issue.type === 'string') {
             return {
-              message: `String must contain ${issue.inclusive ? `at most` : `under`
+              message: `String must contain ${issue.inclusive ? "at most" : "under"
                 } ${issue.maximum} character(s)`,
             }
           } else if (issue.type === 'number') {
             return {
-              message: `Number must be less than ${issue.inclusive ? `or equal to ` : ``
+              message: `Number must be less than ${issue.inclusive ? "or equal to " : ""
                 }${issue.maximum}`,
             }
           } else {
@@ -113,11 +113,11 @@ export const zodCustomErrorMap =
           }
         case z.ZodIssueCode.custom:
           return {
-            message: `Invalid input`,
+            message: "Invalid input",
           }
         case z.ZodIssueCode.invalid_intersection_types:
           return {
-            message: `Intersection results could not be merged`,
+            message: "Intersection results could not be merged",
           }
         case z.ZodIssueCode.not_multiple_of:
           return {

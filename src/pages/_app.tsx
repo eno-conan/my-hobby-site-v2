@@ -9,7 +9,7 @@ import { NextPageWithLayout } from "./page";
 import { ThemeProvider } from "next-themes";
 
 // MSWの起動設定
-if (process.env.NEXT_PUBLIC_API_MOCKING == "enabled") {
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
   require("../mocks");
 }
 

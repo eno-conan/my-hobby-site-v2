@@ -28,13 +28,13 @@ function sleep(ms: number) {
 }
 
 // レコード情報送信
-async function sendRecord(newRecord: any) {
-    Router.push({ pathname: `/sending`, });
+async  function sendRecord(newRecord: any) {
+    Router.push({ pathname: "/sending", });
     await sleep(500);
     // 送信情報の設定
-    await wretch(`/api/record`).post(newRecord).res(response => {
+    await wretch("/api/record").post(newRecord).res(response => {
         if (response.ok) {
-            Router.push({ pathname: `/`, });
+            Router.push({ pathname: "/", });
         } else {
             alert('何らかのエラーが発生');
         }
@@ -97,13 +97,14 @@ const Add: NextPageWithLayout = () => {
                 </Popover.Root> */}
                 <div>
                     {fields.map((_field: any, index: number) => (
+                        // rome-ignore lint/suspicious/noArrayIndexKey: <explanation
                         <div key={index}>
                             <div className='flex'>
                                 <Label type={'referenceIndex'} word={`${index + 1}個目`} />
                                 <button type={"button"} className={`${styles.IconButton}`} onClick={() => remove(index)}><Cross2Icon /></button>
                             </div>
-                            <Input register={register} label={`references.${index}.referenceTitle`} classSub={`referenceTitle`} />
-                            <Input register={register} label={`references.${index}.referenceUrl`} classSub={`referenceUrl`} />
+                            <Input register={register} label={`references.${index}.referenceTitle`} classSub={"referenceTitle"} />
+                            <Input register={register} label={`references.${index}.referenceUrl`} classSub={"referenceUrl"} />
                             <ErrorMessageUI errors={errors} name={`references.${index}.referenceTitle`} />
                             <ErrorMessageUI errors={errors} name={`references.${index}.referenceUrl`} />
                         </div>

@@ -11,7 +11,7 @@ import { prismaRecordRefsCreate } from '../../../../prisma/functions/recordRef';
  */
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<any>
+res: NextApiResponse<any>
 ) {
     const { method, body, query } = req;
 
@@ -42,8 +42,8 @@ export default async function handler(
             const year = currentDate.getFullYear().toString();
             const month = (currentDate.getMonth() + 1).toString();
             const day = (currentDate.getDate()).toString();
-            const date = year + '/' + month + '/' + day
-            const createRecordParams: any = {
+            const date = `${year}/${month}/${day}`
+            const  createRecordParams: any = {
                 title: body.title,
                 description: body.description,
                 subject: body.subject,

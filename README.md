@@ -84,7 +84,8 @@
 - [23/01/17：cacheTimeとstaleTime](https://zenn.dev/helloiamktn/articles/166f15d1b5fa4b)
 - [23/01/17：Caching Examples(公式)](https://tanstack.com/query/v4/docs/react/guides/caching?from=reactQueryV3&original=https%3A%2F%2Freact-query-v3.tanstack.com%2Fguides%2Fcaching)
 - [23/01/17：テーブル実装](https://dev.classmethod.jp/articles/react-table/)
-- [23/01/17：ページネーション](https://tanstack.com/query/v4/docs/react/guides/paginated-queries)
+- [23/01/17：ページネーション(公式)](https://tanstack.com/query/v4/docs/react/guides/paginated-queries)
+- [23/01/22：Infinite Queries(実装例)](https://dev.to/nischal_dutt/paginated-infinite-queries-182p)
 
 ### Zod
 - [23/01/15：公式ドキュメント](https://zod.dev/)

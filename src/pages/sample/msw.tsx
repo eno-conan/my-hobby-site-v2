@@ -59,7 +59,7 @@ function TableArea() {
         <Table.Body className="divide-y">
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="!p-4">
-              <Checkbox value={'1'} onChange={setValue} checked={checkState == '1'} />
+              <Checkbox value={'1'} onChange={setValue} checked={checkState === '1'} />
             </Table.Cell>
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               Apple MacBook Pro 17"
@@ -84,7 +84,7 @@ function TableArea() {
           </Table.Row>
           <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="!p-4">
-              <Checkbox value={'2'} onChange={setValue} checked={checkState == '2'} />
+              <Checkbox value={'2'} onChange={setValue} checked={checkState === '2'} />
             </Table.Cell>
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
               Microsoft Surface Pro
@@ -126,16 +126,16 @@ function DataUsingMSW(jsonPlaceholders: IJsonPlaceholderData[]) {
     </>)
 }
 
-const MswIndex: NextPage = (props: any) => {
+const  MswIndex: NextPage = (props: any) => {
   // const jsonPlaceholders: IJsonPlaceholderData[] = props.data
 
   return (
     <>
       <div className={'container px-4'}>
         <Meta title="msw" description="check msw work" />
-        {props.data &&
-          props.data.map((d: any, idx: number) => {
-            return <div key={idx}>{idx % 50 == 0 ? <>{d.title}</> : <></>}</div>;
+        {props.data?.map((d: any, idx: number) => {
+            // rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+return  <div key={idx}>{idx % 50 === 0 ? <>{d.title}</> : <></>}</div>;
           })}
         {/* <DataUsingMSW jsonPlaceholders={jsonPlaceholders} /> */}
         <TableArea />
@@ -145,7 +145,7 @@ const MswIndex: NextPage = (props: any) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<any> = async () => {
+export  const getServerSideProps: GetServerSideProps<any> = async () => {
   const res = await axios.get("https://jsonplaceholder.typicode.com/todos");
   const data = res.data
   return {

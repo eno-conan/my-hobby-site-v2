@@ -9,9 +9,9 @@ const Sending = () => {
                 Sending...
             </div>
             <div className={"flex justify-center"}>
-                <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full"}></div>
-                <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full mx-4"}></div>
-                <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full"}></div>
+                <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full"} />
+                <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full mx-4"} />
+                <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full"} />
             </div>
         </>
     )
