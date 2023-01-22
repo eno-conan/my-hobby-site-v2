@@ -34,7 +34,7 @@
 - [23/01/16：Loadingの実装](https://qiita.com/ykkamm/items/4fd4a7bed03e81f07b64)
 - [23/01/17：Sleep機能実装方法](https://lost-in-code.com/ja/tutorials/js/sleep/)
 
-### Eslint,Config
+### Eslint,Rome,Config
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
 - [23/01/12：disabling rules](https://nextjs.org/docs/basic-features/eslint#disabling-rules)
 - [23/01/12：react/display-name](https://cpoint-lab.co.jp/article/202107/20652/)
@@ -42,6 +42,7 @@
 - [23/01/17：VSCode show errors for unresolved types in .d.ts files?](https://stackoverflow.com/questions/70905791/is-there-a-way-to-make-vscode-show-errors-for-unresolved-types-in-d-ts-files)
 - [23/01/22：Rome formatter linter(公式)](https://rome.tools/)
 - [23/01/22：Rome formatter linterとは](https://qiita.com/rana_kualu/items/47341ce38b3df6a75559)
+- [23/01/22：Rome formatter linterコマンドの使い方](https://www.youtube.com/watch?v=uHET9O-E51c)
 
 ### env variables
 - [23/01/11：envファイルの定義](https://fwywd.com/tech/next-env)

@@ -3,7 +3,7 @@
   "formatter": {
     "indentStyle": "tab",
     "lineWidth": 120,
-    "ignore": ["node_modules/*"]
+    "ignore": ["./node_modules/**/*.*"]
   },
   "linter": {
     "enabled": true,
@@ -13,6 +13,10 @@
         "noExplicitAny": "off",
         "noArrayIndexKey":"warn"
       }
-    }
+    },
+    "ignore": [
+      "./node_modules/**/*.*",
+      "./.next/**/*.*"
+  ]
   }
 }
