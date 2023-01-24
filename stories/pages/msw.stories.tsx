@@ -23,11 +23,8 @@ const PageTemplate: ComponentStory<typeof MswPage> = () => <MswPage />;
 export const MockedSuccess = PageTemplate.bind({});
 MockedSuccess.parameters = {
   msw: [
-    rest.get(
-      "https://jsonplaceholder.typicode.com/todos",
-      (_req, res, ctx) => {
-        return res(ctx.json(TestData));
-      }
-    ),
+    rest.get("https://jsonplaceholder.typicode.com/todos", (_req, res, ctx) => {
+      return res(ctx.json(TestData));
+    }),
   ],
 };

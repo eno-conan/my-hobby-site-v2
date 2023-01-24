@@ -1,17 +1,17 @@
-import prisma from '../client'
+import prisma from "../client";
 
 interface CreateDummy {
-    name: string
+  name: string;
 }
 
 export async function createDummy(user: CreateDummy) {
-    if (user.name) {
-        return await prisma.dummy.create({
-            data: user,
-        })
-    } else {
-        return new Error('User must accept terms!')
-    }
+  if (user.name) {
+    return await prisma.dummy.create({
+      data: user,
+    });
+  } else {
+    return new Error("User must accept terms!");
+  }
 }
 
 // interface UpdateUser {

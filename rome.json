@@ -1,7 +1,8 @@
 {
   "$schema": "./node_modules/rome/configuration_schema.json",
   "formatter": {
-    "indentStyle": "tab",
+    "indentStyle": "space",
+    "indentSize": 2,
     "lineWidth": 120,
     "ignore": ["./node_modules/**/*.*"]
   },

@@ -1,8 +1,8 @@
-import React, { ComponentPropsWithoutRef } from 'react';
-import Footer from '../navigation/footer';
-import Header from '../navigation/header';
+import React, { ComponentPropsWithoutRef } from "react";
+import Footer from "../navigation/footer";
+import Header from "../navigation/header";
 
-interface IMainLayout extends ComponentPropsWithoutRef<'div'> { }
+interface IMainLayout extends ComponentPropsWithoutRef<"div"> {}
 
 const MainLayout: React.FC<IMainLayout> = ({ children }) => {
   return (
