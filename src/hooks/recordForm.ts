@@ -11,7 +11,7 @@ export const schema = z.object({
     title: z.string().min(1, "タイトル名は、最低1文字入力してください").max(50, "最大50文字です"),
     description: z.string().min(1, "概要は、最低1文字入力してください").max(100, "最大100文字です"),
     subject: z.string().max(2, 'いずれかの科目を選択してください(決まっていない場合は、その他を選択してください)'),
-    detail: z.string().max(500, "最大500文字です"),
+    detail: z.string().max(1000, "最大1000文字です"),
     // 登録できる参照リンク数は10まで
     references: z.array(referenceSchema).max(10)
 })

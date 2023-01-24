@@ -6,7 +6,6 @@ import Select from "src/components/ui/Select";
 import { Cross2Icon, PlusIcon } from "@radix-ui/react-icons";
 import RecordForm from "src/hooks/recordForm";
 import Label from "src/components/ui/Label";
-import * as Popover from "@radix-ui/react-popover";
 import Router from "next/router";
 import SwitchUI from "src/components/ui/SwitchUI";
 import TextArea from "src/components/ui/TextArea";
