@@ -77,7 +77,7 @@ const TanStackInfinite: NextPageWithLayout = () => {
       <button disabled={!hasNextPage} onClick={getNextPage}>
         load more
       </button>
-      <button disabled={!hasNextPage} onClick={getNextPage}></button>
+      <button disabled={!hasNextPage} onClick={getNextPage} />
     </>
   );
 };

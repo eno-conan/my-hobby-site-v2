@@ -7,6 +7,7 @@
   "rules": {
     "no-console": 1,
     "react/no-unescaped-entities": 1,
-    "react/display-name": 1
+    "react/display-name": 1,
+    "react-hooks/rules-of-hooks":2
   }
 }

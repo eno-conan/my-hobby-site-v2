@@ -9,9 +9,6 @@ import { getRecordDetail } from "src/hooks/recordsDetail";
 const RecordDetail: NextPageWithLayout = () => {
   const router = useRouter();
   const { id } = router.query;
-  if (id?.length === 0) {
-    return <h1>Error</h1>;
-  }
 
   const res: UseQueryResult<any, Error> = useQuery({
     queryKey: ["recordDetail", id],
@@ -21,8 +18,10 @@ const RecordDetail: NextPageWithLayout = () => {
     staleTime: Infinity,
     // cacheTime: 300000, // default:5m
   });
-  console.log(res.data);
-  return <div>Hello</div>;
+  // console.log(res.data);
+  return (
+    <>Hello</>
+  );
 };
 
 export default RecordDetail;
