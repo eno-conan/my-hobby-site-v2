@@ -28,10 +28,10 @@ export const prismaRecordsCount = async (): Promise<number> => {
 };
 
 // ある記事に関する情報を取得する
-export const prismaRecordFindOne = async (id: any): Promise<Record[]> => {
+export const prismaRecordFindOne = async (id: number): Promise<Record[]> => {
   const checkedRecord = await prisma.record.findMany({
     where: {
-      id: Number(id),
+      id: id,
     },
   });
   return checkedRecord;

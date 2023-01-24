@@ -35,3 +35,16 @@ export interface IDisplayRecord {
   finished: boolean;
   updatedAt: string;
 }
+
+// 詳細画面用
+export interface IDisplayRecordDetail {
+  id: number;
+  title: string;
+  description: string;
+  subject:string;
+  detail: string;
+  finished: boolean;
+  createdAt:Date;
+  createdAtDate:string;
+  updatedAt: string;
+}

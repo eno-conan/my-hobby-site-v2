@@ -6,7 +6,7 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 
 //infinite用
 const getRecords2 = ({ pageParam = 1 }) => {
-  console.log(pageParam);
+  // console.log(pageParam);
   return wretch(`/api/records?page=${pageParam}`).get().json();
 };
 
@@ -42,8 +42,8 @@ const TanStackInfinite: NextPageWithLayout = () => {
       return pages.length < 4 ? pages.length + 1 : undefined;
     },
     getNextPageParam: (_lastPage, pages) => {
-      console.log(_lastPage);
-      console.log(pages);
+      // console.log(_lastPage);
+      // console.log(pages);
       return pages.length < 4 ? pages.length + 1 : undefined;
     },
   });

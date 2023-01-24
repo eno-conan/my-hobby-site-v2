@@ -1,5 +1,6 @@
+import { Record } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { prismaRecordCreate, prismaRecordsCount } from "../../../../prisma/functions/record";
+import { prismaRecordCreate, prismaRecordsCount, prismaRecordFindOne } from "../../../../prisma/functions/record";
 import { prismaRecordRefsCreate } from "../../../../prisma/functions/recordRef";
 // import { formatToTimeZone } from 'date-fns-timezone';
 
@@ -13,12 +14,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
   const { method, body, query } = req;
 
   switch (method) {
+    // 特定のデータ取得
     case "GET":
-      // console.log(query);
-      res.status(200).json({name:"Hello"});
-      let records;
+      const detail: Record[] = await prismaRecordFindOne(Number(query.id));
+      let info = detail[0];
+      res.status(200).json(info);
       break;
 
+    //新規データ登録
     case "POST":
       if (!body) return res.status(400).end("No body");
       // recordテーブルへの登録内容設定
