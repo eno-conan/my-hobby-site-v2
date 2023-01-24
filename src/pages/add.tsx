@@ -69,7 +69,7 @@ const Add: NextPageWithLayout = () => {
 	};
 
 	return (
-		<div className="container mx-auto flex flex-wrap items-center justify-between p-4">
+		<div className="container mx-auto items-center justify-between p-4">
 			<Meta title="記録追加画面" description="レコード追加(更新)を行う画面" />
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Label type={"page"} word={"記録追加"} />
@@ -91,16 +91,7 @@ const Add: NextPageWithLayout = () => {
 				<ErrorMessageUI errors={errors} name={"detail"} />
 				{/* 参考リンク */}
 				<Label type={"subHeading"} word={"参考リンク（任意項目）"} />
-				<Label type={"reference"} word={"ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力"} />
-				{/* <Popover.Root>
-                    <Popover.Trigger className={styles.PopoverTrigger} data-state={'open'}>?</Popover.Trigger>
-                    <Popover.Portal>
-                        <Popover.Content className={styles.PopoverContent} data-side={'right'} >
-                            ある場合は、＋ボタンをクリックして、左側に「見出し」、右側に「URL」を入力
-                            <Popover.Arrow className={styles.PopoverArrow} />
-                        </Popover.Content>
-                    </Popover.Portal>
-                </Popover.Root> */}
+				<Label type={"reference"} word={"ある場合、＋ボタンをクリックして「見出し」「URL」の順に入力"} />
 				<div>
 					{fields.map((_field: any, index: number) => (
 						// rome-ignore lint/suspicious/noArrayIndexKey: <explanation
@@ -128,7 +119,7 @@ const Add: NextPageWithLayout = () => {
 					</button>
 				</div>
 				<div className={"text-right"}>
-					<button type={"submit"} className={`${styles.Button} ${styles.violet} flex flex-nowrap`}>
+					<button type={"submit"} className={`${styles.Button} ${styles.violet}`}>
 						送信
 					</button>
 				</div>

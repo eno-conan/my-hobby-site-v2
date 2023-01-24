@@ -13,10 +13,10 @@
     box-shadow: 0 0 0 2px black;
   }
   .Input.title {
-    width: 80%;
+    width: 50%;
   }
   .Input.description {
-    width: 95%;
+    width: 90%;
   }
   .Input.referenceTitle {
     width: 50%;

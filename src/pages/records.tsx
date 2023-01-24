@@ -41,9 +41,18 @@ const Records: NextPageWithLayout = () => {
         }
     )
 
-    const setValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCheckState(event.target.value);
+    // 完了/未完了の出力制御
+    const showFinishStatus = (finishedStatus:boolean)=>{
+        if(finishedStatus){
+            return (<>Y</>)
+        }else{
+            return (<>-</>)
+        }
     }
+
+    // const setValue = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     setCheckState(event.target.value);
+    // }
 
     if (res.status === "loading") return <h1>Loading...</h1>
     if (res.status === "error") {
@@ -60,18 +69,18 @@ const Records: NextPageWithLayout = () => {
                 <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
                 {/* 各チェックボックスのstate管理については慎重に実装 */}
                 <Table hoverable={true} border={4} align={'center'} className={'my-4'}>
-                    {TableHeader()}
+                    <TableHeader/>
                     <Table.Body className="divide-y">
                         {res.data.records.map((rcd: IDisplayRecord) => (
                             <Table.Row className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800" key={rcd.id} onClick={() => console.log(rcd)}>
-                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white pl-2">
                                     {rcd.title}
                                 </Table.Cell>
                                 <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white hidden lg:block">
                                     {rcd.description}
                                 </Table.Cell>
                                 <Table.Cell className="text-center">
-                                    未
+                                    {showFinishStatus(rcd.finished)}
                                 </Table.Cell>
                             </Table.Row>
                         ))}
