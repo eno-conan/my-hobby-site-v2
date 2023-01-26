@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from "next";
 import React from "react";
-import axios from "axios";
+import axios from "redaxios";
 import Meta from "src/components/Meta";
 import styles from "../../styles/pages/sample/msw.module.css";
 import { Checkbox, Table } from "flowbite-react";

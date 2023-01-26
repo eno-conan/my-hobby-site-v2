@@ -16,7 +16,6 @@ const GitHubMark = () => {
       <Image
         src={currentTheme === "dark" ? "/images/github-mark-white.png" : "/images/github-mark.png"}
         fill
-        objectFit="cover"
         alt="github mark"
         // width={300}
         // height={300}

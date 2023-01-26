@@ -16,7 +16,6 @@ const TwitterMark = () => {
       <Image
         src={currentTheme === "dark" ? "/images/twitter-mark.png" : "/images/twitter-mark.png"}
         fill
-        objectFit="cover"
         alt="github mark"
         // width={300}
         // height={300}
