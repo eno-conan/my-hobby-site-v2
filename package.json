@@ -14,7 +14,8 @@
     "build-storybook": "build-storybook",
     "vitest": "vitest run",
     "playwright": "playwright test && playwright show-report",
-    "jest": "jest -i --passWithNoTests"
+    "jest": "jest -i --passWithNoTests",
+    "analyze": "ANALYZE=true yarn build"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -50,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
+    "@next/bundle-analyzer": "^13.1.5",
     "@playwright/test": "^1.29.2",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",

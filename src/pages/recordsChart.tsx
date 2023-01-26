@@ -51,7 +51,7 @@ const options: {} = {
 };
 
 const RecordsChart: NextPageWithLayout = () => {
-  const setData = (data: IRecordsChart[]) => {
+  function setData(data: IRecordsChart[]){
     // グラフのラベル
     const labels: string[] = [];
     // データ情報
@@ -101,8 +101,7 @@ const RecordsChart: NextPageWithLayout = () => {
   return (
     <>
       <Meta title="記録集計表" description="当月の記録数一覧を表示" />
-      <div className={""}>{setData(res.data)}</div>
-      {/* <div className={"pl-20 w-4/5 h-1/4"}>{setData(res.data)}</div> */}
+      <div>{setData(res.data)}</div>
     </>
   );
 };

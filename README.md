@@ -153,6 +153,7 @@
 - [23/01/20：memoをコンポーネントに付与して再レンダリングを防ぐ方法](https://zenn.dev/azukiazusa/articles/react-rerender-patterns)
 - [23/01/20：memo化の使いどころ](https://cam-inc.co.jp/p/techblog/530551646413914939)
   - なんでもかんでもmemo化せず、設計再検討の上で使用
+- [23/01/26：@next/bundle-analyzer](https://zenn.dev/catnose99/scraps/661d77118aa2af)
 
 # i18n
 - [23/01/16：サンプルコード](https://github.com/hisho/nextjs-with-zod-i18n/tree/main/)
