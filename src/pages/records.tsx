@@ -23,7 +23,6 @@ function TableHeader() {
 const Records: NextPageWithLayout = () => {
   // 現在のページ数を管理
   const [page, setPage] = useState(0);
-  const [checkState, setCheckState] = useState<string>("");
   // データ一覧を取得
   const res: UseQueryResult<IRecordsAndCount, Error> = useQuery({
     queryKey: ["records", page],
@@ -42,10 +41,6 @@ const Records: NextPageWithLayout = () => {
       return <>-</>;
     }
   };
-
-  // const setValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setCheckState(event.target.value);
-  // }
 
   const checkRecord = (id: number) => {
     Router.push({ pathname: `record/${id}`, query: { id: id } });

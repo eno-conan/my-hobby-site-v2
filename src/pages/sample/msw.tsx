@@ -36,7 +36,7 @@ function TableArea() {
     <>
       <Table hoverable={true}>
         <Table.Head>
-          <Table.HeadCell className="!p-4"></Table.HeadCell>
+          <Table.HeadCell className="!p-4" />
           <Table.HeadCell>Product name</Table.HeadCell>
           <Table.HeadCell>Color</Table.HeadCell>
           <Table.HeadCell>Category</Table.HeadCell>

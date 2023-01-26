@@ -48,3 +48,10 @@ export interface IDisplayRecordDetail {
   createdAtDate:string;
   updatedAt: string;
 }
+
+// 集計画面用
+export interface IRecordsChart{
+count:number;
+createdDate:string;
+targetYearMonth?:string;
+}

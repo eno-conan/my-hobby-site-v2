@@ -1,7 +1,6 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import * as Popover from "@radix-ui/react-popover";
-import React from "react";
 import styles from "../../styles/pages/sample/radix.module.css";
 import Headline from "../../components/Headline";
 

@@ -9,10 +9,11 @@ import { NextPageWithLayout } from "./page";
 const SECTIONS = [
   { title: "Add Record", link: "/add" },
   { title: "Check Records", link: "/records" },
+  { title: "Records Chart", link: "/recordsChart" },
   { title: "Mock Service Worker", link: "/sample/msw" },
   { title: "Radix", link: "/sample/radix" },
   { title: "LearnMemo", link: "/sample/learnMemo" },
-  { title: "tanStackInfinite", link: "/sample/tanStackInfinite" },
+  // { title: "tanStackInfinite", link: "/sample/tanStackInfinite" },
 ];
 
 const Home: NextPageWithLayout = () => {

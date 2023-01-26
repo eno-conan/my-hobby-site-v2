@@ -19,7 +19,7 @@ const Header = () => {
         {/* menu */}
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2 pt-1">
-            <TwitterMark/>
+            <TwitterMark />
           </div>
           <div className="flex items-center space-x-2">
             <GitHubMark />

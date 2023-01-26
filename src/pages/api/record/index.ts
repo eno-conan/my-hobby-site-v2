@@ -39,12 +39,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         }
       }
 
-      // // const dateInfo = getDateInfo(2);
       const currentDate = new Date();
       const year = currentDate.getFullYear().toString();
       const month = (currentDate.getMonth() + 1).toString();
       const day = currentDate.getDate().toString();
-      const date = `${year}/${month}/${day}`;
+      // 0埋めしてデータ登録
+      const date = `${year}/${month.toString().padStart(2, "0")}/${day.toString().padStart(2, "0")}`;
       const createRecordParams: any = {
         title: body.title,
         description: body.description,
