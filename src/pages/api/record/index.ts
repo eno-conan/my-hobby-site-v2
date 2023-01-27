@@ -40,12 +40,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         }
       }
 
-      const currentDate = new Date();
-      const year = currentDate.getFullYear().toString();
-      const month = (currentDate.getMonth() + 1).toString();
-      const day = currentDate.getDate().toString();
-      // 0埋めしてデータ登録
-      const date = `${year}/${month.toString().padStart(2, "0")}/${day.toString().padStart(2, "0")}`;
+      // 登録日付取得
+      const date = getDateForDisplay();
+      // 送信内容設定
       const createRecordParams: any = {
         title: body.title,
         description: body.description,
@@ -63,5 +60,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     default:
       res.setHeader("Allow", ["GET", "POST"]);
       res.status(405).end(`Method ${method} Not Allowed`);
+  }
+
+  // 日付取得処理
+  function getDateForDisplay() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear().toString();
+    const month = (currentDate.getMonth() + 1).toString();
+    const day = currentDate.getDate().toString();
+    // 0埋めしてデータ登録
+    const date = `${year}/${month.toString().padStart(2, "0")}/${day.toString().padStart(2, "0")}`;
+    return date;
   }
 }
