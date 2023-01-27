@@ -27,6 +27,24 @@ export const prismaRecordsCount = async (): Promise<number> => {
   return recordsCount;
 };
 
+// レコードIDの最大値
+export const prismaMaxRecordId = async (): Promise<any[]> => {
+  const maxRecordId = await prisma.record.findMany({
+    select: {
+      id: true,
+      title: false,
+      description: false,
+      detail: false,
+      finished: false,
+      createdAt: false,
+      updatedAt: false,
+    },
+    orderBy: { id: Prisma.SortOrder.desc },
+    take: 1, //件数制限
+  });
+  return maxRecordId;
+};
+
 // ある記事に関する情報を取得する
 export const prismaRecordFindOne = async (id: number): Promise<Record[]> => {
   const checkedRecord = await prisma.record.findMany({

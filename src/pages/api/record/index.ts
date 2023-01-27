@@ -1,6 +1,6 @@
 import { Record } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { prismaRecordCreate, prismaRecordsCount, prismaRecordFindOne } from "../../../../prisma/functions/record";
+import { prismaRecordCreate, prismaRecordFindOne, prismaMaxRecordId } from "../../../../prisma/functions/record";
 import { prismaRecordRefsCreate } from "../../../../prisma/functions/recordRef";
 // import { formatToTimeZone } from 'date-fns-timezone';
 
@@ -24,12 +24,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     //新規データ登録
     case "POST":
       if (!body) return res.status(400).end("No body");
-      // recordテーブルへの登録内容設定
-      const cnt: number = (await prismaRecordsCount()) + 1;
+      // 記録IDの最大値を取得し、1足した値で登録
+      const maxRecordId = await prismaMaxRecordId();
+      const recordId: number = Number(maxRecordId[0].id) + 1;
 
       // // recordRefへの登録
       if (body.references.length > 0) {
-        const createRecordRefsParams = { referenceTitle: "sample", referenceUrl: "sample", recordId: cnt };
+        const createRecordRefsParams = { referenceTitle: "sample", referenceUrl: "sample", recordId: recordId };
         const links = body.references;
         // 暫定対応でfor文記載（後々bulkInsertにする:22/12/10）
         for (let info of links) {

@@ -93,7 +93,7 @@ const RecordsChart: NextPageWithLayout = () => {
     staleTime: Infinity,
   });
 
-  if (res.status === "loading") return <Loading/>;
+  if (res.status === "loading") return <Loading />;
   if (res.status === "error") {
     return <h1>{JSON.stringify(res.error)}</h1>;
   }
