@@ -12,7 +12,6 @@ Chart.register(...registerables);
 
 const options: {} = {
   plugins: {
-    // 'legend' now within object 'plugins {}'
     legend: {
       labels: {
         color: "purple", // not 'fontColor:' anymore
@@ -24,7 +23,7 @@ const options: {} = {
     scales: {
       // 軸設定
       xAxes: [
-        // Ｘ軸設定
+        // x軸設定
         {
           scaleLabel: {
             // 軸ラベル
@@ -51,7 +50,7 @@ const options: {} = {
 };
 
 const RecordsChart: NextPageWithLayout = () => {
-  function setData(data: IRecordsChart[]){
+  function setData(data: IRecordsChart[]) {
     // グラフのラベル
     const labels: string[] = [];
     // データ情報
@@ -60,7 +59,7 @@ const RecordsChart: NextPageWithLayout = () => {
     let targetYearMonth: string = "";
     data.map((cntData, idx) => {
       if (idx === 0) {
-        targetYearMonth = cntData.targetYearMonth!;
+        targetYearMonth = `${cntData.targetYearMonth?.substring(1, 5)}年${cntData.targetYearMonth?.substring(5, 7)}月`;
       }
       // yyyy/、部分はカット
       labels.push(cntData.createdDate.substring(5));
@@ -79,11 +78,11 @@ const RecordsChart: NextPageWithLayout = () => {
     };
     return (
       <>
-        <div className={"text-2xl text-center"}>{`記録数グラフ${targetYearMonth}`}</div>
+        <div className={"text-2xl text-center"}>{`記録数グラフ ${targetYearMonth}`}</div>
         <Line height={400} width={800} data={chartData} options={options} />
       </>
     );
-  };
+  }
 
   const res: UseQueryResult<IRecordsChart[], Error> = useQuery({
     queryKey: ["recordsChart"],
