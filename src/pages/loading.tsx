@@ -1,7 +1,9 @@
 import React from "react";
+import MainLayout from "src/components/layout";
 import styles from "../styles/pages/loading.module.css";
+import { NextPageWithLayout } from "./page";
 
-const Loading = () => {
+const Loading: NextPageWithLayout = () => {
   const [progress, setProgress] = React.useState(13);
 
   React.useEffect(() => {
@@ -20,3 +22,4 @@ const Loading = () => {
 };
 
 export default Loading;
+Loading.getLayout = (page) => <MainLayout>{page}</MainLayout>;

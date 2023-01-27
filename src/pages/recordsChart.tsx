@@ -6,6 +6,7 @@ import { NextPageWithLayout } from "./page";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import Meta from "src/components/Meta";
+import Loading from "./loading";
 
 // チャートの設定
 Chart.register(...registerables);
@@ -92,7 +93,7 @@ const RecordsChart: NextPageWithLayout = () => {
     staleTime: Infinity,
   });
 
-  if (res.status === "loading") return <h1>Loading...</h1>;
+  if (res.status === "loading") return <Loading/>;
   if (res.status === "error") {
     return <h1>{JSON.stringify(res.error)}</h1>;
   }

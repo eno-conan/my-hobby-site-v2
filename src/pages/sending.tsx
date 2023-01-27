@@ -1,7 +1,8 @@
-import React from "react";
+import MainLayout from "src/components/layout";
 import styles from "../styles/pages/loading.module.css";
+import { NextPageWithLayout } from "./page";
 
-const Sending = () => {
+const Sending: NextPageWithLayout = () => {
   return (
     <>
       <div className={styles.Label}>Sending...</div>
@@ -15,3 +16,4 @@ const Sending = () => {
 };
 
 export default Sending;
+Sending.getLayout = (page) => <MainLayout>{page}</MainLayout>;

@@ -1,4 +1,3 @@
-// import Logo from '@/components/brand/logo';
 import Link from "next/link";
 import GitHubMark from "src/components/ui/github-mark";
 import TwitterMark from "src/components/ui/twitter-mark";

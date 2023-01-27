@@ -4,10 +4,11 @@ import Meta from "src/components/Meta";
 import { NextPageWithLayout } from "./page";
 import MainLayout from "src/components/layout";
 import { IDisplayRecord, IRecordsAndCount } from "types/record";
-import { Checkbox, Table } from "flowbite-react";
+import { Table } from "flowbite-react";
 import { useState } from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Router from "next/router";
+import Loading from "./loading";
 
 // テーブルのヘッダー情報
 function TableHeader() {
@@ -46,7 +47,7 @@ const Records: NextPageWithLayout = () => {
     Router.push({ pathname: `record/${id}`, query: { id: id } });
   };
 
-  if (res.status === "loading") return <h1>Loading...</h1>;
+  if (res.status === "loading") return <Loading/>;
   if (res.status === "error") {
     return <h1>{JSON.stringify(res.error)}</h1>;
   }

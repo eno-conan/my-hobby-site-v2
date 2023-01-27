@@ -1,5 +1,3 @@
-// import Logo from '@/components/brand/logo';
-
 const Footer = () => {
   return (
     <footer className="bg-slate-200 dark:bg-slate-800 py-6">
