@@ -56,38 +56,52 @@ const Records: NextPageWithLayout = () => {
     return <h1>No Data</h1>;
   }
 
-  return (
-    <>
-      <div className={"container mx-auto px-4"}>
-        <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
-        {/* 各チェックボックスのstate管理については慎重に実装 */}
-        <Table hoverable={true} border={4} align={"center"} className={"my-4"}>
-          <TableHeader />
-          <Table.Body className="divide-y">
-            {res.data.records.map((rcd: IDisplayRecord) => (
-              <Table.Row
-                className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800"
-                key={rcd.id}
-                onClick={() => checkRecord(rcd.id)}
-              >
-                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white pl-2">
-                  {rcd.title}
-                </Table.Cell>
-                <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white hidden lg:block">
-                  {rcd.description}
-                </Table.Cell>
-                <Table.Cell className="text-center">{showFinishStatus(rcd.finished)}</Table.Cell>
-              </Table.Row>
-            ))}
-          </Table.Body>
-        </Table>
-        {/* Pagination */}
+  // 記録一覧のテーブルの内容部分
+  function TableBody(data: IRecordsAndCount) {
+    return (
+      <>
+        <Table.Body className="divide-y">
+          {data.records.map((rcd: IDisplayRecord) => (
+            <Table.Row
+              className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800"
+              key={rcd.id}
+              onClick={() => checkRecord(rcd.id)}
+            >
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white pl-2">
+                {rcd.title}
+              </Table.Cell>
+              <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white hidden lg:block">
+                {rcd.description}
+              </Table.Cell>
+              <Table.Cell className="text-center">{showFinishStatus(rcd.finished)}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </>
+    );
+  }
+
+  // レコード件数情報
+  function RecordsInfo(data: IRecordsAndCount) {
+    return (
+      <>
         <div className="flex flex-col items-center">
           <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
-            Showing <span className="font-semibold text-gray-900 dark:text-white">{10 * page + 1}</span> to{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + res.data.records.length}</span>{" "}
-            of <span className="font-semibold text-gray-900 dark:text-white">{res.data.count}</span> Records
+            Showing
+            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + 1}</span> to{" "}
+            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + data.records.length}</span> of
+            <span className="font-semibold text-gray-900 dark:text-white">{data.count}</span> Records
           </span>
+        </div>
+      </>
+    );
+  }
+
+  // ページング
+  function Paging(data: IRecordsAndCount) {
+    return (
+      <>
+        <div className="flex flex-col items-center">
           <div className="inline-flex mt-2 xs:mt-0">
             <button
               onClick={() => setPage((old) => Math.max(old - 1, 0))}
@@ -115,7 +129,7 @@ const Records: NextPageWithLayout = () => {
                   setPage((old) => old + 1);
                 }
               }}
-              disabled={10 * page + res.data.records.length === res.data.count}
+              disabled={10 * page + data.records.length === data.count}
               className="inline-flex items-center px-4 py-2 text-sm font-medium text-white disabled:text-gray-100 bg-purple-600 border-0 border-l border-gray-700 rounded-r hover:bg-purple-800 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:bg-gray-600"
             >
               Next
@@ -135,6 +149,22 @@ const Records: NextPageWithLayout = () => {
             </button>
           </div>
         </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div className={"container mx-auto px-4"}>
+        <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
+        <Table hoverable={true} border={4} align={"center"} className={"my-4"}>
+          <TableHeader />
+          <TableBody records={res.data.records} count={res.data.count} />
+        </Table>
+        {/* レコード件数情報 */}
+        <RecordsInfo records={res.data.records} count={res.data.count} />
+        {/* Pagination */}
+        <Paging records={res.data.records} count={res.data.count} />
       </div>
       {/* 取得データの確認用(開発環境のみ表示) */}
       {process.env.NEXT_PUBLIC_API_MOCKING === "enabled" ? <ReactQueryDevtools /> : <></>}

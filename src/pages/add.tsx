@@ -66,29 +66,37 @@ const Add: NextPageWithLayout = () => {
     // 送信
     sendRecord(newRecord);
   };
-
-  return (
-    <div className="container mx-auto items-center justify-between p-4">
-      <Meta title="記録追加画面" description="レコード追加(更新)を行う画面" />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Label type={"page"} word={"記録追加"} />
+  // 記録テーブルへの登録情報
+  function RecordArea() {
+    return (
+      <>
         {/* 主要項目 */}
         <Label type={"subHeading"} word={"タイトル名"} />
         <Input register={register} label={"title"} classSub={"title"} />
         <ErrorMessageUI errors={errors} name={"title"} />
+        {/* 概要 */}
         <Label type={"subHeading"} word={"記録の概要"} />
         <Input register={register} label={"description"} classSub={"description"} />
         <ErrorMessageUI errors={errors} name={"description"} />
+        {/* 科目 */}
         <Label type={"subHeading"} word={"学習項目"} />
         <Select register={register} label={"subject"} data={SUBJECTS} />
         <ErrorMessageUI errors={errors} name={"subject"} />
+        {/* 完了状態 */}
         <Label type={"subHeading"} word={"完了状態"} />
         <SwitchUI label={"finished"} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
         <ErrorMessageUI errors={errors} name={"finished"} />
+        {/* 詳細 */}
         <Label type={"subHeading"} word={"詳細"} />
         <TextArea register={register} label={"detail"} />
         <ErrorMessageUI errors={errors} name={"detail"} />
-        {/* 参考リンク */}
+      </>
+    );
+  }
+  // 参考リンクテーブルへの登録情報
+  function ReferenceArea() {
+    return (
+      <>
         <Label type={"subHeading"} word={"参考リンク（任意項目）"} />
         <Label type={"reference"} word={"ある場合、＋ボタンをクリックして「見出し」「URL」の順に入力"} />
         <div>
@@ -117,6 +125,19 @@ const Add: NextPageWithLayout = () => {
             <PlusIcon />
           </button>
         </div>
+      </>
+    );
+  }
+
+  return (
+    <div className="container mx-auto items-center justify-between p-4">
+      <Meta title="記録追加画面" description="レコード追加(更新)を行う画面" />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Label type={"page"} word={"記録追加"} />
+        {/* 記録に関する入力 */}
+        <RecordArea />
+        {/* 参考リンク */}
+        <ReferenceArea />
         <div className={"text-right"}>
           <button type={"submit"} className={`${styles.Button} ${styles.violet}`}>
             送信
