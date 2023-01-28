@@ -3,8 +3,21 @@ import { Cross2Icon } from "@radix-ui/react-icons";
 import * as Popover from "@radix-ui/react-popover";
 import styles from "../../styles/pages/sample/radix.module.css";
 import Headline from "../../components/Headline";
+import wretch from 'wretch';
+import axios from "redaxios";
+import { GetServerSideProps } from "next";
 
 const RadixIndex = () => {
+
+  function getDataFromDeta() {
+    // return wretch("https://4nndrv.deta.dev/").get().json();
+    // return axios.get("https://4nndrv.deta.dev/");
+    // return wretch("https://4nndrv.deta.dev/").get().json();
+  }
+
+  const data = getDataFromDeta();//スペルミスではない
+  // console.log(data);
+
   return (
     <>
       <div className='container mx-auto py-2'>
@@ -79,3 +92,15 @@ const RadixIndex = () => {
 };
 
 export default RadixIndex;
+
+export const getServerSideProps: GetServerSideProps<any> = async () => {
+  const res = await axios.get("https://4nndrv.deta.dev/");
+  const data = res.data;
+  // console.log(data);
+  return {
+    props: {
+      data: data,
+    },
+  };
+};
+
