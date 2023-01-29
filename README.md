@@ -117,6 +117,8 @@
   - 公式のコード使った方がよさそう
 - [23/01/19：React Tableとの連携](https://dev.to/oloriasabi/how-to-create-table-with-data-grid-checkbox-and-pagination-using-react-table-and-tailwind-css-33c)
 - [23/01/21：テーブルのレスポンシブ対応](https://larainfo.com/blogs/tailwind-css-hidden-display-none-class-example)
+- [23/01/29：角が取れた優しいデザインへ1](https://preline.co/docs/tables.html)
+- [23/01/29：角が取れた優しいデザインへ1](https://www.geeksforgeeks.org/tailwind-css-table-layout/?ref=lbp)
 
 ### radix
 - [23/01/12：インストール、初期設定](https://www.radix-ui.com/docs/primitives/overview/getting-started)

@@ -13,10 +13,10 @@ import Loading from "./loading";
 // テーブルのヘッダー情報
 function TableHeader() {
   return (
-    <Table.Head className="">
-      <Table.HeadCell className="text-center">タイトル</Table.HeadCell>
-      <Table.HeadCell className="pr-16 hidden lg:block">概要</Table.HeadCell>
-      <Table.HeadCell className="text-center">完了</Table.HeadCell>
+    <Table.Head className={"bg-purple-300 text-lg rounded-full"}>
+      <Table.HeadCell className="text-center py-2 border-l-2 border-purple-300">タイトル</Table.HeadCell>
+      <Table.HeadCell className="text-center hidden lg:block py-2">概要</Table.HeadCell>
+      <Table.HeadCell className="text-center py-2 pr-2 border-r-2 border-purple-300">完了</Table.HeadCell>
     </Table.Head>
   );
 }
@@ -61,19 +61,21 @@ const Records: NextPageWithLayout = () => {
     return (
       <>
         <Table.Body className="divide-y">
-          {data.records.map((rcd: IDisplayRecord) => (
+          {data.records.map((rcd: IDisplayRecord, idx: number) => (
             <Table.Row
               className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800"
               key={rcd.id}
               onClick={() => checkRecord(rcd.id)}
             >
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white pl-2">
+              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white pl-2 border-l-2 border-purple-300">
                 {rcd.title}
               </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white hidden lg:block">
+              <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white hidden lg:inline-block">
                 {rcd.description}
               </Table.Cell>
-              <Table.Cell className="text-center">{showFinishStatus(rcd.finished)}</Table.Cell>
+              <Table.Cell className="text-center border-r-2 border-purple-300">
+                {showFinishStatus(rcd.finished)}
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -157,7 +159,7 @@ const Records: NextPageWithLayout = () => {
     <>
       <div className={"container mx-auto px-4"}>
         <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
-        <Table hoverable={true} border={4} align={"center"} className={"my-4"}>
+        <Table hoverable={true} align={"center"} className={"my-4 border rounded-lg"}>
           <TableHeader />
           <TableBody records={res.data.records} count={res.data.count} />
         </Table>
@@ -165,6 +167,50 @@ const Records: NextPageWithLayout = () => {
         <RecordsInfo records={res.data.records} count={res.data.count} />
         {/* Pagination */}
         <Paging records={res.data.records} count={res.data.count} />
+        {/* 追加実装中 */}
+        <div className="flex flex-col pt-2">
+          <div className="-m-1.5 overflow-x-auto">
+            <div className="p-1.5 min-w-full inline-block align-middle">
+              <div className="border rounded-lg overflow-hidden dark:border-gray-700">
+                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                  <thead>
+                    <tr>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase bg-purple-300"
+                      >
+                        Name
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase bg-purple-300"
+                      >
+                        Age
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase bg-purple-300"
+                      >
+                        Address
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                    <tr>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                        John Brown
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">45</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                        New York No. 1 Lake Park
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       {/* 取得データの確認用(開発環境のみ表示) */}
       {process.env.NEXT_PUBLIC_API_MOCKING === "enabled" ? <ReactQueryDevtools /> : <></>}
