@@ -16,6 +16,9 @@
   - v1と同様に使用して進めている
 - lightHouse
   - パフォーマンスを適宜確認しながら、動作確認
+- rome
+  - フォーマッターライブラリ(eslintよりも高速みたい)
+  - https://rome.tools/
 - Nextのv13、Reactのv18
   - これで進められている
 
