@@ -7,6 +7,7 @@ import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import Meta from "src/components/Meta";
 import Loading from "./loading";
+import Label from "src/components/ui/Label";
 
 // チャートの設定
 Chart.register(...registerables);
@@ -79,7 +80,7 @@ const RecordsChart: NextPageWithLayout = () => {
     };
     return (
       <>
-        <div className={"text-2xl text-center"}>{`記録数グラフ ${targetYearMonth}`}</div>
+        <Label type={"page"} word={`記録数グラフ ${targetYearMonth}`} />
         <Line height={400} width={800} data={chartData} options={options} />
       </>
     );
@@ -100,8 +101,10 @@ const RecordsChart: NextPageWithLayout = () => {
 
   return (
     <>
-      <Meta title="記録集計表" description="当月の記録数一覧を表示" />
-      <div>{setData(res.data)}</div>
+      <div className={"container mx-auto px-4"}>
+        <Meta title="記録集計表" description="当月の記録数一覧を表示" />
+        <div>{setData(res.data)}</div>
+      </div>
     </>
   );
 };

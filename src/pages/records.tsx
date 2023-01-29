@@ -9,6 +9,7 @@ import { useState } from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Router from "next/router";
 import Loading from "./loading";
+import Label from "src/components/ui/Label";
 
 // テーブルのヘッダー情報
 function TableHeader() {
@@ -20,16 +21,13 @@ function TableHeader() {
     // </Table.Head>
     <thead>
       <tr>
-        <th scope="col" className="px-2 py-3 text-xs font-medium text-gray-500 uppercase bg-purple-300 w-4">
+        <th scope="col" className="px-2 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-300 w-4">
           タイトル
         </th>
-        <th
-          scope="col"
-          className="px-2 py-3 text-xs font-medium text-gray-500 uppercase bg-purple-300 hidden lg:block"
-        >
+        <th scope="col" className="px-2 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-300 hidden lg:block">
           概要
         </th>
-        <th scope="col" className="px-6 py-3 text-xs font-medium text-gray-500 uppercase bg-purple-300">
+        <th scope="col" className="px-4 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-300">
           完了
         </th>
       </tr>
@@ -73,12 +71,12 @@ const Records: NextPageWithLayout = () => {
   }
 
   // タイトルの文字数カット（スマホのときだけにする予定）
-  const trimTitle =(title:string)=>{
-    if(title.length > 15){
-      return `${title.toString().substring(0,20)}...`;
+  const trimTitle = (title: string) => {
+    if (title.length > 15) {
+      return `${title.toString().substring(0, 20)}...`;
     }
     return title;
-  }
+  };
 
   // 記録一覧のテーブルの内容部分
   function TableBody(data: IRecordsAndCount) {
@@ -106,7 +104,7 @@ const Records: NextPageWithLayout = () => {
         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
           {data.records.map((rcd: IDisplayRecord, idx: number) => (
             <tr key={rcd.id}>
-              <td className="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200" >
+              <td className="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                 {trimTitle(rcd.title)}
               </td>
               <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block">
@@ -142,8 +140,8 @@ const Records: NextPageWithLayout = () => {
   function Paging(data: IRecordsAndCount) {
     return (
       <>
-        <div className="flex flex-col items-center">
-          <div className="inline-flex mt-2 xs:mt-0">
+        <div className="flex flex-col items-center mb-4">
+          <div className="inline-flex sm:mt-0">
             <button
               onClick={() => setPage((old) => Math.max(old - 1, 0))}
               disabled={page === 0}
@@ -198,7 +196,8 @@ const Records: NextPageWithLayout = () => {
     <>
       <div className={"container mx-auto px-4"}>
         <Meta title="記録一覧画面" description="レコード一覧を表示する画面" />
-        <div className="flex flex-col pt-6">
+        <Label type={"page"} word={"記録一覧"} />
+        <div className="flex flex-col pt-2">
           <div className="-m-1.5 overflow-x-auto">
             <div className="p-1.5 min-w-full inline-block align-middle">
               <div className="border rounded-lg overflow-hidden dark:border-gray-700">
