@@ -82,10 +82,6 @@ const Add: NextPageWithLayout = () => {
         <Label type={"subHeading"} word={"学習項目"} />
         <Select register={register} label={"subject"} data={SUBJECTS} />
         <ErrorMessageUI errors={errors} name={"subject"} />
-        {/* 完了状態 */}
-        <Label type={"subHeading"} word={"完了状態"} />
-        <SwitchUI label={"finished"} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
-        <ErrorMessageUI errors={errors} name={"finished"} />
         {/* 詳細 */}
         <Label type={"subHeading"} word={"詳細"} />
         <TextArea register={register} label={"detail"} />
@@ -136,6 +132,10 @@ const Add: NextPageWithLayout = () => {
         <Label type={"page"} word={"記録追加"} />
         {/* 記録に関する入力 */}
         <RecordArea />
+        {/* 完了状態 */}
+        <Label type={"subHeading"} word={"完了状態"} />
+        <SwitchUI label={"finished"} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
+        <ErrorMessageUI errors={errors} name={"finished"} />
         {/* 参考リンク */}
         <ReferenceArea />
         <div className={"text-right"}>
