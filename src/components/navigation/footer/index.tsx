@@ -13,7 +13,7 @@ const Footer = () => {
             Check on Vercel
           </a>
         </div>
-        <div>Copyright &copy; {new Date().getFullYear()}</div>
+        <div className="my-2">Copyright &copy; {new Date().getFullYear()}</div>
       </div>
     </footer>
   );

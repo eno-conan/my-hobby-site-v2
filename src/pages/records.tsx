@@ -13,20 +13,15 @@ import Label from "src/components/ui/Label";
 // テーブルのヘッダー情報
 function TableHeader() {
   return (
-    // <Table.Head className={"bg-purple-300 text-lg rounded-full"}>
-    //   <Table.HeadCell className="text-center py-2 border-l-2 border-purple-300">タイトル</Table.HeadCell>
-    //   <Table.HeadCell className="text-center hidden lg:block py-2">概要</Table.HeadCell>
-    //   <Table.HeadCell className="text-center py-2 pr-2 border-r-2 border-purple-300">完了</Table.HeadCell>
-    // </Table.Head>
     <thead>
       <tr>
-        <th scope="col" className="px-2 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-300 w-4">
+        <th scope="col" className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400">
           タイトル
         </th>
-        <th scope="col" className="px-2 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-300 hidden lg:block">
+        <th scope="col" className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400 hidden lg:block">
           概要
         </th>
-        <th scope="col" className="px-4 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-300">
+        <th scope="col" className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400">
           完了
         </th>
       </tr>
@@ -81,35 +76,16 @@ const Records: NextPageWithLayout = () => {
   function TableBody(data: IRecordsAndCount) {
     return (
       <>
-        {/* <Table.Body className="divide-y">
-          {data.records.map((rcd: IDisplayRecord, idx: number) => (
-            <Table.Row
-              className="bg-purple-50 dark:border-gray-700 dark:bg-gray-800"
-              key={rcd.id}
-              onClick={() => checkRecord(rcd.id)}
-            >
-              <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white pl-2 border-l-2 border-purple-300">
-                {rcd.title}
-              </Table.Cell>
-              <Table.Cell className="whitespace-nowrap font-sans text-gray-700 dark:text-white hidden lg:block">
-                {rcd.description}
-              </Table.Cell>
-              <Table.Cell className="text-center border-r-2 border-purple-300">
-                {showFinishStatus(rcd.finished)}
-              </Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body> */}
         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
           {data.records.map((rcd: IDisplayRecord, idx: number) => (
             <tr key={rcd.id}>
-              <td className="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+              <td className="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200 bg-lime-100">
                 {trimTitle(rcd.title)}
               </td>
-              <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block">
+              <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block bg-lime-100">
                 {rcd.description}
               </td>
-              <td className="text-center whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+              <td className="text-center whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 bg-lime-100">
                 {showFinishStatus(rcd.finished)}
               </td>
             </tr>
@@ -125,10 +101,10 @@ const Records: NextPageWithLayout = () => {
       <>
         <div className="flex flex-col items-center">
           <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
-            Showing
-            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + 1}</span> to{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + data.records.length}</span> of
-            <span className="font-semibold text-gray-900 dark:text-white">{data.count}</span> Records
+            Showing{" "}
+            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + 1}</span>{" "}to{" "}
+            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + data.records.length}</span>{" "}of{" "}
+            <span className="font-semibold text-gray-900 dark:text-white">{data.count}</span>{" "}Records
           </span>
         </div>
       </>
@@ -144,7 +120,7 @@ const Records: NextPageWithLayout = () => {
             <button
               onClick={() => setPage((old) => Math.max(old - 1, 0))}
               disabled={page === 0}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white disabled:text-gray-100 bg-purple-600 rounded-l hover:bg-purple-800 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:bg-gray-600"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white disabled:text-gray-100 bg-purple-500 rounded-l hover:bg-purple-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:bg-gray-600"
             >
               <svg
                 aria-hidden="true"
@@ -168,7 +144,7 @@ const Records: NextPageWithLayout = () => {
                 }
               }}
               disabled={10 * page + data.records.length === data.count}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white disabled:text-gray-100 bg-purple-600 border-0 border-l border-gray-700 rounded-r hover:bg-purple-800 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:bg-gray-600"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white disabled:text-gray-100 bg-purple-500 border-0 border-l border-gray-700 rounded-r hover:bg-purple-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:bg-gray-600"
             >
               Next
               <svg
@@ -208,15 +184,10 @@ const Records: NextPageWithLayout = () => {
             </div>
           </div>
         </div>
-        {/* <Table hoverable={true} align={"center"} className={"my-4 border rounded-lg"}>
-          <TableHeader />
-          <TableBody records={res.data.records} count={res.data.count} />
-        </Table> */}
         {/* レコード件数情報 */}
         <RecordsInfo records={res.data.records} count={res.data.count} />
         {/* Pagination */}
         <Paging records={res.data.records} count={res.data.count} />
-        {/* 追加実装中 */}
       </div>
       {/* 取得データの確認用(開発環境のみ表示) */}
       {process.env.NEXT_PUBLIC_API_MOCKING === "enabled" ? <ReactQueryDevtools /> : <></>}
