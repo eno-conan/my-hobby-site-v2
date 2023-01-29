@@ -72,6 +72,14 @@ const Records: NextPageWithLayout = () => {
     return <h1>No Data</h1>;
   }
 
+  // タイトルの文字数カット（スマホのときだけにする予定）
+  const trimTitle =(title:string)=>{
+    if(title.length > 15){
+      return `${title.toString().substring(0,20)}...`;
+    }
+    return title;
+  }
+
   // 記録一覧のテーブルの内容部分
   function TableBody(data: IRecordsAndCount) {
     return (
@@ -97,9 +105,9 @@ const Records: NextPageWithLayout = () => {
         </Table.Body> */}
         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
           {data.records.map((rcd: IDisplayRecord, idx: number) => (
-            <tr>
+            <tr key={rcd.id}>
               <td className="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200" >
-                {rcd.title}
+                {trimTitle(rcd.title)}
               </td>
               <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block">
                 {rcd.description}
