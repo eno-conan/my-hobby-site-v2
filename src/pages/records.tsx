@@ -29,6 +29,11 @@ function TableHeader() {
   );
 }
 
+// 一定時間処理停止
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 const Records: NextPageWithLayout = () => {
   // 現在のページ数を管理
   const [page, setPage] = useState(0);
@@ -55,6 +60,8 @@ const Records: NextPageWithLayout = () => {
     Router.push({ pathname: `record/${id}`, query: { id: id } });
   };
 
+  // ページングしたときに、res.isRefetchingがtrueになるタイミングがある
+  // stateが更新されないと、再度データ取得ができないから・・・
   if (res.status === "loading") return <Loading />;
   if (res.status === "error") {
     return <h1>{JSON.stringify(res.error)}</h1>;
@@ -100,11 +107,17 @@ const Records: NextPageWithLayout = () => {
     return (
       <>
         <div className="flex flex-col items-center">
-          <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
+          {/* <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
             Showing{" "}
             <span className="font-semibold text-gray-900 dark:text-white">{10 * page + 1}</span>{" "}to{" "}
             <span className="font-semibold text-gray-900 dark:text-white">{10 * page + data.records.length}</span>{" "}of{" "}
             <span className="font-semibold text-gray-900 dark:text-white">{data.count}</span>{" "}Records
+          </span> */}
+          <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
+            page
+            <span className="font-semibold text-gray-900 dark:text-white">{" "}{page+1}</span>{" "}of{" "}
+            <span className="font-semibold text-gray-900 dark:text-white">{Math.floor(data.count / 10)}</span>{" "}
+            <span className="font-semibold text-gray-900 dark:text-white">(total{" "}{data.count}{" "}Records{" "})</span>
           </span>
         </div>
       </>
@@ -130,7 +143,7 @@ const Records: NextPageWithLayout = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
                   clipRule="evenodd"
                 />
