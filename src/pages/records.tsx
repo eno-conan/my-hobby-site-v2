@@ -4,7 +4,6 @@ import Meta from "src/components/Meta";
 import { NextPageWithLayout } from "./page";
 import MainLayout from "src/components/layout";
 import { IDisplayRecord, IRecordsAndCount } from "types/record";
-import { Table } from "flowbite-react";
 import { useState } from "react";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Router from "next/router";
