@@ -16,6 +16,10 @@ const Meta = ({ title = "Eno Record App", description = "Eno Record App" }) => {
       {/* Windowsでは対応してないから、設定しておくだけマシくらいらしい */}
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="white" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/images/kogoro/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/images/kogoro/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/images/kogoro/favicon-16x16.png" />
+      <link rel="manifest" href="/images/kogoro/site.webmanifest" />
     </Head>
   );
 };

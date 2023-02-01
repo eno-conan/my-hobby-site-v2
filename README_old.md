@@ -1,75 +1,28 @@
+## 基本方針
+- テスト環境やパフォーマンス、設計を重視して作業を進める
+- playwright
+  - e2eテスト
+- msw
+  - ローカル環境でのMockデータ
+- storybook
+  - getServersidePropsでのデータ取得が残課題
+- vitest
+  - 設定、動作確認完了
+- planetScale → supabase
+  - データ追加・取得完了
+- MaterialUI → radix(tailwindCssも併せて)
+  - 適宜実装中
+- Zod
+  - v1と同様に使用して進めている
+- lightHouse
+  - パフォーマンスを適宜確認しながら、動作確認
+- rome
+  - フォーマッターライブラリ(eslintよりも高速みたい)
+  - https://rome.tools/
+- Nextのv13、Reactのv18
+  - これで進められている
 
-# 自分の記録作成・閲覧サイト
-
-自分が行ってきた学習について、記録を残すために作成したサイト
-
-## Authors
-
-- [@eno-conan](https://github.com/eno-conan)
-
-## 🛠 Skills
-Java, Python, TypeScript, next(React), Flutter(Beginner)
-AWS, Azure(Beginner) 
-
-## 🚀 About Me
-I'm a full stack developer...
-
-## Tech Stack
-
-**Client:** Next, Zod, TailwindCSS, Radix, playwright, storybook
-
-**Server:** TypeScript, prisma, supabase,vitest, msw
-
-## Deployment
-
-To deploy this project run
-
-```bash
-  npm run deploy
-```
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://link-to-project
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run dev
-```
-
-Format Code src Folder 
-
-```bash
-  npm run format2
-```
-
-
-## Usage/Examples
-
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
-
+## リンク集
 ### create-next-app
 - [23/01/10：アプリ作成方法](https://mo-gu-mo-gu.com/create-next-app-typescript/)
 - [23/01/11：アプリ作成方法(ESlintの設定も含めて)](https://qiita.com/mu-suke08/items/28fefe92b113c8f1c25d)
@@ -83,10 +36,6 @@ function App() {
 - [23/01/16：Auth.jsのOAuth認証をNext.jsで試す](https://dev.classmethod.jp/articles/auth_js/)
 - [23/01/16：Loadingの実装](https://qiita.com/ykkamm/items/4fd4a7bed03e81f07b64)
 - [23/01/17：Sleep機能実装方法](https://lost-in-code.com/ja/tutorials/js/sleep/)
-
-### tools
-- [favicon.io](https://favicon.io/favicon-converter/)
-- [README作成ツール](https://readme.so/ja/editor)
 
 ### Eslint,Rome,Config
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
@@ -211,6 +160,14 @@ function App() {
   - なんでもかんでもmemo化せず、設計再検討の上で使用
 - [23/01/26：@next/bundle-analyzer](https://zenn.dev/catnose99/scraps/661d77118aa2af)
 
-### i18n
+# i18n
 - [23/01/16：サンプルコード](https://github.com/hisho/nextjs-with-zod-i18n/tree/main/)
 - [23/01/16：Internationalized Routing](https://nextjs.org/docs/advanced-features/i18n-routing)
+
+### Cypress
+- playwrightの方が実装しやすいかも
+  - [23/01/11：インストール、初期設定](https://zenn.dev/tsucchiiinoko/articles/cbf3189eb62127)
+  - 以下エラーの適切な解決方法は？
+     ```
+      Type error: 'commands.ts' cannot be compiled under '--isolatedModules' because it is considered a global script file. Add an import, export, or an empty 'export {}' statement to make it a module.
+    ```

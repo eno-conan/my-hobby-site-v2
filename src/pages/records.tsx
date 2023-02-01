@@ -115,9 +115,9 @@ const Records: NextPageWithLayout = () => {
           </span> */}
           <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
             page
-            <span className="font-semibold text-gray-900 dark:text-white">{" "}{page+1}</span>{" "}of{" "}
+            <span className="font-semibold text-gray-900 dark:text-white"> {page + 1}</span> of{" "}
             <span className="font-semibold text-gray-900 dark:text-white">{Math.floor(data.count / 10)}</span>{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">(total{" "}{data.count}{" "}Records{" "})</span>
+            <span className="font-semibold text-gray-900 dark:text-white">(total {data.count} Records )</span>
           </span>
         </div>
       </>

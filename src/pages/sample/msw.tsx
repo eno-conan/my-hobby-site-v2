@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from "next";
 import axios from "redaxios";
 import Meta from "src/components/Meta";
-import styles from "../../styles/pages/sample/msw.module.css";;
+import styles from "../../styles/pages/sample/msw.module.css";
 import { IJsonPlaceholderData } from "src/mocks/handlers";
 
 // Cssの学習関連を表示
