@@ -1,10 +1,5 @@
 
-# 自分の記録作成・閲覧サイト
-
-自分が行ってきた学習について、記録を残すために作成したサイト
-
 ## Authors
-
 - [@eno-conan](https://github.com/eno-conan)
 
 ## 🛠 Skills
@@ -14,11 +9,20 @@ AWS, Azure(Beginner)
 ## 🚀 About Me
 I'm a full stack developer...
 
+
+## 2023年の抱負
+![今年の目標](./Tweet_by_etkt.png)
+
+# 自分の記録作成・閲覧サイト
+
+自分が行ってきた学習について、記録を残すために作成したサイト
 ## Tech Stack
 
-**Client:** Next, Zod, TailwindCSS, Radix, playwright, storybook
+**Client:** 
+Next, Zod, TailwindCSS, Radix, playwright, storybook
 
-**Server:** TypeScript, prisma, supabase,vitest, msw
+**Server:** 
+TypeScript, prisma, supabase,vitest, msw
 
 ## Deployment
 
@@ -85,8 +89,10 @@ function App() {
 - [23/01/17：Sleep機能実装方法](https://lost-in-code.com/ja/tutorials/js/sleep/)
 
 ### tools
+- [23/02/01：知らないと損する生産性向上に役立つツール](https://zenn.dev/nameless_sn/articles/awesome_sites_for_development?s=09)
 - [favicon.io](https://favicon.io/favicon-converter/)
 - [README作成ツール](https://readme.so/ja/editor)
+- [ツイート画像表示](https://poet.so/)
 
 ### Eslint,Rome,Config
 - [23/01/11：no-consoleの設定](https://eslint.org/docs/latest/rules/no-console?s=09)
