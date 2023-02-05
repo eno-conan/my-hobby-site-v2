@@ -1,6 +1,5 @@
 import Link from "next/link";
 import GitHubMark from "src/components/ui/github-mark";
-import TwitterMark from "src/components/ui/twitter-mark";
 import styles from "../../../styles/navigation/header.module.css";
 
 const menuItems = [
@@ -17,9 +16,6 @@ const Header = () => {
         </div>
         {/* menu */}
         <div className="flex items-center space-x-4">
-          <div className="flex items-center space-x-2 pt-1">
-            <TwitterMark />
-          </div>
           <div className="flex items-center space-x-2">
             <GitHubMark />
           </div>

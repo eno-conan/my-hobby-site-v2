@@ -88,15 +88,15 @@ const Records: NextPageWithLayout = () => {
             <tr key={rcd.id}>
               {/* https://docs.rome.tools/lint/rules/usekeywithclickevents/ */}
               <td
-                className="px-2 py-4 whitespace-nowrap text-sm font-medium text-blue-400 dark:text-gray-200 bg-lime-100 hover:cursor-pointer hover:text-blue-800"
+                className="px-2 py-4 whitespace-nowrap text-sm font-medium text-purple-500 dark:text-gray-200 bg-lime-50 hover:cursor-pointer hover:text-blue-800"
                 onClick={() => checkRecord(rcd.id)}
               >
                 {trimTitle(rcd.title)}
               </td>
-              <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block bg-lime-100">
+              <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block bg-lime-50">
                 {rcd.description}
               </td>
-              <td className="text-center whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 bg-lime-100">
+              <td className="text-center whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 bg-lime-50">
                 {showFinishStatus(rcd.finished)}
               </td>
             </tr>
@@ -120,7 +120,7 @@ const Records: NextPageWithLayout = () => {
           <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
             page
             <span className="font-semibold text-gray-900 dark:text-white"> {page + 1}</span> of{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">{Math.floor(data.count / 10)}</span>{" "}
+            <span className="font-semibold text-gray-900 dark:text-white">{Math.floor(data.count / 10) + 1}</span>{" "}
             <span className="font-semibold text-gray-900 dark:text-white">(total {data.count} Records )</span>
           </span>
         </div>
@@ -137,7 +137,7 @@ const Records: NextPageWithLayout = () => {
             <button
               onClick={() => setPage((old) => Math.max(old - 1, 0))}
               disabled={page === 0}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white disabled:text-gray-100 bg-purple-500 rounded-l hover:bg-purple-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:bg-gray-600"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-50 disabled:text-gray-100 bg-purple-500 rounded-l hover:bg-purple-700 disabled:bg-purple-200"
             >
               <svg
                 aria-hidden="true"
@@ -161,7 +161,7 @@ const Records: NextPageWithLayout = () => {
                 }
               }}
               disabled={10 * page + data.records.length === data.count}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-white disabled:text-gray-100 bg-purple-500 border-0 border-l border-gray-700 rounded-r hover:bg-purple-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:bg-gray-600"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-50 disabled:text-gray-100 bg-purple-500 border-0 border-l border-gray-700 rounded-r hover:bg-purple-600 disabled:bg-purple-200"
             >
               Next
               <svg
