@@ -86,7 +86,12 @@ const Records: NextPageWithLayout = () => {
         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
           {data.records.map((rcd: IDisplayRecord, idx: number) => (
             <tr key={rcd.id}>
-              <td className="px-2 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200 bg-lime-100">
+              {/* https://docs.rome.tools/lint/rules/usekeywithclickevents/ */}
+              {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
+              <td
+                className="px-2 py-4 whitespace-nowrap text-sm font-medium text-blue-400 dark:text-gray-200 bg-lime-100 hover:cursor-pointer hover:text-blue-800"
+                onClick={() => checkRecord(rcd.id)}
+              >
                 {trimTitle(rcd.title)}
               </td>
               <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block bg-lime-100">

@@ -34,6 +34,7 @@ const RecordDetail: NextPageWithLayout = () => {
       <div>Hello</div>
       <div>{res.data.title}</div>
       <div>{res.data.description}</div>
+      <div>{res.data.detail}</div>
     </>
   );
 };
