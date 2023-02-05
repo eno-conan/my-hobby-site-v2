@@ -87,7 +87,6 @@ const Records: NextPageWithLayout = () => {
           {data.records.map((rcd: IDisplayRecord, idx: number) => (
             <tr key={rcd.id}>
               {/* https://docs.rome.tools/lint/rules/usekeywithclickevents/ */}
-              {/* rome-ignore lint/a11y/useKeyWithClickEvents: <explanation> */}
               <td
                 className="px-2 py-4 whitespace-nowrap text-sm font-medium text-blue-400 dark:text-gray-200 bg-lime-100 hover:cursor-pointer hover:text-blue-800"
                 onClick={() => checkRecord(rcd.id)}
