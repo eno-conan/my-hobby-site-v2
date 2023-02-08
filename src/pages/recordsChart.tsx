@@ -100,12 +100,10 @@ const RecordsChart: NextPageWithLayout = () => {
   }
 
   return (
-    <>
       <div className={"container mx-auto px-4"}>
         <Meta title="記録集計表" description="当月の記録数一覧を表示" />
         <div>{setData(res.data)}</div>
       </div>
-    </>
   );
 };
 

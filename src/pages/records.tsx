@@ -82,7 +82,6 @@ const Records: NextPageWithLayout = () => {
   // 記録一覧のテーブルの内容部分
   function TableBody(data: IRecordsAndCount) {
     return (
-      <>
         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
           {data.records.map((rcd: IDisplayRecord, idx: number) => (
             <tr key={rcd.id}>
@@ -102,21 +101,13 @@ const Records: NextPageWithLayout = () => {
             </tr>
           ))}
         </tbody>
-      </>
     );
   }
 
   // レコード件数情報
   function RecordsInfo(data: IRecordsAndCount) {
     return (
-      <>
         <div className="flex flex-col items-center">
-          {/* <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
-            Showing{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + 1}</span>{" "}to{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">{10 * page + data.records.length}</span>{" "}of{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">{data.count}</span>{" "}Records
-          </span> */}
           <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
             page
             <span className="font-semibold text-gray-900 dark:text-white"> {page + 1}</span> of{" "}
@@ -125,14 +116,12 @@ const Records: NextPageWithLayout = () => {
             <span className="font-semibold text-gray-900 dark:text-white">(total {data.count} Records )</span>
           </span>
         </div>
-      </>
     );
   }
 
   // ページング
   function Paging(data: IRecordsAndCount) {
     return (
-      <>
         <div className="flex flex-col items-center mb-4">
           <div className="inline-flex sm:mt-0">
             <button
@@ -181,7 +170,6 @@ const Records: NextPageWithLayout = () => {
             </button>
           </div>
         </div>
-      </>
     );
   }
 
@@ -208,7 +196,9 @@ const Records: NextPageWithLayout = () => {
         <Paging records={res.data.records} count={res.data.count} />
       </div>
       {/* 取得データの確認用(開発環境のみ表示) */}
-      {process.env.NEXT_PUBLIC_API_MOCKING === "enabled" ? <ReactQueryDevtools /> : <></>}
+      {process.env.NEXT_PUBLIC_API_MOCKING === "enabled" ? <ReactQueryDevtools /> 
+      : <></>
+      }
     </>
   );
 };

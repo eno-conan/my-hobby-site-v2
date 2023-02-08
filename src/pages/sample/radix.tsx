@@ -18,7 +18,6 @@ const RadixIndex = () => {
   // console.log(data);
 
   return (
-    <>
       <div className='container mx-auto py-2'>
         <Headline headline='Radix Sample Page' />
         <div>
@@ -57,7 +56,7 @@ const RadixIndex = () => {
               <Dialog.Content className={styles.DialogContent}>
                 <Dialog.Title className={styles.DialogTitle}>Edit profile</Dialog.Title>
                 <Dialog.Description className={styles.DialogDescription}>
-                  Make changes to your profile here. Click save when you're done.
+                  Make changes to your profile here. Click save when you &lsquo;re done.
                 </Dialog.Description>
                 <fieldset className={styles.Fieldset}>
                   <label className={styles.Label} htmlFor="name">
@@ -86,7 +85,6 @@ const RadixIndex = () => {
           </Dialog.Root>
         </div>
       </div>
-    </>
   );
 };
 

@@ -104,6 +104,7 @@ function App() {
 - [23/01/22：Rome formatter linterとは](https://qiita.com/rana_kualu/items/47341ce38b3df6a75559)
 - [23/01/22：Rome formatter linterコマンドの使い方](https://www.youtube.com/watch?v=uHET9O-E51c)
 - [23/02/04：Security Headers](https://nextjs.org/docs/advanced-features/security-headers)
+- [23/02/08：Disallow unnecessary fragments](https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md)
 
 ### env variables
 - [23/01/11：envファイルの定義](https://fwywd.com/tech/next-env)

@@ -10,7 +10,6 @@ interface Props {
 
 const Select = ({ register, label, data }: Props) => {
   return (
-    <>
       <div className='w-full'>
         <select className={styles.SelectTrigger} {...register(label)}>
           {data.map((subj: any) => {
@@ -22,7 +21,6 @@ const Select = ({ register, label, data }: Props) => {
           })}
         </select>
       </div>
-    </>
   );
 };
 
