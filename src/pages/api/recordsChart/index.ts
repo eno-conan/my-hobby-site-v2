@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { prismaRecordsGroupByDay } from "../../../../prisma/functions/record";
 
+
 interface IResRecord {
   count: number;
   createdDate: string;
@@ -13,6 +14,9 @@ interface IResRecord {
  * @param req リクエスト
  * @param res レスポンス
  */
+export const config = {
+  runtime: 'edge'
+}
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
   const { method, body } = req;
 
