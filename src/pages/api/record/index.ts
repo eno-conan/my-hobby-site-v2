@@ -10,14 +10,7 @@ import { prismaRecordRefsCreate } from "../../../../prisma/functions/recordRef";
  * @param req リクエスト
  * @param res レスポンス
  */
-export const config = {
-  runtime: 'edge'
-}
-
 export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
-  if (req !== undefined) {
-    console.info(req.headers);
-  }
   const { method, body, query } = req;
 
   switch (method) {
