@@ -3,4 +3,4 @@ import { handlers } from "./handlers";
 
 export * from "msw";
 
-export const server: SetupServerApi = setupServer(...handlers);
+export const server: any = setupServer(...handlers);
