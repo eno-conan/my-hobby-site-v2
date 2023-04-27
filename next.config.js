@@ -2,10 +2,10 @@
 
 const securityHeaders = [
   {
-  key: 'X-XSS-Protection',
-  value: '1; mode=block'
-}
-]
+    key: "X-XSS-Protection",
+    value: "1; mode=block",
+  },
+];
 
 const nextConfig = {
   reactStrictMode: false,
@@ -18,16 +18,17 @@ const nextConfig = {
     return [
       {
         // Apply these headers to all routes in your application.
-        source: '/:path*',
+        source: "/:path*",
         headers: securityHeaders,
       },
-    ]
+    ];
   },
 };
 
 // module.exports = nextConfig;
-const withBundleAnalyzer = process.env.ANALYZE === 'true'
-    ? require('@next/bundle-analyzer')({ enabled: true })
+const withBundleAnalyzer =
+  process.env.ANALYZE === "true"
+    ? require("@next/bundle-analyzer")({ enabled: true })
     : (config) => config;
 
 module.exports = withBundleAnalyzer(nextConfig);

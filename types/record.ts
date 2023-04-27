@@ -41,17 +41,17 @@ export interface IDisplayRecordDetail {
   id: number;
   title: string;
   description: string;
-  subject:string;
+  subject: string;
   detail: string;
   finished: boolean;
-  createdAt:Date;
-  createdAtDate:string;
+  createdAt: Date;
+  createdAtDate: string;
   updatedAt: string;
 }
 
 // 集計画面用
-export interface IRecordsChart{
-count:number;
-createdDate:string;
-targetYearMonth?:string;
+export interface IRecordsChart {
+  count: number;
+  createdDate: string;
+  targetYearMonth?: string;
 }

@@ -11,19 +11,24 @@ import {
  * @param req リクエスト
  * @param res レスポンス
  */
-export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<any>
+) {
   const { method, body, query } = req;
 
   switch (method) {
     case "GET":
       let records;
-      let info = { records: [], count: 0 };
+      const info = { records: [], count: 0 };
       // 条件が入力されている場合は、絞って取得
       if (query.condition) {
         records = await prismaRecordFindOneByTitle(query.condition.toString());
       } else {
         // records = await prismaRecordsFindMany(Number(query.page));
-        const [records, recordsCount] = await prismaRecordsFindMany(Number(query.page));
+        const [records, recordsCount] = await prismaRecordsFindMany(
+          Number(query.page)
+        );
         info["records"] = records as any;
         info["count"] = recordsCount as number;
       }

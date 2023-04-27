@@ -1,20 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import '@radix-ui/colors/violet.css';
-@import '@radix-ui/colors/blackA.css';
-@import '@radix-ui/colors/mauve.css';
-@import '@radix-ui/colors/green.css';
-@import '@radix-ui/colors/slate.css';
+@import "@radix-ui/colors/violet.css";
+@import "@radix-ui/colors/blackA.css";
+@import "@radix-ui/colors/mauve.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/slate.css";
 
 body {
-    background-color: beige;
+  background-color: beige;
 }
 
-.container{
-    width: 100%;
-    max-width: 960px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+}

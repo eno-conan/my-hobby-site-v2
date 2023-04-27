@@ -8,20 +8,19 @@
   line-height: 1;
   background-color: var(--blackA3);
   box-shadow: 0 0 0 1px var(--blackA9);
-  }
-  .Input:focus {
-    box-shadow: 0 0 0 2px black;
-  }
-  .Input.title {
-    width: 70%;
-  }
-  .Input.description {
-    width: 90%;
-  }
-  .Input.referenceTitle {
-    width: 70%;
-  }
-  .Input.referenceUrl {
-    width: 90%;
-  }
-  
+}
+.Input:focus {
+  box-shadow: 0 0 0 2px black;
+}
+.Input.title {
+  width: 70%;
+}
+.Input.description {
+  width: 90%;
+}
+.Input.referenceTitle {
+  width: 70%;
+}
+.Input.referenceUrl {
+  width: 90%;
+}

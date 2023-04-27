@@ -4,7 +4,11 @@ test.beforeEach(async ({ page }) => {
   await page.goto("https://demo.playwright.dev/todomvc");
 });
 
-const TODO_ITEMS = ["buy some cheese", "feed the cat", "book a doctors appointment"];
+const TODO_ITEMS = [
+  "buy some cheese",
+  "feed the cat",
+  "book a doctors appointment",
+];
 
 test.describe("New Todo", () => {
   test("should allow me to add todo items", async ({ page }) => {
@@ -23,12 +27,17 @@ test.describe("New Todo", () => {
     await newTodo.press("Enter");
 
     // Make sure the list now has two todo items.
-    await expect(page.getByTestId("todo-title")).toHaveText([TODO_ITEMS[0], TODO_ITEMS[1]]);
+    await expect(page.getByTestId("todo-title")).toHaveText([
+      TODO_ITEMS[0],
+      TODO_ITEMS[1],
+    ]);
 
     await checkNumberOfTodosInLocalStorage(page, 2);
   });
 
-  test("should clear text input field when an item is added", async ({ page }) => {
+  test("should clear text input field when an item is added", async ({
+    page,
+  }) => {
     // create a new todo locator
     const newTodo = page.getByPlaceholder("What needs to be done?");
 
@@ -41,7 +50,9 @@ test.describe("New Todo", () => {
     await checkNumberOfTodosInLocalStorage(page, 1);
   });
 
-  test("should append new items to the bottom of the list", async ({ page }) => {
+  test("should append new items to the bottom of the list", async ({
+    page,
+  }) => {
     // Create 3 items.
     await createDefaultTodos(page);
 
@@ -415,9 +426,16 @@ async function checkNumberOfTodosInLocalStorage(page: Page, expected: number) {
   }, expected);
 }
 
-async function checkNumberOfCompletedTodosInLocalStorage(page: Page, expected: number) {
+async function checkNumberOfCompletedTodosInLocalStorage(
+  page: Page,
+  expected: number
+) {
   return await page.waitForFunction((e) => {
-    return JSON.parse(localStorage["react-todos"]).filter((todo: any) => todo.completed).length === e;
+    return (
+      JSON.parse(localStorage["react-todos"]).filter(
+        (todo: any) => todo.completed
+      ).length === e
+    );
   }, expected);
 }
 

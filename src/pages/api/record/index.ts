@@ -1,6 +1,10 @@
 import { Record } from "@prisma/client";
 import type { NextApiRequest, NextApiResponse } from "next";
-import { prismaRecordCreate, prismaRecordFindOne, prismaMaxRecordId } from "../../../../prisma/functions/record";
+import {
+  prismaRecordCreate,
+  prismaRecordFindOne,
+  prismaMaxRecordId,
+} from "../../../../prisma/functions/record";
 import { prismaRecordRefsCreate } from "../../../../prisma/functions/recordRef";
 // import { formatToTimeZone } from 'date-fns-timezone';
 
@@ -10,14 +14,17 @@ import { prismaRecordRefsCreate } from "../../../../prisma/functions/recordRef";
  * @param req リクエスト
  * @param res レスポンス
  */
-export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<any>
+) {
   const { method, body, query } = req;
 
   switch (method) {
     // 特定のデータ取得
     case "GET":
       const detail: Record[] = await prismaRecordFindOne(Number(query.id));
-      let info = detail[0];
+      const info = detail[0];
       res.status(200).json(info);
       break;
 
@@ -30,10 +37,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
       // // recordRefへの登録
       if (body.references.length > 0) {
-        const createRecordRefsParams = { referenceTitle: "sample", referenceUrl: "sample", recordId: recordId };
+        const createRecordRefsParams = {
+          referenceTitle: "sample",
+          referenceUrl: "sample",
+          recordId: recordId,
+        };
         const links = body.references;
         // 暫定対応でfor文記載（後々bulkInsertにする:22/12/10）
-        for (let info of links) {
+        for (const info of links) {
           createRecordRefsParams.referenceTitle = info.referenceTitle;
           createRecordRefsParams.referenceUrl = info.referenceUrl;
           await prismaRecordRefsCreate(createRecordRefsParams);
@@ -69,7 +80,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     const month = (currentDate.getMonth() + 1).toString();
     const day = currentDate.getDate().toString();
     // 0埋めしてデータ登録
-    const date = `${year}/${month.toString().padStart(2, "0")}/${day.toString().padStart(2, "0")}`;
+    const date = `${year}/${month.toString().padStart(2, "0")}/${day
+      .toString()
+      .padStart(2, "0")}`;
     return date;
   }
 }

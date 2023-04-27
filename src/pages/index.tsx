@@ -28,10 +28,15 @@ const Home: NextPageWithLayout = () => {
 
         <div className="grid grid-cols-12 gap-4">
           {SECTIONS?.map((meta) => (
-            <div key={meta.title} className="col-span-12 md:col-span-6 p-2 flex flex-col">
+            <div
+              key={meta.title}
+              className="col-span-12 md:col-span-6 p-2 flex flex-col"
+            >
               <div className="flex flex-col space-y-2 p-4">
                 <Link href={`${meta.link}`}>
-                  <span className="headingxs cursor-pointer hover:underline text-2xl">{meta.title}</span>
+                  <span className="headingxs cursor-pointer hover:underline text-2xl">
+                    {meta.title}
+                  </span>
                 </Link>
               </div>
             </div>

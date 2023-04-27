@@ -1,13 +1,13 @@
 .TextArea {
-    width: 90%;
-    display: flex;
-    border-radius: 2px;
-    padding: 5px 10px;
-    margin: 10px 10px 10px 30px;
-    height: 200px;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1;
-    background-color: var(--blackA3);
-    box-shadow: 0 0 0 1px var(--blackA9);
-    }
+  width: 90%;
+  display: flex;
+  border-radius: 2px;
+  padding: 5px 10px;
+  margin: 10px 10px 10px 30px;
+  height: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  background-color: var(--blackA3);
+  box-shadow: 0 0 0 1px var(--blackA9);
+}

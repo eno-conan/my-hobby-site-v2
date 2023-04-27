@@ -18,7 +18,10 @@ test("get started link", async ({ page }) => {
 });
 
 test.describe("chromium only", () => {
-  test.skip(({ browserName }) => browserName === "chromium", "except Chromium!");
+  test.skip(
+    ({ browserName }) => browserName === "chromium",
+    "except Chromium!"
+  );
 
   test.beforeAll(async () => {
     // This hook is only run in Chromium.

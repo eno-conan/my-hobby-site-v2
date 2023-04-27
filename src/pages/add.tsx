@@ -17,7 +17,9 @@ import MainLayout from "src/components/layout";
 import dynamic from "next/dynamic";
 import { IFieldCheckInputs, IRecordForAdd } from "types/record";
 // 遅延読込
-const ErrorMessageUI = dynamic(() => import("src/components/ui/ErrorMessageUI"));
+const ErrorMessageUI = dynamic(
+  () => import("src/components/ui/ErrorMessageUI")
+);
 
 // 一定時間処理停止
 function sleep(ms: number) {
@@ -50,7 +52,10 @@ const Add: NextPageWithLayout = () => {
     formState: { errors },
   } = RecordForm();
   // 参照リンク
-  const { fields, append, remove } = useFieldArray({ control, name: "references" });
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: "references",
+  });
   const [finishStatus, setFinishStatus] = useState(false);
 
   const onSubmit: SubmitHandler<IFieldCheckInputs> = () => {
@@ -76,7 +81,11 @@ const Add: NextPageWithLayout = () => {
         <ErrorMessageUI errors={errors} name={"title"} />
         {/* 概要 */}
         <Label type={"subHeading"} word={"記録の概要"} />
-        <Input register={register} label={"description"} classSub={"description"} />
+        <Input
+          register={register}
+          label={"description"}
+          classSub={"description"}
+        />
         <ErrorMessageUI errors={errors} name={"description"} />
         {/* 科目 */}
         <Label type={"subHeading"} word={"学習項目"} />
@@ -94,21 +103,42 @@ const Add: NextPageWithLayout = () => {
     return (
       <>
         <Label type={"subHeading"} word={"参考リンク（任意項目）"} />
-        <Label type={"reference"} word={"ある場合、＋ボタンをクリックして「見出し」「URL」の順に入力"} />
+        <Label
+          type={"reference"}
+          word={"ある場合、＋ボタンをクリックして「見出し」「URL」の順に入力"}
+        />
         <div>
           {fields.map((_field: any, index: number) => (
             // rome-ignore lint/suspicious/noArrayIndexKey: <explanation
             <div key={index}>
-              <div className='flex'>
+              <div className="flex">
                 <Label type={"referenceIndex"} word={`${index + 1}個目`} />
-                <button type={"button"} className={`${styles.IconButton}`} onClick={() => remove(index)}>
+                <button
+                  type={"button"}
+                  className={`${styles.IconButton}`}
+                  onClick={() => remove(index)}
+                >
                   <Cross2Icon />
                 </button>
               </div>
-              <Input register={register} label={`references.${index}.referenceTitle`} classSub={"referenceTitle"} />
-              <Input register={register} label={`references.${index}.referenceUrl`} classSub={"referenceUrl"} />
-              <ErrorMessageUI errors={errors} name={`references.${index}.referenceTitle`} />
-              <ErrorMessageUI errors={errors} name={`references.${index}.referenceUrl`} />
+              <Input
+                register={register}
+                label={`references.${index}.referenceTitle`}
+                classSub={"referenceTitle"}
+              />
+              <Input
+                register={register}
+                label={`references.${index}.referenceUrl`}
+                classSub={"referenceUrl"}
+              />
+              <ErrorMessageUI
+                errors={errors}
+                name={`references.${index}.referenceTitle`}
+              />
+              <ErrorMessageUI
+                errors={errors}
+                name={`references.${index}.referenceUrl`}
+              />
             </div>
           ))}
           {/* buttonタグはtype未設定の場合、submitで設定されてしまう */}
@@ -134,12 +164,19 @@ const Add: NextPageWithLayout = () => {
         <RecordArea />
         {/* 完了状態 */}
         <Label type={"subHeading"} word={"完了状態"} />
-        <SwitchUI label={"finished"} finishStatus={finishStatus} setFinishStatus={setFinishStatus} />
+        <SwitchUI
+          label={"finished"}
+          finishStatus={finishStatus}
+          setFinishStatus={setFinishStatus}
+        />
         <ErrorMessageUI errors={errors} name={"finished"} />
         {/* 参考リンク */}
         <ReferenceArea />
         <div className={"text-right"}>
-          <button type={"submit"} className={`${styles.Button} ${styles.violet}`}>
+          <button
+            type={"submit"}
+            className={`${styles.Button} ${styles.violet}`}
+          >
             送信
           </button>
         </div>

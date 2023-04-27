@@ -8,7 +8,9 @@ const Sending: NextPageWithLayout = () => {
       <div className={styles.Label}>Sending...</div>
       <div className={"flex justify-center"}>
         <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full"} />
-        <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full mx-4"} />
+        <div
+          className={"animate-ping h-2 w-2 bg-purple-700 rounded-full mx-4"}
+        />
         <div className={"animate-ping h-2 w-2 bg-purple-700 rounded-full"} />
       </div>
     </>

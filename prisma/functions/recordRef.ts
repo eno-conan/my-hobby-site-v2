@@ -7,7 +7,9 @@ export const prismaRecordRefsFindMany = async (): Promise<RecordRef[]> => {
 };
 
 // ある記録に関する参照リンクをすべて取得
-export const prismaRecordRefsFindOne = async (id: any): Promise<RecordRef[]> => {
+export const prismaRecordRefsFindOne = async (
+  id: any
+): Promise<RecordRef[]> => {
   const recordRefs = await prisma.recordRef.findMany({
     where: {
       recordId: Number(id),
@@ -17,7 +19,9 @@ export const prismaRecordRefsFindOne = async (id: any): Promise<RecordRef[]> => 
 };
 
 /* 記録を新規保存 */
-export const prismaRecordRefsCreate = async (param: Omit<RecordRef, "id">): Promise<RecordRef> => {
+export const prismaRecordRefsCreate = async (
+  param: Omit<RecordRef, "id">
+): Promise<RecordRef> => {
   const recordRefs = await prisma.recordRef.create({
     data: param,
   });
@@ -25,7 +29,10 @@ export const prismaRecordRefsCreate = async (param: Omit<RecordRef, "id">): Prom
 };
 
 /* 参考リンクの更新 */
-export const prismaRecordRefsUpdate = async (id: number, param: Omit<RecordRef, "id">): Promise<RecordRef> => {
+export const prismaRecordRefsUpdate = async (
+  id: number,
+  param: Omit<RecordRef, "id">
+): Promise<RecordRef> => {
   const recordRefs = await prisma.recordRef.update({
     where: { id: id },
     data: param,
@@ -34,7 +41,9 @@ export const prismaRecordRefsUpdate = async (id: number, param: Omit<RecordRef, 
 };
 
 /* 参考リンクの削除 */
-export const prismaRecordRefsDelete = async (id: number): Promise<RecordRef> => {
+export const prismaRecordRefsDelete = async (
+  id: number
+): Promise<RecordRef> => {
   const recordRefs = await prisma.recordRef.delete({
     where: { id: id },
   });
