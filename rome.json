@@ -12,15 +12,12 @@
       "recommended": true,
       "suspicious": {
         "noExplicitAny": "off",
-        "noArrayIndexKey":"warn"
+        "noArrayIndexKey": "warn"
       },
-      "a11y":{
-        "useKeyWithClickEvents":"off"
+      "a11y": {
+        "useKeyWithClickEvents": "off"
       }
     },
-    "ignore": [
-      "./node_modules/**/*.*",
-      "./.next/**/*.*"
-  ]
+    "ignore": ["./node_modules/**/*.*", "./.next/**/*.*"]
   }
 }

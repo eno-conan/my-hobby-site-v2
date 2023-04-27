@@ -25,26 +25,26 @@ function CssFlex() {
 // MSWをもちいたデータ取得
 function DataUsingMSW(jsonPlaceholders: IJsonPlaceholderData[]) {
   // {jsonPlaceholders: Array(1)}
-  return (
-      {/* {jsonPlaceholders &&
+  return {
+    /* {jsonPlaceholders &&
         data.map((d: any, idx: number) => {
           return <div key={idx}>{idx % 50 == 0 ? <>{d.title}</> : <></>}</div>;
-        })} */}
-  );
+        })} */
+  };
 }
 
 const MswIndex: NextPage = (props: any) => {
   // const jsonPlaceholders: IJsonPlaceholderData[] = props.data
 
   return (
-      <div className={"container px-4"}>
-        <Meta title="msw" description="check msw work" />
-        {props.data?.map((d: any, idx: number) => {
-          // rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-          return <div key={idx}>{idx % 50 === 0 ? <>{d.title}</> : <></>}</div>;
-        })}
-        <CssFlex />
-      </div>
+    <div className={"container px-4"}>
+      <Meta title="msw" description="check msw work" />
+      {props.data?.map((d: any, idx: number) => {
+        // rome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+        return <div key={idx}>{idx % 50 === 0 ? <>{d.title}</> : <></>}</div>;
+      })}
+      <CssFlex />
+    </div>
   );
 };
 

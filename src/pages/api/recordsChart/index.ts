@@ -13,7 +13,10 @@ interface IResRecord {
  * @param req リクエスト
  * @param res レスポンス
  */
-export default async function handler(req: NextApiRequest, res: NextApiResponse<any>) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<any>
+) {
   const { method, body } = req;
 
   switch (method) {

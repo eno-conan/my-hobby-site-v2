@@ -56,7 +56,9 @@ export const prismaRecordFindOne = async (id: number): Promise<Record[]> => {
 };
 
 // ある記事に関する情報を取得する
-export const prismaRecordFindOneByTitle = async (condition: string): Promise<Record[]> => {
+export const prismaRecordFindOneByTitle = async (
+  condition: string
+): Promise<Record[]> => {
   const records = await prisma.record.findMany({
     where: {
       title: {
@@ -68,7 +70,9 @@ export const prismaRecordFindOneByTitle = async (condition: string): Promise<Rec
 };
 
 // 当月のデータを取得
-export const prismaRecordsGroupByDay = async (yearMonth: string): Promise<any[]> => {
+export const prismaRecordsGroupByDay = async (
+  yearMonth: string
+): Promise<any[]> => {
   const records = await prisma.record.groupBy({
     by: ["createdAtDate"],
     _count: {
@@ -89,7 +93,7 @@ export const prismaRecordsGroupByDay = async (yearMonth: string): Promise<any[]>
 /* 記録を新規保存 */
 export const prismaRecordCreate = async (
   // param: Omit<Record, 'id'>,
-  param: Record,
+  param: Record
 ): Promise<Record> => {
   const record = await prisma.record.create({
     data: param,
@@ -98,7 +102,10 @@ export const prismaRecordCreate = async (
 };
 
 /* 記録を更新 */
-export const prismaRecordUpdate = async (id: number, param: Record): Promise<Record> => {
+export const prismaRecordUpdate = async (
+  id: number,
+  param: Record
+): Promise<Record> => {
   const record = await prisma.record.update({
     where: { id: id },
     data: param,

@@ -1,35 +1,35 @@
-.Label{
-    font-family: 'Courier New', Courier, monospace;
+.Label {
+  font-family: "Courier New", Courier, monospace;
 }
 
-  .Label.page{
-      text-align: center;
-      font-weight: 600;
-      font-size: 32px;
-      padding: 8px 4px 0px 4px;
-  }
-  .Label.subHeading{
-      font-size: 24px;
-      font-weight: 600;
-      padding: 8px 4px 4px 4px;
-      margin-top: 10px;
-  }
-  .Label.reference{
-    font-size: 14px;
-    font-weight: 600;
-    padding: 4px 4px;
-    margin-left: 10px;
+.Label.page {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  padding: 8px 4px 0px 4px;
 }
-  .Label.referenceIndex{
-    font-size: 18px;
-    font-weight: 600;
-    padding: 2px 2px;
-    text-align: center;
-    margin-left: 10px;
+.Label.subHeading {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 8px 4px 4px 4px;
+  margin-top: 10px;
 }
-  .Label.finishStatus{
-    font-size: 14px;
-    font-weight: 600;
-    padding: 0px 0px 0px 10px;
-    margin: 10px 0px 0px 10px;
+.Label.reference {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 4px;
+  margin-left: 10px;
+}
+.Label.referenceIndex {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 2px 2px;
+  text-align: center;
+  margin-left: 10px;
+}
+.Label.finishStatus {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0px 0px 0px 10px;
+  margin: 10px 0px 0px 10px;
 }

@@ -15,13 +15,22 @@ function TableHeader() {
   return (
     <thead>
       <tr>
-        <th scope="col" className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400">
+        <th
+          scope="col"
+          className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400"
+        >
           タイトル
         </th>
-        <th scope="col" className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400 hidden lg:block">
+        <th
+          scope="col"
+          className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400 hidden lg:block"
+        >
           概要
         </th>
-        <th scope="col" className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400">
+        <th
+          scope="col"
+          className="px-1 py-3 text-sm font-medium text-gray-800 uppercase bg-purple-400"
+        >
           完了
         </th>
       </tr>
@@ -82,94 +91,101 @@ const Records: NextPageWithLayout = () => {
   // 記録一覧のテーブルの内容部分
   function TableBody(data: IRecordsAndCount) {
     return (
-        <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-          {data.records.map((rcd: IDisplayRecord, idx: number) => (
-            <tr key={rcd.id}>
-              {/* https://docs.rome.tools/lint/rules/usekeywithclickevents/ */}
-              <td
-                className="px-2 py-4 whitespace-nowrap text-sm font-medium text-purple-500 dark:text-gray-200 bg-lime-50 hover:cursor-pointer hover:text-blue-800"
-                onClick={() => checkRecord(rcd.id)}
-              >
+      <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+        {data.records.map((rcd: IDisplayRecord, idx: number) => (
+          <tr key={rcd.id}>
+            <td className="px-2 py-4 whitespace-nowrap text-sm font-medium text-purple-500 dark:text-gray-200 bg-lime-50 hover:cursor-pointer hover:text-blue-800">
+              <button onClick={() => checkRecord(rcd.id)}>
                 {trimTitle(rcd.title)}
-              </td>
-              <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block bg-lime-50">
-                {rcd.description}
-              </td>
-              <td className="text-center whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 bg-lime-50">
-                {showFinishStatus(rcd.finished)}
-              </td>
-            </tr>
-          ))}
-        </tbody>
+              </button>
+            </td>
+            <td className="px-2 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 hidden lg:block bg-lime-50">
+              {rcd.description}
+            </td>
+            <td className="text-center whitespace-nowrap text-sm text-gray-800 dark:text-gray-200 bg-lime-50">
+              {showFinishStatus(rcd.finished)}
+            </td>
+          </tr>
+        ))}
+      </tbody>
     );
   }
 
   // レコード件数情報
   function RecordsInfo(data: IRecordsAndCount) {
     return (
-        <div className="flex flex-col items-center">
-          <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
-            page
-            <span className="font-semibold text-gray-900 dark:text-white"> {page + 1}</span> of{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">
-              {data.count % 10 === 0 ? (data.count / 10) : Math.floor(data.count / 10) + 1}</span>{" "}
-            <span className="font-semibold text-gray-900 dark:text-white">(total {data.count} Records )</span>
+      <div className="flex flex-col items-center">
+        <span className="text-xl text-gray-700 dark:text-gray-400 my-2">
+          page
+          <span className="font-semibold text-gray-900 dark:text-white">
+            {" "}
+            {page + 1}
+          </span>{" "}
+          of{" "}
+          <span className="font-semibold text-gray-900 dark:text-white">
+            {data.count % 10 === 0
+              ? data.count / 10
+              : Math.floor(data.count / 10) + 1}
+          </span>{" "}
+          <span className="font-semibold text-gray-900 dark:text-white">
+            (total {data.count} Records )
           </span>
-        </div>
+        </span>
+      </div>
     );
   }
 
   // ページング
   function Paging(data: IRecordsAndCount) {
     return (
-        <div className="flex flex-col items-center mb-4">
-          <div className="inline-flex sm:mt-0">
-            <button
-              onClick={() => setPage((old) => Math.max(old - 1, 0))}
-              disabled={page === 0}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-50 disabled:text-gray-100 bg-purple-500 rounded-l hover:bg-purple-700 disabled:bg-purple-200"
+      <div className="flex flex-col items-center mb-4">
+        <div className="inline-flex sm:mt-0">
+          <button
+            onClick={() => setPage((old) => Math.max(old - 1, 0))}
+            disabled={page === 0}
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-50 disabled:text-gray-100 bg-purple-500 rounded-l hover:bg-purple-700 disabled:bg-purple-200"
+          >
+            <svg
+              aria-hidden="true"
+              className="w-5 h-5 mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 mr-2"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              Prev
-            </button>
-            <button
-              onClick={() => {
-                if (!res.isPreviousData) {
-                  setPage((old) => old + 1);
-                }
-              }}
-              disabled={10 * page + data.records.length === data.count}
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-50 disabled:text-gray-100 bg-purple-500 border-0 border-l border-gray-700 rounded-r hover:bg-purple-600 disabled:bg-purple-200"
+              <path
+                fillRule="evenodd"
+                d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Prev
+          </button>
+          <button
+            onClick={() => {
+              if (!res.isPreviousData) {
+                setPage((old) => old + 1);
+              }
+            }}
+            disabled={10 * page + data.records.length === data.count}
+            className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-50 disabled:text-gray-100 bg-purple-500 border-0 border-l border-gray-700 rounded-r hover:bg-purple-600 disabled:bg-purple-200"
+          >
+            Next
+            <svg
+              aria-hidden="true"
+              className="w-5 h-5 ml-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              Next
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 ml-2"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
+              <path
+                fill-rule="evenodd"
+                d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
         </div>
+      </div>
     );
   }
 
@@ -184,7 +200,10 @@ const Records: NextPageWithLayout = () => {
               <div className="border rounded-lg overflow-hidden dark:border-gray-700">
                 <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                   <TableHeader />
-                  <TableBody records={res.data.records} count={res.data.count} />
+                  <TableBody
+                    records={res.data.records}
+                    count={res.data.count}
+                  />
                 </table>
               </div>
             </div>
@@ -196,9 +215,11 @@ const Records: NextPageWithLayout = () => {
         <Paging records={res.data.records} count={res.data.count} />
       </div>
       {/* 取得データの確認用(開発環境のみ表示) */}
-      {process.env.NEXT_PUBLIC_API_MOCKING === "enabled" ? <ReactQueryDevtools /> 
-      : <></>
-      }
+      {process.env.NEXT_PUBLIC_API_MOCKING === "enabled" ? (
+        <ReactQueryDevtools />
+      ) : (
+        <></>
+      )}
     </>
   );
 };

@@ -14,7 +14,11 @@ const GitHubMark = () => {
       className="relative h-6 w-6 md:h-8 md:w-8 cursor-pointer overflow-hidden"
     >
       <Image
-        src={currentTheme === "dark" ? "/images/github-mark-white.png" : "/images/github-mark.png"}
+        src={
+          currentTheme === "dark"
+            ? "/images/github-mark-white.png"
+            : "/images/github-mark.png"
+        }
         fill
         alt="github mark"
         // width={300}

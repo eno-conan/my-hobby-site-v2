@@ -23,7 +23,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   useTransition();
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <QueryClientProvider client={queryClient}>{getLayout(<Component {...pageProps} />)}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        {getLayout(<Component {...pageProps} />)}
+      </QueryClientProvider>
     </ThemeProvider>
   );
 }

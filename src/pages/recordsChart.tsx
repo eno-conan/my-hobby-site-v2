@@ -61,7 +61,10 @@ const RecordsChart: NextPageWithLayout = () => {
     let targetYearMonth: string = "";
     data.map((cntData, idx) => {
       if (idx === 0) {
-        targetYearMonth = `${cntData.targetYearMonth?.substring(1, 5)}年${cntData.targetYearMonth?.substring(5, 7)}月`;
+        targetYearMonth = `${cntData.targetYearMonth?.substring(
+          1,
+          5
+        )}年${cntData.targetYearMonth?.substring(5, 7)}月`;
       }
       // yyyy/、部分はカット
       labels.push(cntData.createdDate.substring(5));
@@ -100,10 +103,10 @@ const RecordsChart: NextPageWithLayout = () => {
   }
 
   return (
-      <div className={"container mx-auto px-4"}>
-        <Meta title="記録集計表" description="当月の記録数一覧を表示" />
-        <div>{setData(res.data)}</div>
-      </div>
+    <div className={"container mx-auto px-4"}>
+      <Meta title="記録集計表" description="当月の記録数一覧を表示" />
+      <div>{setData(res.data)}</div>
+    </div>
   );
 };
 
