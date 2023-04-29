@@ -7,11 +7,12 @@ interface Props {
   register: UseFormRegister<any>;
   label: any;
   classSub?: string;
+  idValue?: string;
 }
 
 const cx = classnames.bind(styles);
 
-const Input = ({ register, label, classSub = "" }: Props) => {
+const Input = ({ register, label, classSub = "", idValue }: Props) => {
   return (
     <div>
       {/* 項目によって幅の調整可能 */}
@@ -20,6 +21,7 @@ const Input = ({ register, label, classSub = "" }: Props) => {
           {...register(label)}
           className={`${cx("Input", classSub)} flex flex-nowrap`}
           aria-label={"input type component ui"}
+          id={idValue}
         />
       </span>
     </div>

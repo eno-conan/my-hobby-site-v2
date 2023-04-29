@@ -76,15 +76,25 @@ const Add: NextPageWithLayout = () => {
     return (
       <>
         {/* 主要項目 */}
-        <Label type={"subHeading"} word={"タイトル名"} />
-        <Input register={register} label={"title"} classSub={"title"} />
+        <Label type={"subHeading"} word={"タイトル名"} forValue={"title"} />
+        <Input
+          register={register}
+          label={"title"}
+          classSub={"title"}
+          idValue={"title"}
+        />
         <ErrorMessageUI errors={errors} name={"title"} />
         {/* 概要 */}
-        <Label type={"subHeading"} word={"記録の概要"} />
+        <Label
+          type={"subHeading"}
+          word={"記録の概要"}
+          forValue={"description"}
+        />
         <Input
           register={register}
           label={"description"}
           classSub={"description"}
+          idValue={"description"}
         />
         <ErrorMessageUI errors={errors} name={"description"} />
         {/* 科目 */}
