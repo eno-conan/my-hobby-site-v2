@@ -41,7 +41,7 @@
     "react-hook-form": "^7.43.8",
     "redaxios": "^0.5.1",
     "wretch": "^2.5.1",
-    "zod": "^3.21.4"
+    "zod": "^3.22.3"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
